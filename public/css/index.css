@@ -15,9 +15,11 @@
 
 :root {
   --font-title: #2A2A2A;
+  --font-bodytext: #2A2A2A;
   --font-desc: #939393;
   --background: #fff;
   --link: #00C0CA;
+  --font-family: 'DM Sans', sans-serif;
 }
 
 html::-webkit-scrollbar {
@@ -42,6 +44,61 @@ body {
   background-color: var(--background);
   font-family: "DM Sans", sans-serif;
 }
+
+/* typography */
+
+.title {
+  color: var(--font-title);
+  font-size: 32px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.desc {
+  color: var(--font-desc);
+  font-size: 16px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.bodytext {
+  color: var(--font-bodytext);
+  font-size: 18px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/*section layout*/
+.layout-section{
+  display: flex;
+  width: 1544px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+}
+
+.layout-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.layout-card {
+  display: inline-block;
+  gap: 16px;
+  margin-right: 24px;
+}
+
+.carousel-container {
+  width: 1554px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+/* promo section ends*/
 
 header {
   position: fixed;
@@ -163,6 +220,33 @@ header .menu,
   color: var(--font-title);
 }
 
+.bgphoto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0;
+  height: 900px;
+  width: 100%;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  height: 90%;
+}
+
+.image-link {
+  display: block;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+  transition: filter 0.3s ease-in-out;
+}
+
 .image:hover {
   filter: brightness(75%);
 }
@@ -172,8 +256,8 @@ header .menu,
   bottom: 0;
   left: 0;
   margin: 0;
-  padding: 10px;
-  font-size: 26px;
+  padding: 36px;
+  font-size: 20px;
   background-color: transparent;
   color: white;
 }
@@ -199,7 +283,7 @@ header .menu,
 }
 
 .container {
-  margin: 92px;
+  margin: 80px;
 }
 
 .wrapper {
@@ -207,7 +291,6 @@ header .menu,
   max-width: 100%;
   padding: 0.5rem 0 0.5rem 7%;
 }
-
 
 .pencarian .kotak-pencarian {
   padding: 1rem 10rem;
