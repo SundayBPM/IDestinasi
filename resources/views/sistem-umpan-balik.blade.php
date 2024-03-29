@@ -34,7 +34,28 @@
             <input type="radio" name="rate" id="rate-1">
             <label for="rate-1" class="fa fa-star"></label>
         </div>
-
+        <div class="form-ulasan">
+            <form action="#">
+                <header> Ulasan</header>
+                <div class="text-area">
+                    <textarea cols="30"></textarea>
+                </div>
+                <div class="btn-submit-ulasan">
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-kritik-saran">
+            <form action="#">
+                <header> Kritik dan Saran untuk Pengembangan Kedepannya</header>
+                <div class="text-area">
+                    <textarea cols="30"></textarea>
+                </div>
+                <div class="btn-submit-ulasan">
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </div>
     </div>
     
 
