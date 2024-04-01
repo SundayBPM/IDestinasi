@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/form-ulasan', function () {
+    return view('form-sistem-umpan-balik');
+});
+
 Route::get('/ulasan', function () {
     return view('sistem-umpan-balik');
 });
