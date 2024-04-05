@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jelajah</title>
+    <title>IDestinasi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +17,7 @@
     <!-- Navbar -->
     <header class="header">
       <!-- Logo -->
-      <a href="index.html" class="logo"><img src="img/logo.png" /></a>
+      <a href="landingPage.blade.php" class="logo"><img src="img/logo.png" /></a>
 
       <!-- Navbar List -->
       <nav class="navbar">
