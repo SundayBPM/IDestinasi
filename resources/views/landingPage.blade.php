@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 
 @extends('layouts.main')
+@section('container')
 <!--page start-->
 <div class="bgphoto">
       <a href="#" class="image-link">
@@ -30,31 +31,74 @@
       </a>
     </div>
 <!--page start ends -->
-@section('container')<div class="layout-section">
-  <div class ="layout-title">
+<div class ="layout-title">
       <div class="title">Temukan Promo dan Diskon</div>
       <div class="desc">Nikmati berbagai promo dan diskon dari IDestinasi untuk teman liburanmu</div>
-  </div>
+</div>
 
-  <div class="carousel-container">
-    <div class="layout-card">
-      <div style="width: 765px; background: linear-gradient(0deg, black 0%, black 100%); border-radius: 0px; overflow: hidden; display: inline-flex">
-        <img style="width: 765px; height: 400px" src="img/lombok-promo.png">
-      </div>
-      <div class="bodytext"style="margin-top: 24px;" >Promo Diskon 50% ke Lombok</div>
-    </div>
-    <div class="layout-card">
-      <div style="width: 765px; background: linear-gradient(0deg, black 0%, black 100%); border-radius: 0px; overflow: hidden; display: inline-flex">
-        <img style="width: 765px; height: 400px" src="img/lombok-promo.png">
-      </div>
-      <div class="bodytext" style="margin-top: 24px;">Promo Diskon 50% ke Lombok</div>
-    </div>
-    <div class="layout-card">
-      <div style="width: 765px; background: linear-gradient(0deg, black 0%, black 100%); border-radius: 0px; overflow: hidden; display: inline-flex">
-        <img style="width: 765px; height: 400px" src="img/lombok-promo.png">
-      </div>
-      <div class="bodytext" style="margin-top: 24px;">Promo Diskon 50% ke Lombok</div>
-    </div>
+<!--banner promo-->
+<div class="container">
+  <div class="slider-wrapper">
+    <swiper-container class="mySwiper" class="mySwiper" init="false" autoplay-delay="2500" autoplay-disable-on-interaction="false" style="height: 400px; width:100%">
+      <swiper-slide>
+        <a href="./promo">
+          <img id = "slide-1" src="img/lombok-promo.png" alt="Promo Lombok"/>
+        </a>
+      </swiper-slide> 
+          
+      <swiper-slide>
+        <a href="./promo">
+          <img id = "slide-2" src="img/lombok-promo.png" alt="Promo Lombok"/>
+        </a>
+      </swiper-slide> 
+
+      <swiper-slide>
+        <a href="./promo">
+          <img id = "slide-3" src="img/lombok-promo.png" alt="Promo Lombok"/>
+        </a>
+      </swiper-slide> 
+        </swiper-container>  
   </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <script>
+      const swiperEl = document.querySelector("swiper-container");
+
+      const params = {
+        injectStyles: [
+          `
+        .swiper-pagination-bullet {
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          line-height: 20px;
+          font-size: 12px;
+          color: #000;
+          opacity: 1;
+          background: rgba(255, 255, 255, 0.8);
+        }
+  
+        .swiper-pagination-bullet-active {
+          color: #fff;
+          background: #00C0CA;
+        }
+        `,
+        ],
+        pagination: {
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+      };
+
+      Object.assign(swiperEl, params);
+
+      swiperEl.initialize();
+</script>
+
+<!--rekomendasi objek wisata-->
 
 @endsection

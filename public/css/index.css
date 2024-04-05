@@ -47,6 +47,21 @@ body {
 
 /* typography */
 
+.headline{
+    color: var(--black, #2A2A2A);
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.headline-desc {
+    color: var(--font-desc);
+    font-size: 28px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    word-wrap: break-word;
+  }
 .title {
   color: var(--font-title);
   font-size: 32px;
@@ -69,6 +84,41 @@ body {
   font-family: var(--font-family);
   font-weight: 400;
   word-wrap: break-word;
+  line-height: 150%;
+}
+
+/*page navigation*/
+.navigation {
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+.navigation-container {
+    display: flex;
+    padding: 12px 92px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    max-width: 100%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--font-desc);
+    transition: color 0.3s, opacity 0.3s;
+}
+  
+.nav-link.active {
+    color: var(--font-bodytext);
+}
+  
+.nav-link:hover {
+    opacity: 0.8;
+}
+  
+.separator {
+    margin: 0 5px;
+    color: var(--font-desc);
 }
 
 /*section layout*/
@@ -81,6 +131,7 @@ body {
 }
 
 .layout-title {
+    margin-left: 92px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -92,18 +143,81 @@ body {
   gap: 16px;
   margin-right: 24px;
 }
-
-.carousel-container {
-  width: 1554px;
-  overflow-x: auto;
-  white-space: nowrap;
+.layout-section {
+    margin-top: 20px;
+  }
+  
+.layout-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
+  
+.layout-section {
+    margin-top: 20px;
+}
+  
+.layout-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+  
+/*banner slider*/
+.slider-wrapper {
+    position:relative;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slider{
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+    border-radius: 0.5rem;
+}
+
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
 /* promo section ends*/
 
 header {
   position: fixed;
   background-color: var(--background);
   width: 100%;
+  max-width: 100%;
   top: 0;
   right: 0;
   z-index: 1000;
@@ -224,7 +338,7 @@ header .menu,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0;
-  height: 900px;
+  height: 800px;
   width: 100%;
   position: relative;
 }
@@ -236,7 +350,7 @@ header .menu,
 
 .image-link {
   display: block;
-  height: 100%;
+  height: 800px;
 }
 
 .image {
@@ -283,7 +397,8 @@ header .menu,
 }
 
 .container {
-  margin: 80px;
+  margin-top: 60px;
+  max-width: 100%;
 }
 
 .wrapper {
@@ -303,10 +418,12 @@ header .menu,
 
 footer {
   position: absolute;
-  width: 100%;
+  left: 0;
+  right: 0;
+  max-width: 100%;
   background: #00C0CA;
   color: var(--background);
-  margin-top: 8rem;
+  margin-top: 24px;
   padding: 0.5rem 7%;
 }
 
@@ -425,3 +542,40 @@ footer {
     transform: scaleX(0);
   }
 }
+
+/*promo*/
+.promo-image {
+    max-width: 100%;
+}
+
+.promo-title-container{
+    display: flex;
+    padding: 60px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+.promo-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 100%;
+}
+
+.promo-desc-container {
+    display: flex;
+    padding: 60px 92px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 51px;
+    background-color: #fff;
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+

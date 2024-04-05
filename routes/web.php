@@ -2,10 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/landingPage', function () {
+    return view('landingPage');
 });
 
-Route::get('/ulasan', function () {
-    return view('sistem-umpan-balik');
+Route::get('/promo', function () {
+    return view('promo');
 });
+
+Route::get('/landingPage', function () {
+    return view('landingPage');
+})->name('landingPage');
+
+Route::get('/promo', function () {
+    return view('promo');
+})->name('promo');
+
+
