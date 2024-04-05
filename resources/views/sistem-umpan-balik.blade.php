@@ -1,66 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDestinasi | Ulasan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- import font awesome -->
-    <!-- import font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <!-- import bootstrap icon-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><i class="bi bi-arrow-left"></i> Navbar</a>   
-            <div class="navbar-text">
-                <p>Lengkapi formulir ulasan dibawah ini untuk "...."</p>
+@extends('layouts/main')
+
+
+@section('container')
+<div class="ulasan-header">
+    <img src="img/ulasan-img1.png" alt="Deskripsi gambar">
+</div>
+
+<h1>Buat Ulasan Untuk Destinasi Terdahulu</h1>
+<p>Buat ulasan untuk objek wisata yang telah kamu kunjungi untuk membantu meningkatkan kualitas objek wisata</p>
+
+    <div class="list-ulasan-destinasi">
+        <div class="card">
+            <img src="img/kete kesu.jpg" alt="objek wisata">
+            <div class="card-content">
+                <h3>Card 1</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi quisquam amet, error a reiciendis facere illum, 
+                    ea laboriosam rerum quae accusantium cupiditate, dolor 
+                    porro commodi blanditiis nostrum numquam quibusdam! Quo.</p>
+                    <a href="/">Buat Ulasan</a>
             </div>
         </div>
-    </nav>
-    <div class="rating-ulasan">
-        <div class="star-widget">
-            <input type="radio" name="rate" id="rate-5">
-            <label for="rate-5" class="fa fa-star"></label>
-            <input type="radio" name="rate" id="rate-4">
-            <label for="rate-4" class="fa fa-star"></label>
-            <input type="radio" name="rate" id="rate-3">
-            <label for="rate-3" class="fa fa-star"></label>
-            <input type="radio" name="rate" id="rate-2">
-            <label for="rate-2" class="fa fa-star"></label>
-            <input type="radio" name="rate" id="rate-1">
-            <label for="rate-1" class="fa fa-star"></label>
+        <div class="card">
+            <img src="img/tanjung bira.jpg" alt="objek wisata">
+            <div class="card-content">
+                <h3>Card 2</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi quisquam amet, error a reiciendis facere illum, 
+                    ea laboriosam rerum quae accusantium cupiditate, dolor 
+                    porro commodi blanditiis nostrum numquam quibusdam! Quo.</p>
+                    <a href="/">Buat Ulasan</a>
+            </div>
         </div>
-        <div class="form-ulasan">
-            <form action="#">
-                <header> Ulasan</header>
-                <div class="text-area">
-                    <textarea cols="30"></textarea>
-                </div>
-                <div class="btn-submit-ulasan">
-                    <button type="submit">Post</button>
-                </div>
-            </form>
+        <div class="card">
+            <img src="img/Ollon.png" alt="objek wisata">
+            <div class="card-content">
+                <h3>Card 3</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi quisquam amet, error a reiciendis facere illum, 
+                    ea laboriosam rerum quae accusantium cupiditate, dolor 
+                    porro commodi blanditiis nostrum numquam quibusdam! Quo.</p>
+                    <a href="/">Buat Ulasan</a>
+            </div>
         </div>
-        <div class="form-kritik-saran">
-            <form action="#">
-                <header> Kritik dan Saran untuk Pengembangan Kedepannya</header>
-                <div class="text-area">
-                    <textarea cols="30"></textarea>
-                </div>
-                <div class="btn-submit-ulasan">
-                    <button type="submit">Post</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    
-</body>
-</html>
+        <!--img src="img/img3.jpg" alt="Deskripsi gambar"-->
+    </div>    
+        
+@endsection
