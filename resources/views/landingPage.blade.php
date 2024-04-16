@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+<script src="https://kit.fontawesome.com/6fab7730bd.js" crossorigin="anonymous"></script>
 
 @extends('layouts.main')
 @section('container')
@@ -31,15 +32,17 @@
       </a>
     </div>
 <!--page start ends -->
-<div class ="layout-title">
+<div class ="layout-section">
+  <div class ="layout-title">
       <div class="title">Temukan Promo dan Diskon</div>
       <div class="desc">Nikmati berbagai promo dan diskon dari IDestinasi untuk teman liburanmu</div>
+  </div>
 </div>
 
 <!--banner promo-->
 <div class="container">
   <div class="slider-wrapper">
-    <swiper-container class="mySwiper" class="mySwiper" init="false" autoplay-delay="2500" autoplay-disable-on-interaction="false" style="height: 400px; width:100%">
+    <swiper-container class="mySwiper" class="mySwiper" init="false" autoplay-delay="2500" autoplay-disable-on-interaction="false" style="height: 360px; width:100%">
       <swiper-slide>
         <a href="./promo">
           <img id = "slide-1" src="img/lombok-promo.png" alt="Promo Lombok"/>
@@ -100,5 +103,202 @@
 </script>
 
 <!--rekomendasi objek wisata-->
+<div class= "layout-section">
+  <div class="layout-section-title">
+    <div class ="layout-title">
+      <div class="title">Rekomendasi Untukmu</div>
+      <div class="desc">Lihat rekomendasi objek wisata sesuai preferensimu</div>
+    </div>
+    <a href="#" class="secondary-button">Lihat Semua Wisata</a>
+    </div>
 
+<!--card rekomendasi objek wisata-->
+  <!--card 1-->
+  <div class="card-container">
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img2.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 2-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img3.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 3-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img4.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 4-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img5.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 5-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img5.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+</div>
+</div>
+
+<!-- rekomendasi paket-->
+<div class= "layout-section">
+  <div class="layout-section-title">
+    <div class ="layout-title">
+      <div class="title">Temukan Paket Tour Wisata Impianmu</div>
+      <div class="desc">Temukan berbagai pilihan paket tour wisata lengkap dengan harga murah disini</div>
+    </div>
+    <a href="#" class="secondary-button">Lihat Semua Paket</a>
+    </div>
+
+<!--card rekomendasi paket-->
+  <!--card 1-->
+  <div class="card-container">
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img2.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Paket Wisata di Dieng</div>
+        <div class="rating">
+          <div class="reviews">5 Orang</div>
+          <div class="reviews">|</div>
+          <div class="reviews">7 Hari</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 2-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img3.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Paket Wisata di Dieng</div>
+        <div class="rating">
+          <div class="reviews">5 Orang</div>
+          <div class="reviews">|</div>
+          <div class="reviews">7 Hari</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 3-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img4.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Paket Wisata di Dieng</div>
+        <div class="rating">
+          <div class="reviews">5 Orang</div>
+          <div class="reviews">|</div>
+          <div class="reviews">7 Hari</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 4-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img5.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Paket Wisata di Dieng</div>
+        <div class="rating">
+          <div class="reviews">5 Orang</div>
+          <div class="reviews">|</div>
+          <div class="reviews">7 Hari</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 5-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img5.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Paket Wisata di Dieng</div>
+        <div class="rating">
+          <div class="reviews">5 Orang</div>
+          <div class="reviews">|</div>
+          <div class="reviews">7 Hari</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+</div>
+</div>
 @endsection

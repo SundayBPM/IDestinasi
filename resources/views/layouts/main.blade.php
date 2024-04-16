@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Navbar -->
