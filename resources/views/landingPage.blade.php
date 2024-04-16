@@ -202,7 +202,7 @@
 </div>
 </div>
 
-<!-- rekomendasi paket-->
+<!-- rekomendasi paket tour-->
 <div class= "layout-section">
   <div class="layout-section-title">
     <div class ="layout-title">
