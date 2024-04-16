@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-<!--description-->
+<!--description-->`
     <div class="promo-desc-container">
         <div class ="bodytext"> Kami sangat gembira untuk mengumumkan promo diskon 50% untuk perjalanan wisata ke Lombok! Dapatkan kesempatan langka ini untuk menikmati keindahan pulau Lombok dengan harga yang sangat terjangkau.
 
