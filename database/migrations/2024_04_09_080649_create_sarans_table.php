@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sarans', function (Blueprint $table) {
-            $table->id('id_saran');
+            $table->id();
             $table->tinyInteger("rating");
             $table->tinyInteger("penilaian_nps");
             $table->tinyInteger("penilaian_amenitas");
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->tinyInteger("penilaian_atraksi");
             $table->text("kritik_saran");
             $table->text("ulasan");
-            $table->timestamp("date");
+            $table->timestamps();
         });
     }
 

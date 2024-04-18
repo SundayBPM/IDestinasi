@@ -15,13 +15,23 @@
 <body>
     <nav class="navbar justify-content-left navbar-expand-lg navbar-light bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><i class="bi bi-arrow-left"></i> Navbar</a>   
+            <a class="navbar-brand" href="/ulasan"><i class="bi bi-arrow-left"></i> Navbar</a>   
             <p>Lengkapi formulir ulasan dibawah ini untuk "...."</p>
             <div class="navbar-text">
             </div>
         </div>
     </nav>
-    <form action="" method="POST">
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <form action="/ulasan" method="POST">
+        @csrf
         <div class="ulasan">
             <div class="ulasan-text">
                 <h4>Ulasan dan Rating</h4>
@@ -29,25 +39,25 @@
             </div>
             <h6>bagaimana keseluruhan ratingmu?</h6>
             <div class="star-widget">
-                <input type="radio" name="rate" id="rate-1">
+                <input type="radio" name="rate" id="rate-1" value="1" >
                 <label for="rate-1" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-2">
+                <input type="radio" name="rate" id="rate-2" value="1">
                 <label for="rate-2" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-3">
+                <input type="radio" name="rate" id="rate-3" value="1">
                 <label for="rate-3" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-4">
+                <input type="radio" name="rate" id="rate-4" value="1">
                 <label for="rate-4" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-5">
+                <input type="radio" name="rate" id="rate-5" value="1">
                 <label for="rate-5" class="fa fa-star"></label>    
             </div>
             <div class="form-ulasan-saran">
                 <header> Ulasan</header>
-                <textarea cols="30" placeholder="ketik Ulasan Di sini"></textarea>
+                <textarea id='ulasan-id' name='ulasan' cols="30" placeholder="ketik Ulasan Di sini" require></textarea>
             </div>
 
             <div class="form-ulasan-saran">
                 <header> Kritik dan Saran untuk Pengembangan Kedepannya</header>
-                <textarea cols="50" placeholder="ketik Kritik dan Saran Di sini"></textarea>
+                <textarea id='kritik-saran-id' name='kritik_saran' cols="50" placeholder="ketik Kritik dan Saran Di sini" require></textarea>
             </div>
         </div>
       
@@ -56,16 +66,16 @@
             <hr>
             <p>Seberapa menarik Anda menilai atraksi wisata yang ada?</p>
             <div class="rating-penilaian">
-                <input type="radio" name="rate" id="rate-1">
-                <input type="radio" name="rate" id="rate-2">
-                <input type="radio" name="rate" id="rate-3">
-                <input type="radio" name="rate" id="rate-4">
-                <input type="radio" name="rate" id="rate-5">
-                <input type="radio" name="rate" id="rate-6">
-                <input type="radio" name="rate" id="rate-7">
-                <input type="radio" name="rate" id="rate-8">
-                <input type="radio" name="rate" id="rate-10">
-                <input type="radio" name="rate" id="rate-9">
+                <input type="radio" name="rate_atraksi" id="rate-1" value="1">
+                <input type="radio" name="rate_atraksi" id="rate-2" value="2">
+                <input type="radio" name="rate_atraksi" id="rate-3" value="3">
+                <input type="radio" name="rate_atraksi" id="rate-4" value="4">
+                <input type="radio" name="rate_atraksi" id="rate-5" value="5">
+                <input type="radio" name="rate_atraksi" id="rate-6" value="6">
+                <input type="radio" name="rate_atraksi" id="rate-7" value="7">
+                <input type="radio" name="rate_atraksi" id="rate-8" value="8">
+                <input type="radio" name="rate_atraksi" id="rate-9" value="9">
+                <input type="radio" name="rate_atraksi" id="rate-10" value="10">
                 <label for="rate-1">1</label>
                 <label for="rate-2">2</label>
                 <label for="rate-3">3</label>
@@ -86,16 +96,16 @@
                 <hr>
             </div>
             <div class="rating-penilaian">
-                <input type="radio" name="rate" id="rate-10">
-                <input type="radio" name="rate" id="rate-9">
-                <input type="radio" name="rate" id="rate-8">
-                <input type="radio" name="rate" id="rate-7">
-                <input type="radio" name="rate" id="rate-6">
-                <input type="radio" name="rate" id="rate-5">
-                <input type="radio" name="rate" id="rate-4">
-                <input type="radio" name="rate" id="rate-3">
-                <input type="radio" name="rate" id="rate-2">
-                <input type="radio" name="rate" id="rate-1">
+                <input type="radio" name="rate_aksesibilitas" id="rate-10" value="10">
+                <input type="radio" name="rate_aksesibilitas" id="rate-9" value="9">
+                <input type="radio" name="rate_aksesibilitas" id="rate-8" value="8">
+                <input type="radio" name="rate_aksesibilitas" id="rate-7" value="7">
+                <input type="radio" name="rate_aksesibilitas" id="rate-6" value="6">
+                <input type="radio" name="rate_aksesibilitas" id="rate-5" value="5">
+                <input type="radio" name="rate_aksesibilitas" id="rate-4" value="4">
+                <input type="radio" name="rate_aksesibilitas" id="rate-3" value="3">
+                <input type="radio" name="rate_aksesibilitas" id="rate-2" value="2">
+                <input type="radio" name="rate_aksesibilitas" id="rate-1" value="1">
 
             </div>
             <div class="rating-penilaian-labels">
@@ -117,25 +127,25 @@
             <hr>
             <div class="rating-penilaian">
                 <label for="rate-10">10</label>
-                <input type="radio" name="rate" id="rate-10">
+                <input type="radio" name="rate_amenitas" id="rate-10" value="10">
                 <label for="rate-9">9</label>
-                <input type="radio" name="rate" id="rate-9">
+                <input type="radio" name="rate_amenitas" id="rate-9" value="9">
                 <label for="rate-8">8</label>
-                <input type="radio" name="rate" id="rate-8">
+                <input type="radio" name="rate_amenitas" id="rate-8" value="8">
                 <label for="rate-7">7</label>
-                <input type="radio" name="rate" id="rate-7">
+                <input type="radio" name="rate_amenitas" id="rate-7" value="7">
                 <label for="rate-6">6</label>
-                <input type="radio" name="rate" id="rate-6">
+                <input type="radio" name="rate_amenitas" id="rate-6" value="6">
                 <label for="rate-5">5</label>
-                <input type="radio" name="rate" id="rate-5">
+                <input type="radio" name="rate_amenitas" id="rate-5" value="5">
                 <label for="rate-4">4</label>
-                <input type="radio" name="rate" id="rate-4">
+                <input type="radio" name="rate_amenitas" id="rate-4" value="4">
                 <label for="rate-3">3</label>
-                <input type="radio" name="rate" id="rate-3">
+                <input type="radio" name="rate_amenitas" id="rate-3" value="3">
                 <label for="rate-2">2</label>
-                <input type="radio" name="rate" id="rate-2">
+                <input type="radio" name="rate_amenitas" id="rate-2" value="2">
                 <label for="rate-1">1</label>
-                <input type="radio" name="rate" id="rate-1">
+                <input type="radio" name="rate_amenitas" id="rate-1" value="1">
                 
             </div>
         </div>
@@ -145,85 +155,108 @@
             <hr>
             <div class="rating-penilaian">
                 <label for="rate-10">10</label>
-                <input type="radio" name="rate" id="rate-10">
+                <input type="radio" name="rate_ansilari" id="rate-10" value="10">
                 <label for="rate-9">9</label>
-                <input type="radio" name="rate" id="rate-9">
+                <input type="radio" name="rate_ansilari" id="rate-9" value="9">
                 <label for="rate-8">8</label>
-                <input type="radio" name="rate" id="rate-8">
+                <input type="radio" name="rate_ansilari" id="rate-8" value="8">
                 <label for="rate-7">7</label>
-                <input type="radio" name="rate" id="rate-7">
+                <input type="radio" name="rate_ansilari" id="rate-7" value="7">
                 <label for="rate-6">6</label>
-                <input type="radio" name="rate" id="rate-6">
+                <input type="radio" name="rate_ansilari" id="rate-6" value="6">
                 <label for="rate-5">5</label>
-                <input type="radio" name="rate" id="rate-5">
+                <input type="radio" name="rate_ansilari" id="rate-5" value="5">
                 <label for="rate-4">4</label>
-                <input type="radio" name="rate" id="rate-4">
+                <input type="radio" name="rate_ansilari" id="rate-4" value="4">
                 <label for="rate-3">3</label>
-                <input type="radio" name="rate" id="rate-3">
+                <input type="radio" name="rate_ansilari" id="rate-3" value="3">
                 <label for="rate-2">2</label>
-                <input type="radio" name="rate" id="rate-2">
+                <input type="radio" name="rate_ansilari" id="rate-2" value="2">
                 <label for="rate-1">1</label>
-                <input type="radio" name="rate" id="rate-1">
+                <input type="radio" name="rate_ansilari" id="rate-1" value="1">
+                
+            </div>
+            <Header>Penilaian Ansilari</Header>
+            <hr>
+            <div class="rating-penilaian">
+                <label for="rate-10">10</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-10" value="10">
+                <label for="rate-9">9</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-9" value="9">
+                <label for="rate-8">8</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-8" value="8">
+                <label for="rate-7">7</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-7" value="7">
+                <label for="rate-6">6</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-6" value="6">
+                <label for="rate-5">5</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-5" value="5">
+                <label for="rate-4">4</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-4" value="4">
+                <label for="rate-3">3</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-3" value="3">
+                <label for="rate-2">2</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-2" value="2">
+                <label for="rate-1">1</label>
+                <input type="radio" name="rate_ansilari_layanan" id="rate-1" value="1">
                 
             </div>
         </div>
         
         <div class="penilaian">
-            <Header>Penilaian Ansilari</Header>
-            <hr>
-            <div class="rating-penilaian">
-                     <label for="rate-10">10</label>
-                <input type="radio" name="rate" id="rate-10">
-                <label for="rate-9">9</label>
-                <input type="radio" name="rate" id="rate-9">
-                <label for="rate-8">8</label>
-                <input type="radio" name="rate" id="rate-8">
-                <label for="rate-7">7</label>
-                <input type="radio" name="rate" id="rate-7">
-                <label for="rate-6">6</label>
-                <input type="radio" name="rate" id="rate-6">
-                <label for="rate-5">5</label>
-                <input type="radio" name="rate" id="rate-5">
-                <label for="rate-4">4</label>
-                <input type="radio" name="rate" id="rate-4">
-                <label for="rate-3">3</label>
-                <input type="radio" name="rate" id="rate-3">
-                <label for="rate-2">2</label>
-                <input type="radio" name="rate" id="rate-2">
-                <label for="rate-1">1</label>
-                <input type="radio" name="rate" id="rate-1">
-                
-            </div>
-        </div>
-        <div class="penilaian">
             <Header>Penilaian NPS</Header>
             <div class="rating-penilaian">
                 <label for="rate-10">10</label>
-                <input type="radio" name="rate" id="rate-10">
+                <input type="radio" name="rate_nps" id="rate-10" value="10">
                 <label for="rate-9">9</label>
-                <input type="radio" name="rate" id="rate-9">
+                <input type="radio" name="rate_nps" id="rate-9" value="9">
                 <label for="rate-8">8</label>
-                <input type="radio" name="rate" id="rate-8">
+                <input type="radio" name="rate_nps" id="rate-8" value="8">
                 <label for="rate-7">7</label>
-                <input type="radio" name="rate" id="rate-7">
+                <input type="radio" name="rate_nps" id="rate-7" value="7">
                 <label for="rate-6">6</label>
-                <input type="radio" name="rate" id="rate-6">
+                <input type="radio" name="rate_nps" id="rate-6" value="6">
                 <label for="rate-5">5</label>
-                <input type="radio" name="rate" id="rate-5">
+                <input type="radio" name="rate_nps" id="rate-5" value="5">
                 <label for="rate-4">4</label>
-                <input type="radio" name="rate" id="rate-4">
+                <input type="radio" name="rate_nps" id="rate-4" value="4">
                 <label for="rate-3">3</label>
-                <input type="radio" name="rate" id="rate-3">
+                <input type="radio" name="rate_nps" id="rate-3" value="3">
                 <label for="rate-2">2</label>
-                <input type="radio" name="rate" id="rate-2">
+                <input type="radio" name="rate_nps" id="rate-2" value="2">
                 <label for="rate-1">1</label>
-                <input type="radio" name="rate" id="rate-1">
+                <input type="radio" name="rate_nps" id="rate-1" value="1">
                 
             </div>
         </div>
         </div>
+        
+        <!-- Button trigger modal -->
         <div class="btn-submit-ulasan">
-            <button type="submit">Post</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Post
+            </button>    
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/Success_Icon.png" alt="">
+                <h3>Yay! Ulasanmu Sudah Dikirim</h3>
+                <p>Terima kasih sudah berpartisipasi dalam meningkatkan kualitas parawisata di Indonesia</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Kembali Ke Beranda</button>
+            </div>
+            </div>
+        </div>
         </div>
     </form>
     

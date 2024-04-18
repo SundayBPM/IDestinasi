@@ -13,22 +13,26 @@
     <div class="list-ulasan-destinasi">
         @foreach($list_destinasi as $destinasi)
         <div class="card">
-            @php
-                $imageFormats = ['jpg', 'png', 'gif']; // Daftar format gambar yang didukung
-                $gambarTersedia = false;
-                foreach($imageFormats as $format) {
-                    $imagePath = "img/{$destinasi->nama_destinasi}.$format";
-                    if(file_exists(public_path($imagePath))) {
-                        echo "<img src='".asset($imagePath)."' alt='objek wisata'>";
-                        $gambarTersedia = true;
-                        break;
+            <div class="card_img">
+                
+                <!-- @php
+                    $imageFormats = ['jpg', 'png', 'gif']; // Daftar format gambar yang didukung
+                    $gambarTersedia = false;
+                    foreach($imageFormats as $format) {
+                        $imagePath = "img/{$destinasi->nama_destinasi}.$format";
+                        if(file_exists(public_path($imagePath))) {
+                            echo "<img src='".asset($imagePath)."' alt='objek wisata'>";
+                            $gambarTersedia = true;
+                            break;
+                        }
                     }
-                }
-            @endphp
+                @endphp -->
+                <img src="img/Kete Kesu.jpg" alt="">
+            </div>
             <div class="card-content">
                 <h3>{{$destinasi->nama_destinasi}}</h3>
                 <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/form-ulasan" class="btn">
+                <a href="/ulasan/form" class="btn">
                     <i class="fa-solid fa-pen"></i> Buat Ulasan
                 </a>
             </div>

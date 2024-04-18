@@ -135,5 +135,13 @@ body{
 }
 
 .btn-submit-ulasan {
-    padding: 10px 100px;
+    padding: 0px 5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+.btn-submit-ulasan button{
+    background-color: #00c0ca;
+    height: 60px;
+    width: 120px;
+
 }
