@@ -1,0 +1,46 @@
+.button-container {
+    text-align: center;
+  }
+  
+  .button-container button {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .rating{
+    justify-content: center; 
+    align-items: center; 
+    gap: 12px; 
+    display: center;
+  }
+  
+  .fa-star {
+    color: #FF7A00; 
+    font-size: 14px;
+  }
+  
+  .rating-value {
+    color: #939393; 
+    font-size: 14px;
+    font-family: var(--font-family); 
+    font-weight: 800; 
+    word-wrap: break-word; 
+  }
+  
+  .reviews {
+    color: #939393; 
+    font-size: 14px; 
+    font-family: var(--font-family); 
+    font-weight: 500; 
+    word-wrap: break-word; 
+  }
+  
+  .tickets {
+    text-align: center;
+    color: #939393; 
+    font-size: 14px; 
+    font-family: var(--font-family); 
+    font-weight: 500; 
+    word-wrap: break-word; 
+  }
+  
