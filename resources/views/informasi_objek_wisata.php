@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="img"></div>
-		<img src="{{url('asset/objectimg.jpg')}}" alt="objectimg.jpg">
+		<img src="asset/objectimg.jpg" alt="objectimg.jpg">
 	<div class="card-info">
 		<h3 class="title">Kepulauan Derawan</h3>
 		<p>Kalimantan Timur</p>
@@ -52,8 +52,12 @@
 		   Kakaban, juga menawarkan pesona alam yang tidak kalah menariknya.
 		</p>
 		<h4>Foto Objek Wisata</h4>
-
-		
+		<div class="gallery">
+			<span><img src="asset/object1.jpg"></span>
+			<span><img src="asset/object2.jpg"></span>
+			<span><img src="asset/object3.jpg"></span>
+			<span><img src="asset/object4.jpg"></span>
+		</div>	
 	</div>
 	<div class="location-content">
 	<h4>Lokasi</h4>
@@ -65,5 +69,39 @@
 		PULAU DERAWAN KECAMATAN, Jl. Pulau Derawan, Kabupaten Berau, Kalimantan Timur 77315
 	</div>
 	<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020472.9351397005!2d119.06629890585938!3d2.4327559900304836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3212abcef5b94afb%3A0xe4cf7029473436a9!2sDerawan%20Islands!5e0!3m2!1sen!2sid!4v1713529497397!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+	<div class="testimonials-content">
+		<h4>Ulasan dan Rating</h4>
+		<p>Lihat rating dan ulasan yang dikirim dari pengunjung lain</p>
+		<button type="button" class="btn btn-outline-info" style="float:right;">Lihat Semua Ulasan</button>
+	<div class="u-container-layout u-similar-container u-container-layout-3">
+        <h5 class="u-text u-text-8">Kirana</h5>
+			<i class="fa-solid fa-star"></i>
+          		<div class="rating-value">4.8</div>
+			<p class="u-text u-text-10">
+				Bagus banget pantainya, fasilitasnya juga
+				mendukung. Sangat recommended untuk
+				teman-teman berkunjung ketika liburan!
+			</p>
+	</div>
+	<div class="u-container-layout u-similar-container u-container-layout-3">
+        <h5 class="u-text u-text-8">Kirana</h5>
+			<i class="fa-solid fa-star"></i>
+          		<div class="rating-value">4.8</div>
+			<p class="u-text u-text-10">
+				Bagus banget pantainya, fasilitasnya juga
+				mendukung. Sangat recommended untuk
+				teman-teman berkunjung ketika liburan!
+			</p>
+	</div>
+	<div class="u-container-layout u-similar-container u-container-layout-3">
+        <h5 class="u-text u-text-8">Kirana</h5>
+			<i class="fa-solid fa-star"></i>
+          		<div class="rating-value">4.8</div>
+			<p class="u-text u-text-10">
+				Bagus banget pantainya, fasilitasnya juga
+				mendukung. Sangat recommended untuk
+				teman-teman berkunjung ketika liburan!
+			</p>
 	</div>
 </body>
