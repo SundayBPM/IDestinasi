@@ -37,17 +37,13 @@
 <body>
 	<div class="container">
 		<div class="img">
-			<img src="asset/81f32e54615ba4c21b72403afd2d672c81f32e54615ba4c21b72403afd2d672c.png" width="1000" height="900">
-              <div class="logo">
-                <img src="asset/logoIDestinasi.png" alt="logoIDestinasi.png">
-                <h4>iDestinasi</h4>
-              </div>
+			<img src="asset/logincover.png" width="1000" height="900">
 		</div>
 		<div class="login-content">
 			<form action="index.html">
 				<img src="img/avatar.svg">
-				<h2 class="title">Selamat Datang <span>👋</span></h2>
-				<h3>Lanjutkan dengan Google atau Masukkan Detail Login</h3>
+				<h2 class="title"><strong>Selamat Datang</strong><span>👋</span></h2>
+				<h4>Lanjutkan dengan Google atau Masukkan Detail Login</h4>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
