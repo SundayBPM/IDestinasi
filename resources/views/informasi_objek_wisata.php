@@ -40,8 +40,22 @@
 	<div class="date-content">
 		<h4>Jam Operasional</h4>
 		<i class="bi bi-clock"></i>
-		<p style="color:orange">Buka</p>
+		<h5 style="color:orange">Buka</h5>
 		<p>Senin - Minggu pukul 12:00 -19.00 WIB</p>
 	</div>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020472.9351397005!2d119.06629890585938!3d2.4327559900304836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3212abcef5b94afb%3A0xe4cf7029473436a9!2sDerawan%20Islands!5e0!3m2!1sen!2sid!4v1713529497397!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	<div class="info-content">
+		<h4>Deskripsi</h4>
+		<p>Salah satu daya tarik utama Kepulauan Derawan adalah Terumbu Karangnya yang masih terjaga dengan baik. Terumbu karang yang indah ini 
+		   menjadi rumah bagi berbagai jenis biota laut, seperti ikan-ikan warna-warni, penyu, dan ubur-ubur. Selain itu, Kepulauan Derawan juga
+		   terkenal dengan wisata hiu pausnya, di mana wisatawan dapat menyaksikan hiu paus dari dekat. Selain keindahan bawah lautnya, Kepulauan
+		   Derawan juga memiliki pantai pasir putih yang menawan dan air laut yang jernih. Pulau-pulau di sekitarnya, seperti Pulau Maratua dan Pulau 
+		   Kakaban, juga menawarkan pesona alam yang tidak kalah menariknya.
+		</p>
+		<h4>Foto Objek Wisata</h4>
+
+		
+	</div>
+	
+	<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020472.9351397005!2d119.06629890585938!3d2.4327559900304836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3212abcef5b94afb%3A0xe4cf7029473436a9!2sDerawan%20Islands!5e0!3m2!1sen!2sid!4v1713529497397!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
 </body>
