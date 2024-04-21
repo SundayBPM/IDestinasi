@@ -9,10 +9,99 @@
 	<link rel="stylesheet" href="css/ulasan_ratingcss"/>
 </head>
 <body>
-    <div class="container">
-		<h4>Ulasan dan Rating</h4>
+  <section class="u-align-center u-clearfix u-section-2" id="sec-245b"></section>
+    <div class="u-list u-repeater u-list-1">
+		<h4><strong>Ulasan dan Rating</strong></h4>
 		<p>Lihat rating dan ulasan yang dikirim dari pengunjung lain</p>
-	<div class="u-container-layout u-similar-container u-container-layout-3">
+	<div class="u-container-style u-list-item u-palette-2-light-2 u-repeater-item u-list-item-1">
+        <div alt class="u-image u-image-circle u-image-1" data-image-width="864" data-image-height="1080"></div>
+        <h5 class="u-text u-text-default u-text-3">Kirana</h5>
+			<i class="fa-solid fa-star"></i>
+          		<div class="rating-value">4.8</div>
+                  <p>21 Maret 2024, 19:45 WIB</p>
+			<p class="u-text u-text-4">
+				Bagus banget pantainya, fasilitasnya juga mendukung. Sangat recommended 
+                untuk teman-teman berkunjung ketika liburan!
+			</p>
+            <p class="u-text u-text-4">
+				<strong>Saran</strong>
+			</p>
+            <p class="u-text u-text-4">
+				Semoga dibanyakin lagi toilet nya yaa, karena susah banget mau cari toilet disini
+			</p>
+        </div>
+	</div>
+    <div class="u-list u-repeater u-list-1">
+		<h4><strong>Ulasan dan Rating</strong></h4>
+		<p>Lihat rating dan ulasan yang dikirim dari pengunjung lain</p>
+	<div class="u-container-style u-list-item u-palette-2-light-2 u-repeater-item u-list-item-1">
+        <div alt class="u-image u-image-circle u-image-1" data-image-width="864" data-image-height="1080"></div>
+        <h5 class="u-text u-text-default u-text-3">Kirana</h5>
+			<i class="fa-solid fa-star"></i>
+          		<div class="rating-value">4.8</div>
+                  <p>21 Maret 2024, 19:45 WIB</p>
+			<p class="u-text u-text-4">
+				Bagus banget pantainya, fasilitasnya juga mendukung. Sangat recommended 
+                untuk teman-teman berkunjung ketika liburan!
+			</p>
+            <p class="u-text u-text-4">
+				<strong>Saran</strong>
+			</p>
+            <p class="u-text u-text-4">
+				Semoga dibanyakin lagi toilet nya yaa, karena susah banget mau cari toilet disini
+			</p>
+        </div>
+	</div>
+    <div class="u-list u-repeater u-list-1">
+		<h4><strong>Ulasan dan Rating</strong></h4>
+		<p>Lihat rating dan ulasan yang dikirim dari pengunjung lain</p>
+	<div class="u-container-style u-list-item u-palette-2-light-2 u-repeater-item u-list-item-1">
+        <div alt class="u-image u-image-circle u-image-1" data-image-width="864" data-image-height="1080"></div>
+        <h5 class="u-text u-text-default u-text-3">Kirana</h5>
+			<i class="fa-solid fa-star"></i>
+          		<div class="rating-value">4.8</div>
+                  <p>21 Maret 2024, 19:45 WIB</p>
+			<p class="u-text u-text-4">
+				Bagus banget pantainya, fasilitasnya juga mendukung. Sangat recommended 
+                untuk teman-teman berkunjung ketika liburan!
+			</p>
+            <p class="u-text u-text-4">
+				<strong>Saran</strong>
+			</p>
+            <p class="u-text u-text-4">
+				Semoga dibanyakin lagi toilet nya yaa, karena susah banget mau cari toilet disini
+			</p>
+        </div>
+	</div>
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="u-container-style u-list-item u-palette-2-light-2 u-repeater-item u-list-item-1">
         <h5 class="u-text u-text-8">Kirana</h5>
 			<i class="fa-solid fa-star"></i>
           		<div class="rating-value">4.8</div>
@@ -23,18 +112,7 @@
 				teman-teman berkunjung ketika liburan!
 			</p>
 	</div>
-	<div class="u-container-layout u-similar-container u-container-layout-3">
-        <h5 class="u-text u-text-8">Kirana</h5>
-			<i class="fa-solid fa-star"></i>
-          		<div class="rating-value">4.8</div>
-                  <p>21 Maret 2024, 19:45 WIB</p>
-			<p class="u-text u-text-10">
-				Bagus banget pantainya, fasilitasnya juga
-				mendukung. Sangat recommended untuk
-				teman-teman berkunjung ketika liburan!
-			</p>
-	</div>
-	<div class="u-container-layout u-similar-container u-container-layout-3">
+	<div class="u-container-style u-list-item u-palette-2-light-2 u-repeater-item u-list-item-1">
         <h5 class="u-text u-text-8">Kirana</h5>
 			<i class="fa-solid fa-star"></i>
           		<div class="rating-value">4.8</div>
