@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- import bootstrap icon-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <nav class="navbar justify-content-left navbar-expand-lg navbar-light bg-body-tertiary">
@@ -39,25 +39,25 @@
             </div>
             <h6>bagaimana keseluruhan ratingmu?</h6>
             <div class="star-widget">
+                <input type="radio" name="rate" id="rate-5" value="5">
+                <label for="rate-5" class="fa fa-star"></label>    
+                <input type="radio" name="rate" id="rate-4" value="4">
+                <label for="rate-4" class="fa fa-star"></label>
+                <input type="radio" name="rate" id="rate-3" value="3">
+                <label for="rate-3" class="fa fa-star"></label>
+                <input type="radio" name="rate" id="rate-2" value="2">
+                <label for="rate-2" class="fa fa-star"></label>
                 <input type="radio" name="rate" id="rate-1" value="1" >
                 <label for="rate-1" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-2" value="1">
-                <label for="rate-2" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-3" value="1">
-                <label for="rate-3" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-4" value="1">
-                <label for="rate-4" class="fa fa-star"></label>
-                <input type="radio" name="rate" id="rate-5" value="1">
-                <label for="rate-5" class="fa fa-star"></label>    
             </div>
             <div class="form-ulasan-saran">
                 <header> Ulasan</header>
-                <textarea id='ulasan-id' name='ulasan' cols="30" placeholder="ketik Ulasan Di sini" require></textarea>
+                <textarea id='ulasan-id' name='ulasan' cols="30" placeholder="ketik Ulasan Di sini"></textarea>
             </div>
 
             <div class="form-ulasan-saran">
                 <header> Kritik dan Saran untuk Pengembangan Kedepannya</header>
-                <textarea id='kritik-saran-id' name='kritik_saran' cols="50" placeholder="ketik Kritik dan Saran Di sini" require></textarea>
+                <textarea id='kritik-saran-id' name='kritik_saran' cols="50" placeholder="ketik Kritik dan Saran Di sini" ></textarea>
             </div>
         </div>
       
@@ -231,15 +231,16 @@
         </div>
         </div>
         
+        <button type="submit"> POST CUII</button>
         <!-- Button trigger modal -->
-        <div class="btn-submit-ulasan">
+        <!-- <div class="btn-submit-ulasan">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
-        </div>
+        </div> -->
 
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -257,7 +258,7 @@
             </div>
             </div>
         </div>
-        </div>
+        </div> -->
     </form>
     
 

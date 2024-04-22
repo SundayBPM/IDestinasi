@@ -3,39 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jelajah</title>
+    <title>IDestinasi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/index.css" />
-    <!-- import font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <script src="https://unpkg.com/feather-icons"></script> 
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Navbar -->
     <header class="header">
-      <div class="logo">
-        <img src="img/logo.png" />
+      <!-- Logo -->
+      <a href="landingPage.blade.php" class="logo"><img src="img/logo.png" /></a>
+
+      <!-- Navbar List -->
+      <nav class="navbar">
+        <a href="destinations.html">Destinasi</a>
+        <a href="#eksplor">Eksplor</a>
+        <a href="#paket-tur">Paket Tur</a>
+        <a href="#artikel">Artikel</a>
+        <a href="/ulasan">Ulasan</a>
+      </nav>
+
+      <!-- Profile -->
+      <!-- <a class="dropdown-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+      </a> -->
+
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+
+      </form>
+      <div class="profile">
+        <i data-feather="search" class="search"></i>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">>Sign Out</a>
+        
+        <!-- <a href="#login" class="special">Login</a> -->
+        <i data-feather="menu" class="menu" id="ham-menu"></i>
       </div>
-      <ul>
-        <li><a href="/">Tentang Kami</a></li>
-        <li><a href="/">Eksplor</a></li>
-        <li><a href="/">Paket Tur</a></li>
-        <li><a href="/">Artikel</a></li>
-        <li><a href="/">Ulasan</a></li>
-        <li><a href="#sign-up">Sign Up</a></li>
-        <li><a href="#login" class="special">Login</a></li>
-      </ul>
-      <div class="menu">
-        <label for="chk1">
-          <i class="fa fa-bars"></i>
-        </label>
+
+      <!-- Search input -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="Cari apa..." />
+        <i data-feather="search" class="search"></i>
       </div>
-      <input type ="checkbox" name ="" id ="chk1">
     </header>
 
     <!--container template-->
@@ -101,5 +119,7 @@
     <script>
       feather.replace();
     </script>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

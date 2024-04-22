@@ -9,6 +9,8 @@ class Saran extends Model
 {
     use HasFactory;
     protected $fillable = ['rating',
+                            'id_user',
+                            'id_objek_wisata',
                             'ulasan',
                             'kritik_saran',
                             'penilaian_atraksi',
