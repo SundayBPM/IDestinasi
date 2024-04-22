@@ -17,10 +17,25 @@ use App\Http\Controllers\KelolaObjekWisataController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// ====================Landing Page========================================
+Route::get('/landingPage', function () {
+    return view('landingPage');
 });
 
+
+Route::get('/promo', function () {
+    return view('promo');
+});
+
+Route::get('/landingPage', function () {
+    return view('landingPage');
+})->name('landingPage');
+
+Route::get('/promo', function () {
+    return view('promo');
+})->name('promo');
+
+// ========================== Landing Page========================================
 
 Route::get('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'index'])->name('kelola-objek-wisata.index');
 
@@ -47,4 +62,5 @@ Route::get('/register2', [authController::class, 'register2']);
 Route::post('/register2', [authController::class, 'processStep2']);
 Route::get('/register3', [authController::class, 'register3']);
 Route::post('/register3', [authController::class, 'processStep3']);
+
 
