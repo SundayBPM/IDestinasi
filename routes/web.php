@@ -20,25 +20,6 @@ Route::get('/ulasan/form',[SistemUmpanBalikController::class,'create']);
 Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
 
 
-
-// Untuk mengetes file form-sistem-umpan-balik. Nanti dihapus
-Route::get('/testing', function () {
-    $userId = Auth::id();
-    return  $userId
-    ;
-});
-
-// masuk kedalam landing page atau homepage
-Route::get('/landingPage', function () {
-    return view('landingPage');
-});
-
-Route::get('/landingPage', function () {
-    return view('landingPage');
-})->name('landingPage');
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
