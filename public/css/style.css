@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+    font-family: "DM Sans", serif;
+}
+
+th,
+td {
+    padding: 1rem;
+}
+
+.modal.fade .modal-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+}
+.modal.show .modal-content {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.modal-content {
+    transform: scale(1.1);
+    transition: visibility 0.25s ease-out, opacity 0.25s ease-out,
+        transform 0.25s ease-out;
+}
+
+/** Modal static */
+
+.modal.modal-static .modal-content {
+    transform: scale(1.02);
+}
+
+/* modal-gallery */
+/* Animasi untuk modal fade up */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menggunakan animasi fadeUp untuk modal */
+.modal-gallery {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeUp 0.5s ease forwards; /* Menggunakan animasi fadeUp */
+}
+
+/* Animasi untuk menutup modal */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Menggunakan animasi fadeOut untuk menutup modal */
+.modal-gallery.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+.modal-gallery .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 80%; /* Mengubah lebar menjadi 80% dari lebar layar */
+    max-width: 800px; /* Tetapkan maksimum lebar modal */
+    top: 50%; /* Posisi vertikal ke 50% dari atas */
+    transform: translateY(
+        -50%
+    ); /* Geser modal ke atas sejauh setengah tingginya */
+}
+
+.modal-gallery .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-gallery .carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+/* Animasi untuk transisi smooth pada gambar carousel */
+@keyframes slideTransition {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Terapkan animasi slideTransition pada gambar dalam carousel */
+.modal-gallery .carousel img {
+    scroll-snap-align: start;
+    width: 50%;
+    height: auto;
+    animation: slideTransition 0.3s ease forwards; /* Animasi untuk transisi smooth */
+}
+
+.modal-gallery .prev,
+.modal-gallery .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-gallery .prev {
+    left: 10px;
+}
+
+.modal-gallery .next {
+    right: 10px;
+}
+
+.modal-gallery .carousel {
+    display: flex;
+    overflow-x: hidden; /* Mengubah overflow-x menjadi hidden */
+    scroll-snap-type: x mandatory;
+}
