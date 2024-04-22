@@ -119,7 +119,7 @@
     <div class="card-layout">
       <div class="card img">
         <img src="img/img2.jpg" alt="Wisata 1">
-    </div>
+      </div>
       <div class="card-info">
         <div class="card-title">Kepulauan Derawan , Kaltim</div>
         <div class="rating">

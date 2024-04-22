@@ -15,8 +15,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- Navbar -->
-    <header class="header">
+
+  <!-- Navbar -->
+  <header class="header">
       <!-- Logo -->
       <a href="landingPage.blade.php" class="logo"><img src="img/logo.png" /></a>
 
@@ -29,14 +30,88 @@
         <a href="#ulasan">Ulasan</a>
       </nav>
 
-      <!-- Profile -->
+      </form>
       <div class="profile">
         <i data-feather="search" class="search"></i>
-        <a href="#sign-up">Sign Up</a>
-        <a href="#login" class="special">Login</a>
+        <a href="./register">Sign Up</a>
+        <a href="./login" class="special">Login</a>
         <i data-feather="menu" class="menu" id="ham-menu"></i>
       </div>
 
+      <!-- pengelola -->
+      <div class="profile-dropdown">
+        <div class="profile-dropdown-btn" data-dropdown="pengelola" onclick="toggle('pengelola')">
+          <div class="profile-img">
+            <i class="fa-solid fa-circle"></i>
+          </div>
+          <span
+            >Pengelola
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-list-check"></i>
+              Kelola Objek Wisata
+            </a>
+          </li>
+       
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-chart-column"></i>
+              Statistik Wisata
+            </a>
+          </li>
+          <hr />
+          <li class="profile-dropdown-list-item">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+            </form>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+
+        <!-- Wisatawan -->
+      <!-- if user ="wisatawan" -->
+      <div class="profile-dropdown">
+        <div class="profile-dropdown-btn" data-dropdown="wisatawan" onclick="toggle('wisatawan')">
+          <div class="profile-img">
+            <i class="fa-solid fa-circle"></i>
+          </div>
+          <span
+            >Wisatawan
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+          <hr />
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+        </ul>
+      </div>
       <!-- Search input -->
       <div class="search-form">
         <input type="search" id="search-box" placeholder="Cari apa..." />
@@ -46,8 +121,8 @@
 
     <!--container template-->
     <div class="container">
-        @yield('container')
-    </div>
+            @yield('container')
+        </div>
 
     <!-- Footer starts -->
 
@@ -109,5 +184,7 @@
     </script>
 
     <script src="./js/index.js"></script>
+    <script src="./js/logged-in.js"></script>
+
   </body>
 </html>

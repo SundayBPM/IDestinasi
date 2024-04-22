@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 *,
 *::before,
 *::after {
@@ -20,6 +21,8 @@
   --background: #fff;
   --link: #00C0CA;
   --font-family: 'DM Sans', sans-serif;
+  --secondary-light: rgb(34, 124, 112, 0.2);
+  --shadow: 0px 2px 8px 0px var(--secondary-light);
 }
 
 html::-webkit-scrollbar {
@@ -311,8 +314,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 7%;
+  padding: 1rem 7%;
   transition: 0.5s;
+  box-shadow: var(--shadow);
 }
 
 header a,
@@ -385,6 +389,108 @@ header .menu,
   display: none;
 }
 
+/*profile logged in navbar*/
+.profile-dropdown {
+  position: relative;
+  width: fit-content;
+}
+
+.profile-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: fit-content;
+  border-radius: 50px;
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #939393;
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: var(--secondary-light-2);
+  box-shadow: var(--shadow);
+}
+
+.profile-img {
+  position: relative;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background-color: #008489;
+  background-size: cover;
+}
+
+.profile-img i {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  font-size: 0.5rem;
+  color: greenyellow;
+}
+
+.profile-dropdown-btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+}
+
+.profile-dropdown-list {
+  position: absolute;
+  top: 68px;
+  width: 220px;
+  right: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: max-height 0.5s;
+}
+
+.profile-dropdown-list hr {
+  border: 0.5px solid #939393;
+}
+
+.profile-dropdown-list.active {
+  max-height: 500px;
+}
+
+.profile-dropdown-list-item {
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-in, padding-left 0.2s;
+}
+
+.profile-dropdown-list-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: black;
+}
+
+.profile-dropdown-list-item a i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  line-height: 2.3rem;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: margin-right 0.3s;
+}
+
+.profile-dropdown-list-item:hover {
+  padding-left: 1.5rem;
+  background-color: #00c0ca2d;
+}
 .header .search-form {
   position: absolute;
   top: 115%;
