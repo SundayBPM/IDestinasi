@@ -6,12 +6,16 @@ use App\Models\Saran;
 use Illuminate\Http\Request;
 use App\Models\Pembelian_tiket;
 use App\Http\Controllers\Controller;
+use App\Models\Objek_Wisata;
 use Illuminate\Support\Facades\Auth;
 
 class SistemUmpanBalikController extends Controller
 {
     public function index()
     {
+        // Ambil ID destinasi yang dipilih dari permintaan, jika ada
+        $selected_destinasi_id = request()->get('selected_destinasi_id');
+
         // Dapatkan ID pengguna yang sedang diautentikasi
         $userId = Auth::id();
 
@@ -26,20 +30,22 @@ class SistemUmpanBalikController extends Controller
             'pembelian_tikets.created_at'
         ]);
         // dd($list_destinasi);
-        return view('sistem-umpan-balik',compact(['list_destinasi']));
+        return view('sistem-umpan-balik',compact(['list_destinasi','selected_destinasi_id']));
         
     }
     
-    public function create()
+    public function create(Request $request)
     {
-        // dd($list_destinasi);
-        return view('form-sistem-umpan-balik');
+        $destinasiId = $request->query('id_destinasi');
+        $destinasi = Pembelian_tiket::find($destinasiId);
+        // $datDestinasi = Objek_Wisata::where('id_destinasi')
+        return view('form-sistem-umpan-balik', ['destinasi' => $destinasi]);
     }
     
     public function store(Request $request)
     {
         // dd($list_destinasi);
-        dd($request->all());
+        // dd($request->all());
         $request->validate([
             'rating' => 'required',
             'ulasan' => 'required',
@@ -56,16 +62,17 @@ class SistemUmpanBalikController extends Controller
             'id_user' => Auth::id(),
             'id_objek_wisata' => $request-> id_objek_wisata,
             'id_tiket' => $request -> id_tiket,
-            'rating' => $request->rate,
+            'rating' => $request->rating,
             'ulasan' => $request->ulasan,
             'kritik_saran' => $request->kritik_saran,
-            'penilaian_atraksi' => $request->rate_atraksi,
-            'penilaian_aksesibilitas' => $request->rate_aksesibilitas,
-            'penilaian_amenitas' => $request->rate_amenitas,
-            'penilaian_ansilari1' => $request->rate_ansilari,
-            'penilaian_ansilari2' => $request->rate_ansilari_layanan,
-            'penilaian_nps' => $request->rate_nps
+            'penilaian_atraksi' => $request->penilaian_atraksi,
+            'penilaian_aksesibilitas' => $request->penilaian_aksesibilitas,
+            'penilaian_amenitas' => $request->penilaian_amenitas,
+            'penilaian_ansilari1' => $request->penilaian_ansilari1,
+            'penilaian_ansilari2' => $request->penilaian_ansilari2,
+            'penilaian_nps' => $request->penilaian_nps
         ]);
         return redirect('/ulasan');
     }
+    
 }

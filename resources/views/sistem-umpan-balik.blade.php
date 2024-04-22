@@ -32,75 +32,13 @@
             <div class="card-content">
                 <h3>{{$destinasi->nama_destinasi}}</h3>
                 <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/ulasan/form" class="btn">
+                <a href="/ulasan/form?id_destinasi={{ $destinasi->id_tiket }}" class="btn">
+                <!-- <a href="/ulasan/form" class="btn"> -->
                     <i class="fa-solid fa-pen"></i> Buat Ulasan
                 </a>
             </div>
         </div>
         @endforeach
-<!--
-        <div class="card">
-            <img src="img/tanjung bira.jpg" alt="objek wisata">
-            <div class="card-content">
-                <h3>Card 2</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/" class="btn">
-                    <i class="fa-solid fa-pen"></i> Buat Ulasan
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/Ollon.png" alt="objek wisata">
-            <div class="card-content">
-                <h3>Card 3</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/" class="btn">
-                    <i class="fas fa-pen"></i> Buat Ulasan
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/Ollon.png" alt="objek wisata">
-            <div class="card-content">
-                <h3>Card 3</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/" class="btn">
-                    <i class="fas fa-pen"></i> Buat Ulasan
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/Ollon.png" alt="objek wisata">
-            <div class="card-content">
-                <h3>Card 3</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/" class="btn">
-                    <i class="fas fa-pen"></i> Buat Ulasan
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/Ollon.png" alt="objek wisata">
-            <div class="card-content">
-                <h3>Card 3</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/" class="btn">
-                    <i class="fas fa-pen"></i> Buat Ulasan
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/Ollon.png" alt="objek wisata">
-            <div class="card-content">
-                <h3>Card 3</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
-                <a href="/" class="btn">
-                    <i class="fas fa-pen"></i> Buat Ulasan
-                </a>
-            </div>
-        </div> 
--->
-        <!--img src="img/img3.jpg" alt="Deskripsi gambar"-->
     </div>    
         
 @endsection
