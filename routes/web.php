@@ -5,7 +5,6 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +32,7 @@ Route::get('/landing-page', [HomeController::class, 'index']);
 
 // Informasi Wisata
 Route::get('/informasi-wisata', [HomeController::class, 'infoWisata']);
-=======
+
 // ====================Landing Page========================================
 Route::get('/landingPage', function () {
     return view('landingPage');
@@ -73,12 +72,12 @@ Route::delete('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 
 // Route::post('/login', [authController::class, 'cekLogin']);
 // Route::get('/logout', [authController::class, 'logout']);
 // register step
-Route::get('/regist', [authController::class, 'register1']);
-Route::post('/regist', [authController::class, 'processStep1']);
-Route::get('/register2', [authController::class, 'register2']);
-Route::post('/register2', [authController::class, 'processStep2']);
-Route::get('/register3', [authController::class, 'register3']);
-Route::post('/register3', [authController::class, 'processStep3']);
+// Route::get('/regist', [authController::class, 'register1']);
+// Route::post('/regist', [authController::class, 'processStep1']);
+// Route::get('/register2', [authController::class, 'register2']);
+// Route::post('/register2', [authController::class, 'processStep2']);
+// Route::get('/register3', [authController::class, 'register3']);
+// Route::post('/register3', [authController::class, 'processStep3']);
 
 
 // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
