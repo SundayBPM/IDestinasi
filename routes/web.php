@@ -52,13 +52,13 @@ Route::delete('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 
 // Route::get('/login', [authController::class, 'login']);
 // Route::post('/login', [authController::class, 'cekLogin']);
 // Route::get('/logout', [authController::class, 'logout']);
-// // register step
-// Route::get('/register', [authController::class, 'register1']);
-// Route::post('/register', [authController::class, 'processStep1']);
-// Route::get('/register2', [authController::class, 'register2']);
-// Route::post('/register2', [authController::class, 'processStep2']);
-// Route::get('/register3', [authController::class, 'register3']);
-// Route::post('/register3', [authController::class, 'processStep3']);
+// register step
+Route::get('/regist', [authController::class, 'register1']);
+Route::post('/regist', [authController::class, 'processStep1']);
+Route::get('/register2', [authController::class, 'register2']);
+Route::post('/register2', [authController::class, 'processStep2']);
+Route::get('/register3', [authController::class, 'register3']);
+Route::post('/register3', [authController::class, 'processStep3']);
 
 
 // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
