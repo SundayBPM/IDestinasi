@@ -113,32 +113,94 @@
     </div>
 
 <!--card rekomendasi objek wisata-->
-@foreach($saran_destinasi as $destinasi)
   <!--card 1-->
   <div class="card-container">
     <a href="#">
-      <div class="card-layout">
-        <div class="card img">
-          <img src="img/img2.jpg" alt="Wisata 1">
-        </div>
-        <div class="card-info">
-          <h3>
-            tes
-          </h3>
-          <!-- <div class="card-title">{{ $destinasi -> nama_destinasi }} </div> -->
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <div class="rating-value">4.8</div>
-            <div class="reviews">85 Reviews</div>
-          </div>
-          <div class="price">Rp 100.000/pax</div>
-        </div>
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img2.jpg" alt="Wisata 1">
       </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
     </a>
-  </div>
-
-@endforeach
-    
+    <!--card 2-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img3.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 3-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img4.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 4-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img5.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+    <!--card 5-->
+    <a href="#">
+    <div class="card-layout">
+      <div class="card img">
+        <img src="img/img5.jpg" alt="Wisata 1">
+    </div>
+      <div class="card-info">
+        <div class="card-title">Kepulauan Derawan , Kaltim</div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <div class="rating-value">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+      </div>
+    </div>
+    </a>
+</div>
+</div>
 
 <!-- rekomendasi paket tour-->
 <div class= "layout-section">
