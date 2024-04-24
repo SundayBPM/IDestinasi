@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\SistemUmpanBalikController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,25 +28,21 @@ Route::post('/register2', [authController::class, 'processStep2']);
 Route::get('/register3', [authController::class, 'register3']);
 Route::post('/register3', [authController::class, 'processStep3']);
 
-// Landing Page
-Route::get('/landing-page', [HomeController::class, 'index']);
-
-// Informasi Wisata
-Route::get('/informasi-wisata', [HomeController::class, 'infoWisata']);
-
 // ====================Landing Page========================================
-Route::get('/landingPage', function () {
-    return view('landingPage');
-});
+Route::get('/landingPage', [LandingPageController::class, 'index']);
+
+// Route::get('/landingPage', function () {
+//     return view('landingPage');
+// });
 
 
 Route::get('/promo', function () {
     return view('promo');
 });
 
-Route::get('/landingPage', function () {
-    return view('landingPage');
-})->name('landingPage');
+// Route::get('/landingPage', function () {
+//     return view('landingPage');
+// })->name('landingPage');
 
 Route::get('/promo', function () {
     return view('promo');
