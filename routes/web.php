@@ -48,7 +48,7 @@ Route::get('/promo', function () {
     return view('promo');
 })->name('promo');
 
-// ========================== Landing Page========================================
+// ========================== Kelola Objek Wisata========================================
 
 Route::get('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'index'])->name('kelola-objek-wisata.index');
 
@@ -76,7 +76,7 @@ Route::delete('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 
 // Route::get('/register3', [authController::class, 'register3']);
 // Route::post('/register3', [authController::class, 'processStep3']);
 
-
+// ========================== Ulasan========================================
 // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
 Route::get('/ulasan',[SistemUmpanBalikController::class,'index']);
 
@@ -86,6 +86,13 @@ Route::get('/ulasan/form',[SistemUmpanBalikController::class,'create']);
 // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
 Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
 
+
+// ========================== Informasi Statistik========================================
+Route::get('/informasi-statistik', function () {
+    return view('informasi-statistik');
+});
+
+// ========================== -------------  ========================================
 
 Auth::routes();
 
