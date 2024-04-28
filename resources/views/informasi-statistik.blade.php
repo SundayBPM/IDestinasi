@@ -34,53 +34,54 @@
             </div>
 
             <div class="custom_chart">
-                <canvas id="salse-revenue"></canvas>
+                <canvas id="sales-revenue"></canvas>
             </div>
         </div>
-
+        
         <div class="bottom_charts">
             <div class="nps_chart">
-                <h1>TESTING</h1>
+                <!-- <h1>TESTING</h1> -->
+                <canvas id="nps-rating"></canvas>
             </div>
             <div class="others_rating">
-                <div class="first_row_rating">
-                    <h3>Penilaian</h3>
+                <div class="row_rating">
+                    <h1>Penilaian</h1>
                 </div>
 
-                <div class="second_row_rating">
-                    <div class="stars_rate">
+                <div class="row_rating">
+                    <div class="rate">
                         <h2>4,5</h2>
                         <h4>Overal Rating From Customer</h4>
                         <h6>3900 Responden</h6>
                     </div>
     
-                    <div class="amenitas_rate">
+                    <div class="rate">
                         <h2>7,9</h2>
                         <h4>Rating Amenitas</h4>
                         <h6>3900 Responden</h6>
                     </div>
     
-                    <div class="ansilari1_rate">
+                    <div class="rate">
                         <h2>6,5</h2>
                         <h4>Rating Ansilari</h4>
                         <h6>3900 Responden</h6>
                     </div>
                 </div>
 
-                <div class="third_row_rating">
-                    <div class="ansilari2_rate">
+                <div class="row_rating">
+                    <div class="rate">
                         <h2>6,7</h2>
                         <h4>Rating Ansilari</h4>
                         <h6>3900 Responden</h6>
                     </div>
     
-                    <div class="aksesibilitas_rate">
+                    <div class="rate">
                         <h2>9,3</h2>
                         <h4>Rating Aksesibilitas</h4>
                         <h6>3900 Responden</h6>
                     </div>
     
-                    <div class="atraksi_rate">
+                    <div class="rate">
                         <h2>6,7</h2>
                         <h4>Rating Atraksi</h4>
                         <h6>3900 Responden</h6>

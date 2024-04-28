@@ -918,7 +918,7 @@ footer {
 
 .nps_chart {
   width: 30%;
-  height: 550px;
+  height: auto;
   border: 1px solid lightgray;
   border-radius: 10px;
 }
@@ -931,54 +931,19 @@ footer {
   justify-content: space-between;
 }
 
-.first_row_rating {
+.row_rating {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
-.second_row_rating {
-  display: flex;
-  flex-direction: row;
+.rate * {
+  padding: 10px;
 }
 
-.third_row_rating {
-  display: flex;
-  flex-direction: row;
-}
-
-.stars_rate {
-  width: 100px;
-  height: 200px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-.amenitas_rate {
-  width: 100px;
-  height: 200px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-.ansilari1_rate {
-  width: 100px;
-  height: 200px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-.ansilari2_rate {
-  width: 100px;
-  height: 200px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-.aksesibilitas_rate {
-  width: 100px;
-  height: 200px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
-.atraksi_rate {
-  width: 100px;
-  height: 200px;
+.rate {
+  width: 200px;
+  height: 150px;
   border: 1px solid lightgray;
   border-radius: 10px;
 }
