@@ -408,8 +408,7 @@ header .menu,
   color: #000;
   cursor: pointer;
   border: 1px solid #939393;
-  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
-    border 0.3s;
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,border 0.3s;
 }
 
 .profile-dropdown-btn:hover {
@@ -871,5 +870,115 @@ footer {
   float: left;
 }
 
+/* ============================================= Bagian Informasi Statistik ============================================= */
 
+.metrics_summary {
+  display: flex;
+  margin: 2% 3%;
+  padding: 10px;
+  justify-content: space-evenly;
+  border: 1px solid lightgrey; /* Tambahkan border untuk melihat batas elemen */
+  border-radius: 10px;
+}
 
+.total_visitor {
+  padding-right:7%;
+  border-right: 2px solid lightgrey;
+  
+}
+
+.total_purchase_tickets {
+}
+
+.profits {
+  border-left: 2px solid lightgrey;
+  padding-left:5%;
+  /* flex-basis: 10px; */
+}
+
+.main_chart{
+  width: auto;
+  height: auto;
+  margin: 2% 3%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.custom_chart {
+  width: auto;
+  height: 700px;
+}
+
+.bottom_charts {
+  display: flex;
+  width: auto;
+  margin: 2% 3%;
+  justify-content: space-around;
+}
+
+.nps_chart {
+  width: 30%;
+  height: 550px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.others_rating {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+  justify-content: space-between;
+}
+
+.first_row_rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.second_row_rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.third_row_rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.stars_rate {
+  width: 100px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.amenitas_rate {
+  width: 100px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.ansilari1_rate {
+  width: 100px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.ansilari2_rate {
+  width: 100px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.aksesibilitas_rate {
+  width: 100px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.atraksi_rate {
+  width: 100px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
