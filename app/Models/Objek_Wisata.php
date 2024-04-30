@@ -12,5 +12,7 @@ class Objek_Wisata extends Model
                             'jenis',
                             'deskripsi',
                             'lokasi',
-                            'harga_tiket'];
+                            'harga_tiket',
+                            'foto',
+                        ];
 }

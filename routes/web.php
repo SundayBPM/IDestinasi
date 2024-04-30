@@ -11,9 +11,7 @@ use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [LandingPageController::class, 'index'])->name('');
 
 
 // login/logout proses
@@ -21,32 +19,25 @@ Route::get('/login', [authController::class, 'login']);
 Route::post('/login', [authController::class, 'cekLogin']);
 Route::get('/logout', [authController::class, 'logout']);
 // register step
-Route::get('/register', [authController::class, 'register1']);
-Route::post('/register', [authController::class, 'processStep1']);
-Route::get('/register2', [authController::class, 'register2']);
-Route::post('/register2', [authController::class, 'processStep2']);
-Route::get('/register3', [authController::class, 'register3']);
-Route::post('/register3', [authController::class, 'processStep3']);
-
-// ====================Landing Page========================================
-Route::get('/landingPage', [LandingPageController::class, 'index']);
+Route::get('/register', [authController::class, 'register1'])->name('registerStep1');
+Route::post('/register_processStep1', [authController::class, 'processStep1'])->name('register_processStep1');
+Route::get('/registerStep2', [authController::class, 'register2'])->name('registerStep2');
+Route::post('/register_processStep2', [authController::class, 'processStep2'])->name('register_processStep2');
+Route::get('/registerStep3', [authController::class, 'register3'])->name('registerStep3');
+Route::post('/register_processStep3', [authController::class, 'processStep3']);
 
 // Route::get('/landingPage', function () {
 //     return view('landingPage');
 // });
 
-
-Route::get('/promo', function () {
-    return view('promo');
-});
-
 // Route::get('/landingPage', function () {
 //     return view('landingPage');
 // })->name('landingPage');
 
-Route::get('/promo', function () {
-    return view('promo');
-})->name('promo');
+// START PROMO
+Route::get('/promo/{event_id}', [LandingPageController::class, 'promoDetails'])->name('promo.detail');
+
+// END PROMO
 
 // ========================== Landing Page========================================
 
@@ -90,4 +81,3 @@ Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
