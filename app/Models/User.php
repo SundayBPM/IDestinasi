@@ -24,6 +24,7 @@ class User extends Authenticatable
         'place_birth',
         'usia',
         'role',
+        'role',
     ];
 
     /**

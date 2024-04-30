@@ -1,23 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDestinasi | Ulasan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xwR5y57vP4Ig/HoDLKFH/8fXCKz5jxjBm7JdhGNssZq3CTbOO2mDPQF3clnV8IYp8+Tx3JhHso1RtIKVDiVKeA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/"><i class="bi bi-arrow-left"></i> Navbar</a>
-            
-    </div>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    
-</body>
-</html>
+@extends('layouts/main')
+
+
+@section('container')
+<div class="ulasan-header">
+    <img src="img/ulasan-img1.png" alt="Deskripsi gambar">
+</div>
+
+<div class="list-ulasan-destinasi-text">
+    <h1>Buat Ulasan Untuk Destinasi Terdahulu</h1>
+    <p>Buat ulasan untuk objek wisata yang telah kamu kunjungi untuk membantu meningkatkan kualitas objek wisata</p>
+</div>
+    <div class="list-ulasan-destinasi">
+        @foreach($list_destinasi as $destinasi)
+        <div class="card">
+            <div class="card_img">
+                
+                <!-- @php
+                    $imageFormats = ['jpg', 'png', 'gif']; // Daftar format gambar yang didukung
+                    $gambarTersedia = false;
+                    foreach($imageFormats as $format) {
+                        $imagePath = "img/{$destinasi->nama_destinasi}.$format";
+                        if(file_exists(public_path($imagePath))) {
+                            echo "<img src='".asset($imagePath)."' alt='objek wisata'>";
+                            $gambarTersedia = true;
+                            break;
+                        }
+                    }
+                @endphp -->
+                <img src="img/Kete Kesu.jpg" alt="">
+            </div>
+            <div class="card-content">
+                <h3>{{$destinasi->nama_destinasi}}</h3>
+                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
+                <a href="/ulasan/form?id_destinasi={{ $destinasi->id_tiket }}" class="btn">
+                <!-- <a href="/ulasan/form" class="btn"> -->
+                    <i class="fa-solid fa-pen"></i> Buat Ulasan
+                </a>
+            </div>
+        </div>
+        @endforeach
+    </div>    
+        
+@endsection

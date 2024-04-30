@@ -19,7 +19,7 @@
   <!-- Navbar -->
   <header class="header">
       <!-- Logo -->
-      <a href="landingPage.blade.php" class="logo"><img src="img/logo.png" /></a>
+      <a href="{{route('landingPage')}}" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
 
       <!-- Navbar List -->
       <nav class="navbar">
@@ -27,91 +27,103 @@
         <a href="#eksplor">Eksplor</a>
         <a href="#paket-tur">Paket Tur</a>
         <a href="#artikel">Artikel</a>
-        <a href="#ulasan">Ulasan</a>
+        <a href="/ulasan">Ulasan</a>
       </nav>
 
       </form>
-      <div class="profile">
-        <i data-feather="search" class="search"></i>
-        <a href="./register">Sign Up</a>
-        <a href="./login" class="special">Login</a>
-        <i data-feather="menu" class="menu" id="ham-menu"></i>
-      </div>
+      <!-- STRAT DROP DOWN -->
+      @if (Auth::check())
+        <!-- pengelola -->
+        @if (Auth::user()->role == 'pengelola')
+        <div class="profile">
+          <i data-feather="search" class="search"></i>
+          <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" data-dropdown="pengelola" onclick="toggle('pengelola')">
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span
+                >Pengelola
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
 
-      <!-- pengelola -->
-      <div class="profile-dropdown">
-        <div class="profile-dropdown-btn" data-dropdown="pengelola" onclick="toggle('pengelola')">
-          <div class="profile-img">
-            <i class="fa-solid fa-circle"></i>
+            <ul class="profile-dropdown-list">
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-user"></i>
+                  Edit Profile
+                </a>
+              </li>
+
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-solid fa-list-check"></i>
+                  Kelola Objek Wisata
+                </a>
+              </li>
+          
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-solid fa-chart-column"></i>
+                  Statistik Wisata
+                </a>
+              </li>
+              <hr />
+              <li class="profile-dropdown-list-item">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+                </a>
+              </li>
+            </ul>
           </div>
-          <span
-            >Pengelola
-            <i class="fa-solid fa-angle-down"></i>
-          </span>
         </div>
+        @endif
+          <!-- Wisatawan -->
+        @if (Auth::user()->role == 'wisatawan')
+        <div class="profile">
+          <i data-feather="search" class="search"></i>
+          <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" data-dropdown="wisatawan" onclick="toggle('wisatawan')">
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span
+                >{{ Auth::user()->name }}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
 
-        <ul class="profile-dropdown-list">
-          <li class="profile-dropdown-list-item">
-            <a href="#">
-              <i class="fa-regular fa-user"></i>
-              Edit Profile
-            </a>
-          </li>
-
-          <li class="profile-dropdown-list-item">
-            <a href="#">
-              <i class="fa-solid fa-list-check"></i>
-              Kelola Objek Wisata
-            </a>
-          </li>
-       
-          <li class="profile-dropdown-list-item">
-            <a href="#">
-              <i class="fa-solid fa-chart-column"></i>
-              Statistik Wisata
-            </a>
-          </li>
-          <hr />
-          <li class="profile-dropdown-list-item">
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-              @csrf
-            </form>
-            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
-            </a>
-          </li>
-        </ul>
-      </div>
-
-        <!-- Wisatawan -->
-      <!-- if user ="wisatawan" -->
-      <div class="profile-dropdown">
-        <div class="profile-dropdown-btn" data-dropdown="wisatawan" onclick="toggle('wisatawan')">
-          <div class="profile-img">
-            <i class="fa-solid fa-circle"></i>
+            <ul class="profile-dropdown-list">
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-user"></i>
+                  Edit Profile
+                </a>
+              </li>
+              <hr />
+              <li class="profile-dropdown-list-item">
+                <a href="{{ route('logout') }}">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Log out
+                </a>
+              </li>
+            </ul>
           </div>
-          <span
-            >Wisatawan
-            <i class="fa-solid fa-angle-down"></i>
-          </span>
         </div>
-
-        <ul class="profile-dropdown-list">
-          <li class="profile-dropdown-list-item">
-            <a href="#">
-              <i class="fa-regular fa-user"></i>
-              Edit Profile
-            </a>
-          </li>
-          <hr />
-          <li class="profile-dropdown-list-item">
-            <a href="#">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              Log out
-            </a>
-          </li>
-        </ul>
-      </div>
+        @endif
+        @else
+        <div class="profile">
+          <i data-feather="search" class="search"></i>
+          <a href="{{route('register')}}">Sign Up</a>
+          <a href="{{route('login')}}" class="special">Login</a>
+          <i data-feather="menu" class="menu" id="ham-menu"></i>
+        </div>
+      @endif
+      <!-- END DROP DOWN -->
       <!-- Search input -->
       <div class="search-form">
         <input type="search" id="search-box" placeholder="Cari apa..." />

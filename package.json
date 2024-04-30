@@ -11,6 +11,10 @@
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^1.0",
         "sass": "^1.56.1",
+<<<<<<< HEAD
         "vite": "^5.0"
+=======
+        "vite": "^5.2.10"
+>>>>>>> 3f7ef591f0ba7e5b7fb9e24d8858812697f92160
     }
 }
