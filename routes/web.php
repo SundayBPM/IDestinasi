@@ -79,10 +79,9 @@ Route::middleware(['auth'])->group(function() {
 
     // ========================== Informasi Statistik========================================
 
-    Route::get('/informasi-statistik', [InformasiStatistikController::class,'whoAmI']);
-    // Route::get('/informasi-statistik', function () {
-    //     return view('informasi-statistik');
-    // });
+    Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
+    // Route::get('/informasi-statistik', 'ChartController@getDataForChart');
+
 
 });
 

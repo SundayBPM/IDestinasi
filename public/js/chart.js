@@ -1,3 +1,4 @@
+
 const sales = document.getElementById('sales-revenue');
 
   new Chart(sales, {

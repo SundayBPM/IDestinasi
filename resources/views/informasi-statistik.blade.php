@@ -3,42 +3,59 @@
 @section('container')
     <!-- Sale & Revenue Start -->
     <div class="container-xxl">
+            
         <div class="ulasan-header">
+            <h1>Statistik Objek Wisata</h1>
             <img src="img/statistik-page.png" alt="Deskripsi gambar">
         </div>
         <div class="metrics_summary">
             <div class="total_visitor">
-                <h3>12,499</h3>
+                <div class="item_box">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h2>12,499</h2>
                 <p>Total Pengunjung Aktif</p>
-                <p>+10% Minggu ini</p>
+                <p><i class="bi bi-arrow-up-right"></i>  +10% Minggu ini</p>
             </div>
-
+            
             <div class="total_purchase_tickets">
-                <h3>4,590</h3>
+                <div class="item_box">
+                    <i class="bi bi-backpack"></i>
+                </div>
+                <h2>4,590</h2>
                 <p>Total Pembelian Tiket</p>
-                <p>+0,49% Minggu ini</p>                
+                <p><i class="bi bi-arrow-up-right"></i>  +0,49% Minggu ini</p>                
             </div>
-
+            
             <div class="profits">
-                <h3>IDR 4,560,000.00</h3>
+                <div class="item_box">
+                    <i class="bi bi-check2-circle"></i>
+                </div>
+                <h2>IDR 4,560,000.00</h2>
                 <p>Keuntungan</p>
-                <p>+0,25% Minggu ini</p>                
+                <p><i class="bi bi-arrow-down-left"></i>  +0,25% Minggu ini</p>                
             </div>
         </div>
 
         <div class="main_chart">
             <div class="chart_header">
-                <h3>Statistik penjualan Tiket</h3>
-                <h5>Tiket Terjual</h5>
-                <h6>monthly</h6>
+                <h3>Statistik Penjualan Tiket</h3>
+                <h5 class="category">Tiket Terjual</h5>
+                <h5 class="monthly">monthly</h5>
             </div>
 
+            {!! $objekWisataChart->container() !!}
+            <script src="{{ $objekWisataChart ->cdn() }}"></script>
+            {{ $chart->script() }}
+            
             <div class="custom_chart">
                 <canvas id="sales-revenue"></canvas>
             </div>
+
         </div>
         
         <div class="bottom_charts">
+
             <div class="nps_chart">
                 <!-- <h1>TESTING</h1> -->
                 <canvas id="nps-rating"></canvas>
