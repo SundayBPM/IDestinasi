@@ -49,7 +49,7 @@
           
         </div>
         
-        <a href="/authController/register2" class="btn">Daftar</a>
+        <a href="/register2" class="btn">Daftar</a>
 
         <div class="register">
           <p>Sudah memiliki akun? <strong><a href="login.php">Masuk ke akun</strong></a></p>

@@ -16,9 +16,7 @@ use App\Http\Controllers\InformasiStatistikController;
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
 
 Route::middleware(['auth'])->group(function() {
-    // ====================Landing Page========================================
-    Route::get('/landingPage', [LandingPageController::class, 'whoAmI']);
-
+    
     Route::get('/promo', function () {
         return view('promo');
     });
@@ -64,7 +62,6 @@ Route::middleware(['auth'])->group(function() {
 
 
 });
-
 
 // ========================== -------------  ========================================
 
