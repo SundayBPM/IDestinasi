@@ -25,7 +25,7 @@ class SistemUmpanBalikController extends Controller
             'pembelian_tikets.id as id_tiket',
             'pembelian_tikets.id_users',
             'objek_wisatas.id as id_objek_wisata',
-            'objek_wisatas.nama_destinasi',
+            'objek_wisatas.nama_wisata',
             'pembelian_tikets.jumlah_tiket',
             'pembelian_tikets.created_at'
         ]);

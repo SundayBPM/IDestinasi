@@ -20,7 +20,7 @@
   <!-- Navbar -->
   <header class="header">
       <!-- Logo -->
-      <a href="/landingPage" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
+      <a href="/" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
       <!-- Navbar List -->
       <nav class="navbar">
         <a href="destinations.html">Destinasi</a>
@@ -56,14 +56,14 @@
               </li>
 
               <li class="profile-dropdown-list-item">
-                <a href="#">
+                <a href="/kelola-objek-wisata">
                   <i class="fa-solid fa-list-check"></i>
                   Kelola Objek Wisata
                 </a>
               </li>
           
               <li class="profile-dropdown-list-item">
-                <a href="#">
+                <a href="/informasi-statistik">
                   <i class="fa-solid fa-chart-column"></i>
                   Statistik Wisata
                 </a>

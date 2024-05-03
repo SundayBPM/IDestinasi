@@ -40,6 +40,7 @@ class InformasiStatistikController extends Controller
         $total_keuntungan = Pembelian_tiket::whereYear('created_at', 2022)
             ->whereMonth('created_at', 11)
             ->sum('total_harga'); //Data Semebtara, yang asli ada diata
+        $total_keuntungan = number_format($total_keuntungan);
 
         $total_kunjugangan = Pembelian_tiket::whereYear('kedatangan', 2022)
             ->whereMonth('kedatangan', 11)
