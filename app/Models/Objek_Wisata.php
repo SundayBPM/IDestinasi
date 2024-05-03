@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Objek_Wisata extends Model
 {
+    public $table = 'objek_wisatas';
     use HasFactory;
-    protected $fillable = ['nama_destinasi',
-                            'jenis',
+    protected $fillable = ['nama_wisata',
                             'deskripsi',
                             'lokasi',
-                            'harga_tiket',
+                            'longitude',
+                            'latitude',
+                            'jam_operasional',
+                            'jenis',
                             'foto',
-                        ];
+                            ];
 }
