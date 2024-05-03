@@ -13,26 +13,15 @@ use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [LandingPageController::class, 'index'])->name('');
 
 Route::middleware(['auth'])->group(function() {
     // ====================Landing Page========================================
     Route::get('/landingPage', [LandingPageController::class, 'whoAmI']);
 
-    // Route::get('/landingPage', function () {
-    //     return view('landingPage');
-    // });
-
-
     Route::get('/promo', function () {
         return view('promo');
     });
-
-    // Route::get('/landingPage', function () {
-    //     return view('landingPage');
-    // })->name('landingPage');
 
     Route::get('/promo', function () {
         return view('promo');
@@ -41,6 +30,10 @@ Route::middleware(['auth'])->group(function() {
     // ========================== Kelola Objek Wisata========================================
 
     Route::get('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'index'])->name('kelola-objek-wisata.index');
+
+    // START PROMO
+    Route::get('/promo/{event_id}', [LandingPageController::class, 'promoDetails'])->name('promo.detail');
+
 
     // Rute untuk menampilkan formulir tambah kegiatan pendaftaran objek wisata dan menyimpan data baru
     Route::get('/kelola-objek-wisata/create', [KelolaObjekWisataController::class, 'create'])->name('kelola-objek-wisata.create');
@@ -52,19 +45,6 @@ Route::middleware(['auth'])->group(function() {
 
     // Rute untuk menghapus data objek wisata
     Route::delete('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 'destroy'])->name('kelola-objek-wisata.destroy');
-
-
-    // // login/logout proses
-    // Route::get('/login', [authController::class, 'login']);
-    // Route::post('/login', [authController::class, 'cekLogin']);
-    // Route::get('/logout', [authController::class, 'logout']);
-    // register step
-    // Route::get('/regist', [authController::class, 'register1']);
-    // Route::post('/regist', [authController::class, 'processStep1']);
-    // Route::get('/register2', [authController::class, 'register2']);
-    // Route::post('/register2', [authController::class, 'processStep2']);
-    // Route::get('/register3', [authController::class, 'register3']);
-    // Route::post('/register3', [authController::class, 'processStep3']);
 
     // ========================== Ulasan========================================
     // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
@@ -85,22 +65,9 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-// login/logout proses
-Route::get('/login', [authController::class, 'login']);
-Route::post('/login', [authController::class, 'cekLogin']);
-Route::get('/logout', [authController::class, 'logout']);
-// register step
-Route::get('/register', [authController::class, 'register1']);
-Route::post('/register', [authController::class, 'processStep1']);
-Route::get('/register2', [authController::class, 'register2']);
-Route::post('/register2', [authController::class, 'processStep2']);
-Route::get('/register3', [authController::class, 'register3']);
-Route::post('/register3', [authController::class, 'processStep3']);
-
 
 // ========================== -------------  ========================================
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-

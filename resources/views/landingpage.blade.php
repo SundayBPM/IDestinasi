@@ -43,24 +43,14 @@
 <div class="container">
   <div class="slider-wrapper">
     <swiper-container class="mySwiper" class="mySwiper" init="false" autoplay-delay="2500" autoplay-disable-on-interaction="false" style="height: 360px; width:100%">
-      <swiper-slide>
-        <a href="./promo">
-          <img id = "slide-1" src="img/lombok-promo.png" alt="Promo Lombok"/>
-        </a>
-      </swiper-slide> 
-          
-      <swiper-slide>
-        <a href="./promo">
-          <img id = "slide-2" src="img/lombok-promo.png" alt="Promo Lombok"/>
-        </a>
-      </swiper-slide> 
-
-      <swiper-slide>
-        <a href="./promo">
-          <img id = "slide-3" src="img/lombok-promo.png" alt="Promo Lombok"/>
-        </a>
-      </swiper-slide> 
-        </swiper-container>  
+        @foreach($events as $event)
+        <swiper-slide>
+          <a href="{{ route('promo.detail', $event->id) }}">
+            <img src="{{ asset('img/' . $event->image_path) }}" alt="{{ $event->title }}" id="{{ $event->id }}"/>
+          </a>
+        </swiper-slide> 
+        @endforeach
+      </swiper-container>  
   </div>
 </div>
 
@@ -115,91 +105,25 @@
 <!--card rekomendasi objek wisata-->
   <!--card 1-->
   <div class="card-container">
-    <a href="#">
-    <div class="card-layout">
-      <div class="card img">
-        <img src="img/img2.jpg" alt="Wisata 1">
-      </div>
-      <div class="card-info">
-        <div class="card-title">Kepulauan Derawan , Kaltim</div>
-        <div class="rating">
-          <i class="fa-solid fa-star"></i>
-          <div class="rating-value">4.8</div>
-          <div class="reviews">85 Reviews</div>
+    @foreach ($data_recomended as $destinationId => $destination)
+      <a href="/details/{{$destination['id']}}">
+        <div class="card-layout">
+          <div class="card img">
+          <img src="{{ asset('img/' . $destination['image']) }}" alt="{{ $destination['title'] }}">
+          </div>
+          <div class="card-info">
+            <div class="card-title">{{ $destination['title'] }}</div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <div class="rating-value">{{ number_format($destination['average_rating'], 1) }}</div>
+              <div class="reviews">{{ $destination['rating_count'] }} Reviews</div>
+            </div>
+            <div class="price">Rp {{ $destination['price'] }}/pax</div>
+          </div>
         </div>
-        <div class="price">Rp 100.000/pax</div>
-      </div>
-    </div>
-    </a>
-    <!--card 2-->
-    <a href="#">
-    <div class="card-layout">
-      <div class="card img">
-        <img src="img/img3.jpg" alt="Wisata 1">
-    </div>
-      <div class="card-info">
-        <div class="card-title">Kepulauan Derawan , Kaltim</div>
-        <div class="rating">
-          <i class="fa-solid fa-star"></i>
-          <div class="rating-value">4.8</div>
-          <div class="reviews">85 Reviews</div>
-        </div>
-        <div class="price">Rp 100.000/pax</div>
-      </div>
-    </div>
-    </a>
-    <!--card 3-->
-    <a href="#">
-    <div class="card-layout">
-      <div class="card img">
-        <img src="img/img4.jpg" alt="Wisata 1">
-    </div>
-      <div class="card-info">
-        <div class="card-title">Kepulauan Derawan , Kaltim</div>
-        <div class="rating">
-          <i class="fa-solid fa-star"></i>
-          <div class="rating-value">4.8</div>
-          <div class="reviews">85 Reviews</div>
-        </div>
-        <div class="price">Rp 100.000/pax</div>
-      </div>
-    </div>
-    </a>
-    <!--card 4-->
-    <a href="#">
-    <div class="card-layout">
-      <div class="card img">
-        <img src="img/img5.jpg" alt="Wisata 1">
-    </div>
-      <div class="card-info">
-        <div class="card-title">Kepulauan Derawan , Kaltim</div>
-        <div class="rating">
-          <i class="fa-solid fa-star"></i>
-          <div class="rating-value">4.8</div>
-          <div class="reviews">85 Reviews</div>
-        </div>
-        <div class="price">Rp 100.000/pax</div>
-      </div>
-    </div>
-    </a>
-    <!--card 5-->
-    <a href="#">
-    <div class="card-layout">
-      <div class="card img">
-        <img src="img/img5.jpg" alt="Wisata 1">
-    </div>
-      <div class="card-info">
-        <div class="card-title">Kepulauan Derawan , Kaltim</div>
-        <div class="rating">
-          <i class="fa-solid fa-star"></i>
-          <div class="rating-value">4.8</div>
-          <div class="reviews">85 Reviews</div>
-        </div>
-        <div class="price">Rp 100.000/pax</div>
-      </div>
-    </div>
-    </a>
-</div>
+      </a>
+    @endforeach
+  </div>
 </div>
 
 <!-- rekomendasi paket tour-->
