@@ -928,6 +928,11 @@ footer {
   justify-content: center; /* Menengahkan horizontal */
 }
 
+.nps_chart h1 {
+  position: absolute;
+}
+
+
 .total_purchase_tickets .item_box {
   width: 30px;
   height: 30px;
@@ -1006,11 +1011,17 @@ footer {
 }
 
 .nps_chart {
+  display: flex;
+  justify-content: center; /* Menyamakan konten secara horizontal */
+  align-items: center; /* Menyamakan konten secara vertikal */
   width: 30%;
   height: auto;
   border: 1px solid lightgray;
   border-radius: 10px;
+  position: relative; /* Diperlukan untuk menggunakan position: absolute; di dalamnya */
 }
+
+
 
 .others_rating {
   display: flex;
