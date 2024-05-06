@@ -148,7 +148,7 @@ td {
     display: flex;
     overflow-x: hidden; /* Mengubah overflow-x menjadi hidden */
     scroll-snap-type: x mandatory;
-=======
+}
 
 body{
     background-color: lightgray;
@@ -290,7 +290,7 @@ body{
     margin-top: 1%;
     margin-bottom: 5%;
 }
-.btn-submit-ulasan button{
+.btn-submit-ulasan button {
     background-color: #00c0ca;
     height: 60px;
     width: 120px;

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Saran;
+use App\Models\Objek_Wisata;
 use Illuminate\Http\Request;
 use App\Models\Pembelian_tiket;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Objek_Wisata;
 use Illuminate\Support\Facades\Auth;
 
 class SistemUmpanBalikController extends Controller
@@ -29,8 +30,13 @@ class SistemUmpanBalikController extends Controller
             'pembelian_tikets.jumlah_tiket',
             'pembelian_tikets.created_at'
         ]);
+
+        $overalRating = Saran::select('id_objek_wisata', DB::raw('AVG(rating) as average_rating'))
+            ->groupBy('id_objek_wisata')
+            ->get();
+        
         // dd($list_destinasi);
-        return view('sistem-umpan-balik',compact(['list_destinasi','selected_destinasi_id']));
+        return view('sistem-umpan-balik',compact(['list_destinasi','selected_destinasi_id','overalRating']));
         
     }
     

@@ -23,7 +23,28 @@ class InformasiStatistikController extends Controller
 
         $id_pengelola = Mengelola::where('id_pengelola', $userId)->pluck('id_objek_wisata')->first();
         $overalRating = Saran::where('id_objek_wisata', $id_pengelola)->avg('rating');
-        $nps_rating = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_nps');
+        $nps_rating_avg = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_nps');
+        $nps_rating_avg = number_format($nps_rating_avg, 2);
+
+        $nps_rating = Saran::where('id_objek_wisata', $id_pengelola)->pluck('penilaian_nps');        
+        $frekuensi_nps = $nps_rating->countBy(function ($item) {
+            return $item;
+        });
+        
+        $nps_labels = [];
+        $nps_data = [];
+
+        foreach ($frekuensi_nps as $nilai => $frekuensi) {
+            $nps_labels[] = $nilai;
+            $nps_data[] = $frekuensi;
+        }
+        
+        $data_nps = [
+            'nps_labels' => $nps_labels,
+            'nps_data' => $nps_data,
+        ];
+
+
         $amenitas_rating = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_amenitas');
         $ansilari1_rating = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_ansilari1');
         $ansilari2_rating = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_ansilari2');
@@ -60,21 +81,21 @@ class InformasiStatistikController extends Controller
         $data_pembelian = json_decode($data_pembelian, true);
 
         // Inisialisasi array labels dan data
-        $labels = [];
-        $data = [];
+        $main_labels = [];
+        $main_data = [];
         
         // Loop melalui setiap data dalam array
         foreach ($data_pembelian as $item) {
             // Tambahkan nilai bulan ke dalam array labels
-            $labels[] = $item['tahun_bulan'];
+            $main_labels[] = $item['tahun_bulan'];
         
             // Tambahkan nilai total_harga ke dalam array data
-            $data[] = $item['total_harga'];
+            $main_data[] = $item['total_harga'];
         }
 
-        $datas = [
-            'labels' => $labels,
-            'data' => $data,
+        $data_pembelian = [
+            'main_labels' => $main_labels,
+            'main_data' => $main_data,
         ];
         
         // $datas = [
@@ -84,7 +105,9 @@ class InformasiStatistikController extends Controller
         
         return view('informasi-statistik')
         ->with('overalRating', $overalRating)
+        ->with('nps_rating_avg', $nps_rating_avg)
         ->with('nps_rating', $nps_rating)
+        ->with('data_nps', $data_nps)
         ->with('amenitas_rating', $amenitas_rating)
         ->with('ansilari1_rating', $ansilari1_rating)
         ->with('ansilari2_rating', $ansilari2_rating)
@@ -95,7 +118,7 @@ class InformasiStatistikController extends Controller
         ->with('total_kunjugangan', $total_kunjugangan)
         ->with('data_pembelian', $data_pembelian)
         ->with('data_user', $data_user)
-        ->with('datas', $datas);
+        ->with('data_pembelian', $data_pembelian);
     }
 
 }
