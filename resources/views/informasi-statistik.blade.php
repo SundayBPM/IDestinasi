@@ -51,15 +51,16 @@
         </div>
         
         <div class="bottom_charts">
-
+            
             <div class="nps_chart">
                 <!-- <h1>TESTING</h1> -->
+                <h1>{{$nps_rating_avg}}</h1>
                 <canvas id="nps-rating"></canvas>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
                 const ctx = document.getElementById('sales-revenue');
-                const labels = <?php echo json_encode($datas['labels']) ?>;
+                const labels = <?php echo json_encode($data_pembelian['main_labels']) ?>;
 
                 new Chart(ctx, {
                     type: 'line',
@@ -67,7 +68,30 @@
                         labels: labels,
                         datasets: [{
                             label: '# of Votes',
-                            data: <?php echo json_encode($datas['data']) ?>,
+                            data: <?php echo json_encode($data_pembelian['main_data']) ?>,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                            beginAtZero: true
+                            }
+                        }
+                    }
+                });
+                
+
+                const nps = document.getElementById('nps-rating');
+                const labels_label = <?php echo json_encode($data_nps['nps_labels']) ?>;
+
+                new Chart(nps, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels_label,
+                        datasets: [{
+                            label: '# of Votes',
+                            data: <?php echo json_encode($data_nps['nps_data']) ?>,
                             borderWidth: 1
                         }]
                     },
