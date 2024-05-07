@@ -19,74 +19,80 @@ class authController extends Controller
     // proses step 1
     public function processStep1(Request $request)
     {
-        // Simpan data ke dalam sesi atau variabel sementara
-        session(['Alamat Email' => $request->input('Alamat Email')]);
-        session(['Kata Sandi' => $request->input('Kata Sandi')]);
-        session(['Konfirmasi Sandi' => $request->input('Konfirmasi Sandi')]);
-        session(['Pengelola objek wisata' => $request->input('Pengelola objek wisata')]);
-        session(['Wisatawan' => $request->input('Wisatawan')]);
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+            'password' => 'min:6|required_with:confirm_password|same:confirm_password',
+            'role' => 'required'
+        ]);
 
-       return redirect('/register2');
+        session(['email' => $request->input('email')]);
+        session(['password' => Hash::make($request->password)]);
+        session(['confirm_password' => $request->input('confirm_password')]);
+        session(['role' => $request->input('role')]);
+       return redirect()->route('registerStep2');
     }
 
     public function register2(){
-        return view('register2');
+        return view('Auth/register2');
     }
     public function processStep2(Request $request)
     {
-        // Simpan data ke dalam sesi atau variabel sementara
-        session(['nama lengkap' => $request->input('nama lengkap')]);
-        session(['nomor telepon' => $request->input('nomor telepon')]);
-        session(['tempat tinggal' => $request->input('tempat tinggal')]);
+        $request->validate([
+            'fullname' => 'required',
+            'number_phone' => 'required',
+            'place_birth' => 'required',
+            'usia' => 'required',
+            'gender' => 'required'
+        ]);
+        
+        session(['fullname' => $request->input('fullname')]);
+        session(['number_phone' => $request->input('number_phone')]);
+        session(['place_birth' => $request->input('place_birth')]);
         session(['usia' => $request->input('usia')]);
-        session(['jenis kelamin' => $request->input('jenis kelamin')]);
-
-        return redirect('/register3');
+        session(['gender' => $request->input('gender')]);
+        
+        return redirect()->route('registerStep3');
     }
 
     public function register3(){
-        return view('register3');
+        if(session('email') == null){
+            return redirect('/register');
+        }
+        $user = User::where('email', session('email'))->first();
+        if(!$user){
+            $testing = User::create([
+                'email' => session('email'),
+                'password' => session('password'),
+                'role' => session('role'),
+                'name' => session('fullname'),
+                'number_phone' => session('number_phone'),
+                'place_birth' => session('place_birth'),
+                'usia' => session('usia'),
+                'gender' => session('gender')
+            ]);
+
+            session()->forget(['email', 'password', 'confirm_password', 'role', 'wisatawan', 'fullname', 'number_phone', 'place_birth', 'usia', 'gender']);
+            
+            return view('register3');
+        }
+        return redirect('/register')->with('status', 'failed')->with('message', 'Email sudah terdaftar');
     }
     public function processStep3(Request $request)
-    {
-        // Validasi input jika diperlukan
-        $request->validate([
-            'password' => 'confirmed'
-        ]);
-
-        // Simpan data ke dalam sesi atau variabel sementara
-        session(['password' => Hash::make($request->password)]);
-
-        $testing = User::create([
-            'Alamat Email' => session('Alamat Email'),
-            'Kata Sandi' => session('Kata Sandi'),
-            'Konfirmasi Sandi' => session('Konfirmasi Sandi'),
-            'Pengelola objek wisata' => session('Pengelola objek wisata'),
-            'Wisatawan' => session('Wisatawan'),
-            'Nama lengkap' => session('Nama lengkap'),
-            'Nomor telepon' => session('Nomor telepon'),
-            'tempat tinggal' => session('tempat tinggal'),
-            'usia' => session('usia'),
-            'jenis kelamin' => session('jenis kelamin')
-        ]);
-
-        // Hapus sesi atau variabel sementara setelah registrasi selesai
-        session()->forget(['alamat email', 'kata sandi', 'konfirmasi sandi', 'pengelola objek wisata', 'wisatawan', 'nama lengkap', 'nomor telepon', 'tempat tinggal', 'usia', 'jenis kelamin']);
-
+    {   
         return redirect('/login');      
     }
 
      public function cekLogin(Request $request){   
          $credentials = $request->validate([
-            'alamat email' => ['required', 'alamat email'],
-            'kata sandi' => ['required']
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
  
             return redirect()->intended('/');
         }
-        if (Auth::guard('pengelola objek wisata, wisatawan')->attempt($credentials)) {
+        if (Auth::guard('role, wisatawan')->attempt($credentials)) {
             $request->session()->regenerate();
  
             return redirect()->intended('/');
@@ -102,6 +108,6 @@ class authController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect('/login');
+        return redirect('/');
     }
 }

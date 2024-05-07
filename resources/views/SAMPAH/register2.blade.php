@@ -23,44 +23,42 @@
     
     </div>
     <div class="wrapper">
-      <form action="">
+      <form action="{{ route('register_processStep2') }}" method="POST">
+        @csrf
         <h2>Selangkah Lebih Dekat</h2>
         <p>Lengkapi data dirimu untuk mulai bersama Kami</p>
         
         <div class="input-box">
-          <input type="text" required />
+          <input type="text" name="fullname" value="{{ session('fullname') }}" required />
           <label>Nama Lengkap</label>
         </div>
         <div class="input-box">
-          <input type="number" required />
+          <input type="number" name="number_phone" value="{{ session('number_phone') }}" required />
           <label>Nomor Telepon</label>
         </div>
         <div class="input-box">
-          <input type="text" required />
+          <input type="text" name="place_birth" value="{{ session('place_birth') }}" required />
           <label>Tempat Tinggal</label>
         </div>
         <div class="input-box">
-          <input type="number" required />
+          <input type="number" name="usia" value="{{ session('usia') }}" required />
           <label>Usia</label>
         </div>
         
         <div class="form-check form-check-inline">
           <label>Jenis Kelamin</label>
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Pria</label>
+          <input class="form-check-input" type="radio" name="gender" id="radio_gender1" value="Pria">
+          <label class="form-check-label" for="radio_gender1">Pria</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Wanita</label>
+          <input class="form-check-input" type="radio" name="gender" id="radio_gender2" value="Wanita">
+          <label class="form-check-label" for="radio_gender2">Wanita</label>
           
         </div>
 
-        <button type="submit" class="btn">Daftar Sekarang</button>
+        <button type="submit" class="btn" style="border:1px solid #000; width:100%;">Daftar Sekarang</button>
 
       </form>
     </div>
   </body>
 </html>
-
-
-  

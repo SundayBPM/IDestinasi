@@ -206,6 +206,7 @@
         
         <div class="penilaian">
             <Header>Penilaian NPS</Header>
+
             <div class="rating-penilaian">
                 <label for="rate-1">1</label>
                 <input type="radio" name="penilaian_nps" id="rate-1" value="1">
@@ -232,16 +233,16 @@
         </div>
         </div>
         
-        <button type="submit"> POST CUII</button>
+        <!-- <button type="submit"> POST CUII</button> -->
         <!-- Button trigger modal -->
-        <!-- <div class="btn-submit-ulasan">
+        <div class="btn-submit-ulasan">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
-        </div> -->
+        </div>
 
         <!-- Modal -->
-        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -259,7 +260,7 @@
             </div>
             </div>
         </div>
-        </div> -->
+        </div>
     </form>
     
 

@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('objek_wisatas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_destinasi');
-            $table->string('jenis');
-            $table->text('deskripsi');
+            $table->string('nama_wisata');
+            $table->string('deskripsi');
             $table->string('lokasi');
-            $table->integer('harga_tiket');
+            $table->string('longitude');
+            $table->string('latitude');
+            $table->string('jam_operasional');
+            $table->text('jenis');
+            $table->string('foto');
             $table->timestamps();
         });
     }

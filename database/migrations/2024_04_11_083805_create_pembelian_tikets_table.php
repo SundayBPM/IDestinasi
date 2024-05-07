@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_users');
             $table->integer('id_destinasi');
             $table->integer('jumlah_tiket');
-            $table->integer('harga');
+            $table->integer('total_harga');
             $table->string('jenis_pembayaran');
             $table->date('kedatangan');
             $table->timestamps();
