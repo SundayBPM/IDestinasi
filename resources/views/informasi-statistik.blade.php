@@ -4,7 +4,7 @@
     <!-- Sale & Revenue Start -->
     <div class="container-xxl">
             
-        <div class="ulasan-header">
+        <div class="statistik-header">
             <h1>Statistik Objek Wisata</h1>
             <img src="img/statistik-page.png" alt="Deskripsi gambar">
         </div>

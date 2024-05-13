@@ -33,7 +33,7 @@
     <div>
         <h5>{{ $destinasi }}</h5>
     </div>
-    <form action="/ulasan" method="POST">
+    <form action="/ulasan" method="POST"> 
         @csrf
         <input type="hidden" name="id_tiket" value="{{ $destinasi->id }}">
         <input type="hidden" name="id_objek_wisata" value="{{ $destinasi->id_destinasi }}">        
