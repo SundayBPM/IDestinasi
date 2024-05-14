@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('latitude');
             $table->string('jam_operasional');
             $table->text('jenis');
+            $table->string('nama_tiket');
+            $table->string('harga_tiket');
             $table->string('foto');
             $table->timestamps();
         });

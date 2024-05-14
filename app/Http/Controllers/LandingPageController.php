@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Objek_Wisata;
+use App\Models\Paket_Tour;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,7 @@ class LandingPageController extends Controller
 
     public function recommendDestinations() 
 {
-    $destinations = Objek_Wisata::all();
+    $destinations = Objek_Wisata::withCount('timeline as total_hari')->get();
     $scores = [];
 
     foreach ($destinations as $destination) {
@@ -49,6 +50,8 @@ class LandingPageController extends Controller
             'title' => $destination->nama_destinasi,
             'rating_count' => $count,
             'total_score' => $totalScore,
+            'total_orang' => $destination->total_orang,
+            'total_hari' => $destination->total_hari,
             'average_rating' => $averageRating,
             'price' => $destination->harga_tiket,
             'operational_hours' => $destination->jam_operasional,
@@ -67,9 +70,7 @@ class LandingPageController extends Controller
 
     public function promoDetails($event_id) 
     {
-        $events = Events::find($event_id);
+        $event = Events::find($event_id);
         return view('promo', compact('event'));
-    }
-
-        
+    }     
 }
