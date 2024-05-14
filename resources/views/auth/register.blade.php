@@ -61,11 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="domisili" class="col-md-4 col-form-label text-md-end">Domisili</label>
+
+                            <div class="col-md-6">
+                                <input id="domisili" type="text" class="form-control" name="domisili">
+                            </div>
+                        </div>
+
                         <div class="row mb-4">
                             <label for="role" class="col-md-4 col-form-label text-md-end"></label>
 
                             <div class="col-md-6">
-                                <input id="role" type="text" class="form-control" name="role" required>
+                                <input id="role-wisatawan" type="radio" name="role" value="wisatawan">Wisatan
+                                <input id="role-pengelola" type="radio" name="role" value="pengelola">Pengelola
                             </div>
                         </div>
 
