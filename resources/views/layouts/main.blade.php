@@ -17,18 +17,7 @@
   </head>
   <body>
 
-  <!-- Navbar -->
-  <header class="header">
-      <!-- Logo -->
-      <a href="/" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
-      <!-- Navbar List -->
-      <nav class="navbar">
-        <a href="destinations.html">Destinasi</a>
-        <a href="#eksplor">Eksplor</a>
-        <a href="#paket-tur">Paket Tur</a>
-        <a href="#artikel">Artikel</a>
-        <a href="/ulasan">Ulasan</a>
-      </nav>
+
       
       <!-- STRAT DROP DOWN -->
       @if (Auth::check())
@@ -68,6 +57,14 @@
                   Statistik Wisata
                 </a>
               </li>
+
+              <li class="profile-dropdown-list-item">
+                <a href="/informasi-statistik">
+                  <i class="fa-solid fa-chart-column"></i>
+                  Wishlist Objek Wisata
+                </a>
+              </li>
+
               <hr />
               <li class="profile-dropdown-list-item">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
