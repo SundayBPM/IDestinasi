@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer("id_user");
             $table->integer("id_objek_wisata");
+            $table->integer("id_pembelian_tiket");
             $table->tinyInteger("rating");
             $table->tinyInteger("penilaian_nps");
             $table->tinyInteger("penilaian_amenitas");

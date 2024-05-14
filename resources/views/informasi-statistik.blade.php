@@ -4,7 +4,7 @@
     <!-- Sale & Revenue Start -->
     <div class="container-xxl">
             
-        <div class="ulasan-header">
+        <div class="statistik-header">
             <h1>Statistik Objek Wisata</h1>
             <img src="img/statistik-page.png" alt="Deskripsi gambar">
         </div>
@@ -13,9 +13,16 @@
                 <div class="item_box">
                     <i class="bi bi-people"></i>
                 </div>
-                <h2>{{ $total_kunjugangan }}</h2>
+                <h2>{{ $total_kunjungan }}</h2>
                 <p>Total Pengunjung Aktif</p>
-                <p><i class="bi bi-arrow-up-right"></i>  +10% Minggu ini</p>
+                <p>
+                    @if((($total_kunjungan-$total_kunjungan_sebelumnya)/$total_kunjungan_sebelumnya)*100 > 0)
+                        <i class="bi bi-arrow-up-right"></i>  
+                    @else
+                        <i class="bi bi-arrow-down-left"></i>  
+                    @endif
+                    {{ number_format((($total_kunjungan-$total_kunjungan_sebelumnya)/$total_kunjungan_sebelumnya)*100 )}}% Minggu ini
+                </p>
             </div>
             
             <div class="total_purchase_tickets">
@@ -24,16 +31,31 @@
                 </div>
                 <h2>{{ $pembelianTikets }}</h2>
                 <p>Total Pembelian Tiket</p>
-                <p><i class="bi bi-arrow-up-right"></i>  +0,49% Minggu ini</p>                
+                <p>
+                    @if((($pembelianTikets-$pembelianTikets_sebelumnya)/$pembelianTikets_sebelumnya)*100 > 0)
+                        <i class="bi bi-arrow-up-right"></i>  
+                    @else
+                        <i class="bi bi-arrow-down-left"></i>  
+                    @endif
+                    {{ number_format((($pembelianTikets-$pembelianTikets_sebelumnya)/$pembelianTikets_sebelumnya)*100 )}}% Minggu ini
+                </p>
             </div>
             
             <div class="profits">
                 <div class="item_box">
                     <i class="bi bi-check2-circle"></i>
                 </div>
-                <h2>IDR {{ $total_keuntungan }}</h2>
+                <h2>IDR {{ number_format($total_keuntungan) }}</h2>
                 <p>Keuntungan</p>
-                <p><i class="bi bi-arrow-down-left"></i>  +0,25% Minggu ini</p>                
+                <!-- <p><i class="bi bi-arrow-down-left"></i>  +0,25% Minggu ini</p>      -->
+                <p>
+                    @if((($total_keuntungan - $total_keuntungan_sebelumnya)/$total_keuntungan_sebelumnya)*100 > 0)
+                        <i class="bi bi-arrow-up-right"></i>  
+                    @else
+                        <i class="bi bi-arrow-down-left"></i>  
+                    @endif
+                    {{ number_format((($total_keuntungan-$total_keuntungan_sebelumnya)/$total_keuntungan_sebelumnya)*100 )}}% Minggu ini
+                </p>           
             </div>
         </div>
 

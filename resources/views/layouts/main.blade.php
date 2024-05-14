@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/01706c9c94.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -105,9 +105,11 @@
                 </li>
                 <hr />
                 <li class="profile-dropdown-list-item">
-                  <a href="{{ route('logout') }}">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    Log out
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
+                  <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
                   </a>
                 </li>
               </ul>
