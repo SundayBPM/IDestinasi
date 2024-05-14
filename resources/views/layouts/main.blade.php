@@ -105,9 +105,11 @@
                 </li>
                 <hr />
                 <li class="profile-dropdown-list-item">
-                  <a href="{{ route('logout') }}">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    Log out
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
+                  <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
                   </a>
                 </li>
               </ul>

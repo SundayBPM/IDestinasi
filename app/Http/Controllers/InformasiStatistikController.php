@@ -57,17 +57,32 @@ class InformasiStatistikController extends Controller
             ->sum('jumlah_tiket'); //Data Semebtara, yang asli ada diata
 
         $pembelianTikets = number_format($pembelianTikets);
+        $pembelianTikets_sebelumnya = Pembelian_tiket::whereYear('created_at', 2022)
+            ->whereMonth('created_at', 10)
+            ->sum('jumlah_tiket'); //Data Semebtara, yang asli ada diata
+
+        $pembelianTikets_sebelumnya = number_format($pembelianTikets_sebelumnya);
 
         $total_keuntungan = Pembelian_tiket::whereYear('created_at', 2022)
             ->whereMonth('created_at', 11)
             ->sum('total_harga'); //Data Semebtara, yang asli ada diata
-        $total_keuntungan = number_format($total_keuntungan);
 
-        $total_kunjugangan = Pembelian_tiket::whereYear('kedatangan', 2022)
+        $total_keuntungan_sebelumnya = Pembelian_tiket::whereYear('created_at', 2022)
+            ->whereMonth('created_at', 10)
+            ->sum('total_harga'); //Data Semebtara, yang asli ada diata
+    
+
+        $total_kunjungan = Pembelian_tiket::whereYear('kedatangan', 2022)
             ->whereMonth('kedatangan', 11)
-            ->sum('jumlah_tiket'); //Data Semebtara, yang asli ada diata
+            ->sum('jumlah_tiket');
 
-        $total_kunjugangan = number_format($total_kunjugangan);
+        $total_kunjungan = number_format($total_kunjungan);
+        
+        $total_kunjungan_sebelumnya = Pembelian_tiket::whereYear('kedatangan', 2022)
+            ->whereMonth('kedatangan', 10)
+            ->sum('jumlah_tiket');
+
+        $total_kunjungan_sebelumnya = number_format($total_kunjungan_sebelumnya);
 
         $data_pembelian = Pembelian_tiket::select(DB::raw('DATE_FORMAT(created_at, "%Y-%M") as tahun_bulan'), 
             DB::raw('SUM(total_harga) AS total_harga'), 
@@ -114,8 +129,11 @@ class InformasiStatistikController extends Controller
         ->with('aksesibilitas_rating', $aksesibilitas_rating)
         ->with('atraksi_rating', $atraksi_rating)
         ->with('pembelianTikets', $pembelianTikets)
+        ->with('pembelianTikets_sebelumnya', $pembelianTikets_sebelumnya)
         ->with('total_keuntungan', $total_keuntungan)
-        ->with('total_kunjugangan', $total_kunjugangan)
+        ->with('total_keuntungan_sebelumnya', $total_keuntungan_sebelumnya)
+        ->with('total_kunjungan', $total_kunjungan)
+        ->with('total_kunjungan_sebelumnya', $total_kunjungan_sebelumnya)
         ->with('data_pembelian', $data_pembelian)
         ->with('data_user', $data_user)
         ->with('data_pembelian', $data_pembelian);
