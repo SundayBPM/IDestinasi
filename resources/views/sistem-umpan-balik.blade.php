@@ -3,6 +3,7 @@
 
 @section('container')
 <div class="ulasan-header">
+    <h1>Bagikan Pengalaman Anda di Ulasan</h1>
     <img src="img/ulasan-img1.png" alt="Deskripsi gambar">
 </div>
 
@@ -10,35 +11,31 @@
     <h1>Buat Ulasan Untuk Destinasi Terdahulu</h1>
     <p>Buat ulasan untuk objek wisata yang telah kamu kunjungi untuk membantu meningkatkan kualitas objek wisata</p>
 </div>
-    <div class="list-ulasan-destinasi">
-        @foreach($list_destinasi as $destinasi)
-        <div class="card">
+<div class="list-ulasan-destinasi">
+    @foreach($list_destinasi as $destinasi)
+        <div class="card_ulasan">
             <div class="card_img">
-                
-                <!-- @php
-                    $imageFormats = ['jpg', 'png', 'gif']; // Daftar format gambar yang didukung
-                    $gambarTersedia = false;
-                    foreach($imageFormats as $format) {
-                        $imagePath = "img/{$destinasi->nama_destinasi}.$format";
-                        if(file_exists(public_path($imagePath))) {
-                            echo "<img src='".asset($imagePath)."' alt='objek wisata'>";
-                            $gambarTersedia = true;
-                            break;
-                        }
-                    }
-                @endphp -->
                 <img src="img/Kete Kesu.jpg" alt="">
             </div>
-            <div class="card-content">
-                <h3>{{$destinasi->nama_destinasi}}</h3>
-                <h5 ><i class="fa-regular fa-star"></i>4.8 Reviews</h5>
+            <div class="card-content-ulasan">
+                <h5>{{ $destinasi }}</h5>
+                <h3>{{ $destinasi->nama_wisata }}</h3>
+                @php
+                    $overalRatingArray = $overalRating->toArray();
+                @endphp
+                @foreach ($overalRatingArray as $rating)
+                    @if ($rating['id_objek_wisata'] == $destinasi->id_objek_wisata)
+                        <h5><i class="fa-regular fa-star"> </i> {{ number_format($rating['average_rating'], 2) }} Reviews</h5>
+                        @break
+                    @endif
+                @endforeach
                 <a href="/ulasan/form?id_destinasi={{ $destinasi->id_tiket }}" class="btn">
-                <!-- <a href="/ulasan/form" class="btn"> -->
                     <i class="fa-solid fa-pen"></i> Buat Ulasan
                 </a>
             </div>
         </div>
-        @endforeach
-    </div>    
+    @endforeach
+
+</div>    
         
 @endsection

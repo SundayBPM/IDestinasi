@@ -1,0 +1,22 @@
+/* ================================================= Login ================================================== */
+body{
+    background-color: aqua;
+}
+.login_page {
+    display: flex;
+    flex-direction: row;
+}
+
+.left_login_side, .right-right_login_side {
+    width: 50%; /* Setiap container akan mengambil 50% lebar layar */
+    height: auto;
+    /* padding: 20px; Tambahkan padding jika diperlukan */
+}
+
+.left_login_side {
+    background-color: lightblue; /* Warna latar belakang untuk container kiri */
+}
+
+.right_login_side {
+    background-color: lightgreen; /* Warna latar belakang untuk container kanan */
+}

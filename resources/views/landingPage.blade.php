@@ -43,13 +43,13 @@
 <div class="container">
   <div class="slider-wrapper">
     <swiper-container class="mySwiper" class="mySwiper" init="false" autoplay-delay="2500" autoplay-disable-on-interaction="false" style="height: 360px; width:100%">
-        @foreach($events as $event)
+<!--         @foreach($events as $event)
         <swiper-slide>
           <a href="{{ route('promo.detail', $event->id) }}">
             <img src="{{ asset('img/' . $event->image_path) }}" alt="{{ $event->title }}" id="{{ $event->id }}"/>
           </a>
         </swiper-slide> 
-        @endforeach
+        @endforeach -->
       </swiper-container>  
   </div>
 </div>
