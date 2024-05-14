@@ -19,7 +19,7 @@
   <!-- Navbar -->
   <header class="header">
       <!-- Logo -->
-      <a href="{{route('landingPage')}}" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
+      <a href="{{route('landingpage')}}" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
 
       <!-- Navbar List -->
       <nav class="navbar">

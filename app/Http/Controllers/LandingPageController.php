@@ -64,7 +64,7 @@ class LandingPageController extends Controller
 
     public function promoDetails($event_id) 
     {
-        $event = Events::find($event_id);
+        $events = Events::find($event_id);
         return view('promo', compact('event'));
     }
 }

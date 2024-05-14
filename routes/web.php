@@ -30,9 +30,9 @@ Route::post('/register_processStep3', [authController::class, 'processStep3']);
 //     return view('landingPage');
 // });
 
-// Route::get('/landingPage', function () {
-//     return view('landingPage');
-// })->name('landingPage');
+Route::get('/landingPage', function () {
+    return view('landingPage');
+})->name('landingPage');
 
 // START PROMO
 Route::get('/promo/{event_id}', [LandingPageController::class, 'promoDetails'])->name('promo.detail');

@@ -55,7 +55,7 @@
         <button type="submit" class="btn" style="border:1px solid #000; width:100%;">Daftar</button>
 
         <div class="register">
-          <p>Sudah memiliki akun? <strong><a href="login.php">Masuk ke akun</strong></a></p>
+          <p>Sudah memiliki akun? <strong><a href="/login">Masuk ke akun</strong></a></p>
           
           <p class="or">atau</p>
         
