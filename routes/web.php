@@ -14,9 +14,6 @@ use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
-Route::get('/clone_login', function () {
-    return view('auth.clone_login');
-});
 
 Route::middleware(['auth'])->group(function() {
     
