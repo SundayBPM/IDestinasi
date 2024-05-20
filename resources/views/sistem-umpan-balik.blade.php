@@ -18,7 +18,7 @@
                 <img src="img/Kete Kesu.jpg" alt="">
             </div>
             <div class="card-content-ulasan">
-                <h5>{{ $destinasi }}</h5>
+                <!-- <h5>{{ $destinasi }}</h5> -->
                 <h3>{{ $destinasi->nama_wisata }}</h3>
                 @php
                     $overalRatingArray = $overalRating->toArray();
