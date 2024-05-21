@@ -141,24 +141,24 @@
           opacity: 1;
           background: rgba(255, 255, 255, 0.8);
         }
-
+  
         .swiper-pagination-bullet-active {
           color: #fff;
           background: #00C0CA;
         }
         `,
-            ],
-            pagination: {
-                clickable: true,
+        ],
+        pagination: {
+          clickable: true,
                 renderBullet: function(index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + "</span>";
-                },
-            },
-        };
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+      };
 
-        Object.assign(swiperEl, params);
+      Object.assign(swiperEl, params);
 
-        swiperEl.initialize();
-    </script>
+      swiperEl.initialize();
+</script>
 
 @endsection
