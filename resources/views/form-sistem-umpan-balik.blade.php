@@ -236,7 +236,7 @@
         <!-- <button type="submit"> POST CUII</button> -->
         <!-- Button trigger modal -->
         <div class="btn-submit-ulasan">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button id="first_button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
         </div>
