@@ -1072,3 +1072,33 @@ footer {
   border-radius: 10px;
 }
 
+/* ============================================= Bagian Ekplore Objek Wisata ============================================= */
+
+.list-eksplore-wisata {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
+ /* Tambahkan border untuk melihat batas elemen */
+  width: 100%;
+  height: 60%; /* Menetapkan z-index untuk memastikan elemen ini di bawah elemen lain */
+
+}
+
+.rekomendasi-title {
+  text-align: left; /* Memposisikan teks di tengah secara horizontal */
+  margin-top: 20px;  /* Menggeser teks ke bawah */
+  margin-left: 10px;
+  margin-bottom: 1px; /* Memberikan jarak bawah antara h2 dan elemen berikutnya */
+  /* font-size: 24px; Mengatur ukuran font */
+  color: #333; /* Mengatur warna teks */
+}
+
+.add-title {
+  text-align: left; /* Memposisikan teks di tengah secara horizontal */
+  /* margin-top: 50px;  Menggeser teks ke bawah */
+  margin-left: 10px;
+  margin-bottom: 10px; /* Memberikan jarak bawah antara h2 dan elemen berikutnya */
+  font-size: 13px; /* Mengatur ukuran font */
+  color: #333; /* Mengatur warna teks */
+}

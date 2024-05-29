@@ -24,7 +24,7 @@
       <!-- Navbar List -->
       <nav class="navbar">
         <a href="destinations.html">Destinasi</a>
-        <a href="#eksplor">Eksplor</a>
+        <a href="/eksplore-objek-wisata">Eksplor</a>
         <a href="#paket-tur">Paket Tur</a>
         <a href="#artikel">Artikel</a>
         <a href="/ulasan">Ulasan</a>
