@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
+@section('container')
     <div class="container">
         <h2>Objek Wisatamu</h2>
         <h6>Lihat objek wiata yang sudah kamu upload</h6>
