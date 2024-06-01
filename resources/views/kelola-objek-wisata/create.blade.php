@@ -42,10 +42,11 @@
                                 <label for="jenis">Kategori Wisata</label>
                                 <select class="form-select" name="jenis" id="jenis" aria-label="Example select with button addon">
                                     <option selected>Pilih Kategori Wisata</option>
-                                    <option value="1">Pantai</option>
-                                    <option value="2">Alam</option>
-                                    <option value="3">Budaya</option>
-                                    <option value="4">Pegunungan</option>
+                                    <option value="Pantai">Pantai</option>
+                                    <option value="Alam">Alam</option>
+                                    <option value="Budaya">Budaya</option>
+                                    <option value="Pegunungan">Pegunungan</option>
+                                    <option value="Wisata Air">Wisata Air</option>
                                 </select>
                             </div>
 

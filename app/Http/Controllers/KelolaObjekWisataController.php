@@ -32,10 +32,10 @@ class KelolaObjekWisataController extends Controller
     {
         
         $request->validate([
-            'nama_destinasi' => 'required',
+            'nama_wisata' => 'required',
             'lokasi' => 'required',
-            'longitude' => 'required',
-            'latitude' => 'required',
+            'longitude',
+            'latitude',
             'jam_operasional' => 'required',
             'deskripsi' => 'required',
             'jenis' => 'required',
@@ -52,7 +52,7 @@ class KelolaObjekWisataController extends Controller
     
         // Membuat entri baru dalam database
         Objek_Wisata::create([
-            'nama_destinasi' => $request->nama_destinasi,
+            'nama_wisata' => $request->nama_wisata,
             'lokasi' => $request->lokasi,
             'longitude' => $request->longitude,
             'latitude' => $request->latitude,
@@ -70,7 +70,7 @@ class KelolaObjekWisataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Obje_kWisata $pengaturanObjekWisata)
+    public function show(Objek_Wisata $pengaturanObjekWisata)
     {
         //
     }
@@ -90,10 +90,10 @@ class KelolaObjekWisataController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_destinasi' => 'required',
+            'nama_wisata' => 'required',
             'lokasi' => 'required',
-            'longitude' => 'required',
-            'latitude' => 'required',
+            'longitude',
+            'latitude',
             'jam_operasional' => 'required',
             'deskripsi' => 'required',
             'jenis' => 'required',
@@ -108,7 +108,7 @@ class KelolaObjekWisataController extends Controller
         $imageName = basename($imagePath);
 
         $pengaturanObjekWisata->update([
-            'nama_destinasi' => $request->nama_destinasi,
+            'nama_wisata' => $request->nama_wisata,
             'lokasi' => $request->lokasi,
             'longitude' => $request->longitude,
             'latitude' => $request->latitude,
