@@ -19,15 +19,15 @@
         <a href="#" class="navbar-secondary-button">Sign Up</a>
         <a href="#" class="navbar-secondary-button">Log In</a>
       </nav>
-
-<div class="history-header">
+<div class="wishlist-header">
     <img src="img/latar-navbar.png" alt="Deskripsi gambar">
-    <h1>Histori Objek Wisatamu</h1>
+    <h1>Wishlist Wisatamu</h1>
 </div>
-    <!-- hsitory objek wisata-->
-<div class="list-history-destinasi-text">
-    <h1>Objek Wisata Sudah Dikunjungi</h1>
-    <p>Lihat objek wisata yang sudah kamu kunjungi</p>
+    <!-- wishlist  objek wisata-->
+<div class="list-wishlist-destinasi-text">
+    <h1>Wishlist Wisata Tersimpan</h1>
+    <p>Lihat objek wisata yang sudah kamu simpan sebagai wishlist</p>
+    <a href="#" class="secondary-button">+ Tambah Objek Wisata</a>
 </div>
     <!--card rekomendasi paket-->
   <!--card 1-->
@@ -39,11 +39,14 @@
     </div>
       <div class="card-info">
         <div class="card-title">Kepulauan Derawan, Kaltim</div>
-        <div class="date">17 Januari 2024</div>
-        <div class="ticket">2 Tiket</div>
-        <div class="price">IDR103.000</div>
-        <a href="#" class="secondary-button">Beli Lagi</a>
-        <a href="#" class="secondary-button">Hapus</a>
+        <input class="star star-3" id="star-3" type="radio" name="star"/>
+        <label class="star star-3" for="star-3"></label>
+        <div class="rating">
+          <div class="reviews">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+        <a href="#" class="secondary-button">Lihat Objek Wisata</a>
       </div>
     </div>
     </a>
@@ -55,11 +58,14 @@
     </div>
       <div class="card-info">
         <div class="card-title">Lombok</div>
-        <div class="date">17 Januari 2024</div>
-        <div class="ticket">2 Tiket</div>
-        <div class="price">IDR103.000</div>
-        <a href="#" class="secondary-button">Beli Lagi</a>
-        <a href="#" class="secondary-button">Hapus</a>
+          <input class="star star-3" id="star-3" type="radio" name="star"/>
+          <label class="star star-3" for="star-3"></label>
+        <div class="rating">
+          <div class="reviews">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+        <a href="#" class="secondary-button">Lihat Objek Wisata</a>
       </div>
     </div>
     </a>
@@ -71,11 +77,14 @@
     </div>
       <div class="card-info">
         <div class="card-title">Pulau Komodo, NTT</div>
-        <div class="date">17 Januari 2024</div>
-        <div class="ticket">2 Tiket</div>
-        <div class="price">IDR103.000</div>
-        <a href="#" class="secondary-button">Beli Lagi</a>
-        <a href="#" class="secondary-button">Hapus</a>
+          <input class="star star-3" id="star-3" type="radio" name="star"/>
+          <label class="star star-3" for="star-3"></label>
+        <div class="rating">
+          <div class="reviews">4.8</div>
+          <div class="reviews">85 Reviews</div>
+        </div>
+        <div class="price">Rp 100.000/pax</div>
+        <a href="#" class="secondary-button">Lihat Objek Wisata</a>
       </div>
     </div>
     </a>

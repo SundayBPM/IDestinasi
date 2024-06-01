@@ -13,6 +13,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
 
@@ -72,8 +73,33 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-// ========================== -------------  ========================================
+// ========================== Verifikasi ========================================
 
-Auth::routes();
+Route::get('/verifikasi', [VerificationController::class, 'index'])->name('verifikasi.index');
+Route::get('/verifikasi/{id}', [VerificationController::class, 'show'])->name('verifikasi.show');
+Route::post('/verifikasi/{id}', [VerificationController::class, 'update'])->name('verifikasi.update');
+Route::post('/verifikasi/{id}/approve', [VerificationController::class, 'approve'])->name('verifikasi.approve');
+Route::post('/verifikasi/{id}/reject', [VerificationController::class, 'reject'])->name('verifikasi.reject');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// ========================== Wishlist ========================================
+
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+Route::get('/wishlist/create', [WishlistController::class, 'create'])->name('wishlist.create');
+Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlist.store');
+
+
+// ========================== History ========================================
+
+Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
+Route::delete('/history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
+Route::post('/history/buy-again/{id}', [HistoryController::class, 'buyAgain'])->name('history.buyAgain');
+
+// ========================== Register ========================================
+
+Route::get('/register', [authController::class, 'register1'])->name('register');
+Route::post('/register-submit', [authController::class, 'procesStep1']);
+Route::get('/profile', [authController::class, 'showProfileForm'])->name('profile');
+Route::post('/profile', [authController::class, 'storeProfile']);
+Route::get('/profile/success', [authController::class, 'showSuccessPage'])->name('profile.success');
+
