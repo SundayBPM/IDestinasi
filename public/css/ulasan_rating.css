@@ -1,0 +1,100 @@
+.container{
+    display: grid;
+}
+
+.rating{
+    justify-content: center; 
+    align-items: center; 
+    gap: 12px; 
+    display: center;
+  }
+  
+.fa-star {
+    color: #FF7A00; 
+    font-size: 14px;
+  }
+  
+.rating-value {
+    color: #939393; 
+    font-size: 14px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 800; 
+    word-wrap: break-word; 
+  }
+  
+.reviews {
+    color: #939393; 
+    font-size: 14px; 
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500; 
+    word-wrap: break-word; 
+  }
+
+.u-container-style .u-palette-2-light-2{
+    text-align: left;
+    color: #111111;
+    outline-color: #111111;
+    border-radius: 10px;
+}
+
+.u-repeater-item{
+    text-align: left;
+    display: flex;
+    position: relative;
+    border-width: 0px;
+}
+
+.u-container-layout{
+    padding: 30px;
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+}
+
+.u-valign-top {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.u-container-layout-1 {
+    padding: 30px;
+}
+
+.u-image {
+    border-width: 0;
+    object-fit: cover;
+    display: block;
+    vertical-align: middle;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.u-image-circle {
+    border-radius: 50%;
+}
+
+.u-section-2 .u-image-1 {
+    width: 110px;
+    height: 110px;
+    background-image: url(//images02.nicepage.com/a1389d7…/6e77b08…/pexels-photo-4576085.jpeg?version=);
+    background-position: 50% 50%;
+    margin: 0 auto 0 0;
+}
+
+.u-section-2 .u-text-3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: -110px auto 0 147px;
+}
+
+.u-text {
+    word-wrap: break-word;
+    position: relative;
+}
+
+.u-text-default {
+    display: table;
+}
