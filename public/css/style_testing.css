@@ -1,60 +1,114 @@
-
-body{
-    background-color: grey;
+.ulasan_area {
+    height: 320px;
+    width: 100%;
+    /* background-color: blueviolet; */
 }
-.rating-ulasan{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 20px;
-    width: 90%;
-    background: #ffffff;
-    padding: 10px 10px;
-    border-radius: 5px;
+
+.ulasan_content {
     display: flex;
-    align-items: left;
-    justify-content: left;
-    flex-direction: column;
-    
+    gap: 10px;
 }
 
-h3.rating-text {
-    text-align: left;
-    color: rgb(0, 0, 0);
+.ulasan_box {
+    width: 390px;
+    height: 170px;
+    /* background-color: aqua; */
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 15px;
 }
 
-.rating-ulasan .star-widget input {
-    display: none;
+.ulasan_box .ulasan_user{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* border: 1px solid black; */
 }
 
-.star-widget label {
-    display: grid;
-    font-size: 30px;
-    color: #444;
-    padding: 10px;
-    place-items: center;
-    float: right;
-    transition: all 0.2s ease;
+.first_column img {
+    /* vertical-align: middle; */
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
 }
 
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label {
-    color: #fd4;
+.first_row {
+    display: flex;
+    /* column-gap: 30px; */
 }
 
-input:checked ~ label {
-    color: #fd4;
+.second_column {
+    /* display:flex ;
+    flex-direction: column; */
+    padding: 0px 10px;
 }
 
-.penilaian-atraksi {
-    background: #ffffff;
-    width: 90%;
-    padding: 10px 10px;
+.first_column img{
+    max-width: 100%;
+    height: auto;    
+}
+
+.modal-body {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+
+.bi-star {
+    color: #FF7A00; 
+}
+
+.modal_ulasan_box {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border: 1px solid lightgrey;
     border-radius: 5px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 1%;
+    padding: 15px;
+    margin-bottom: 20px; /
 }
 
-.rating-atraksi {
-    padding: 10px;
+.modal_ulasan_box .modal_ulasan_user{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* border: 1px solid black; */
+}
+.modal_ulasan_box .modal_kritik_user{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* border: 1px solid black; */
+}
+
+.modal_first_column img {
+    /* vertical-align: middle; */
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.modal_first_row {
+    display: flex;
+    /* column-gap: 30px; */
+}
+
+.modal_second_column {
+    /* display:flex ;
+    flex-direction: column; */
+    padding: 0px 10px;
+}
+
+.modal_first_column img{
+    max-width: 100%;
+    height: auto;    
+}
+
+.modal_modal-body {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
 }

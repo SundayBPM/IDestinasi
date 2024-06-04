@@ -50,4 +50,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function saran()
+    {
+        return $this->hasMany(Saran::class, 'id_user');
+    }
 }

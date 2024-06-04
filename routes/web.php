@@ -13,17 +13,28 @@ use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 
+// menuju ke hal ulasan/feedback
+// Route::get('/test', function () {
+//     return view('tempUlasan');
+// });
+
+Route::get('/informasi-ulasan/{id}', [SistemUmpanBalikController::class, 'display_ulasan']);
+Route::get('/fetch-destinasi', [SistemUmpanBalikController::class, 'display_ulasan'])->name('fetch.destinasi');
+
+
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
+Route::get('/promo/{post}', [LandingPageController::class, 'show_promo'])->name('show_promo');
 
 Route::middleware(['auth'])->group(function() {
     
-    Route::get('/promo', function () {
-        return view('promo');
-    });
+
+    // Route::get('/promo', function () {
+    //     return view('promo');
+    // });
     
-    Route::get('/promo', function () {
-        return view('promo');
-    })->name('promo');
+    // Route::get('/promo', function () {
+    //     return view('promo');
+    // })->name('promo');
 
     Route::get('/informasi-wisata', function () {
         return view('informasi-wisata');

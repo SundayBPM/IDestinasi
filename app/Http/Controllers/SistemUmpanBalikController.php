@@ -67,7 +67,7 @@ class SistemUmpanBalikController extends Controller
         Saran::create([
             'id_user' => Auth::id(),
             'id_objek_wisata' => $request-> id_objek_wisata,
-            'id_tiket' => $request -> id_tiket,
+            'id_pembelian_tiket' => $request -> id_pembelian_tiket,
             'rating' => $request->rating,
             'ulasan' => $request->ulasan,
             'kritik_saran' => $request->kritik_saran,
@@ -79,6 +79,29 @@ class SistemUmpanBalikController extends Controller
             'penilaian_nps' => $request->penilaian_nps
         ]);
         return redirect('/ulasan');
+    }
+
+    public function display_ulasan(Request $request)
+    {
+        $destinasiId = $request->query('id_destinasi');
+        // $destinasi = Saran::where('id_objek_wisata', $destinasiId)->get();
+        $destinasi = Saran::where('id_objek_wisata', 2)
+                ->with('user')
+                ->paginate(10);
+                
+        $latest_review = Saran::where('id_objek_wisata', 2)
+        ->orderBy('created_at', 'desc')
+        ->with('user')
+        ->limit(5)
+        ->get();
+
+        if ($request->ajax()) {
+            return view('partials.ulasan_content', compact('destinasi'))->render();
+        }
+
+        return view('tempUlasan', [
+                                'destinasi' => $destinasi,
+                                'latest_review' => $latest_review]);
     }
     
 }

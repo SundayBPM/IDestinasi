@@ -771,6 +771,13 @@ footer {
 	margin-bottom: 24px;
 }
 
+.promo-detail-container .promo-detail ul.custom-bullet-list {
+  list-style-type: disc !important;
+  padding-left: 20px !important;
+}
+
+
+
 
 /* ============================================= Bagian Sistem Umpan Balik ============================================= */
 .ulasan-header {
