@@ -19,7 +19,7 @@
         <a href="#" class="navbar-secondary-button">Sign Up</a>
         <a href="#" class="navbar-secondary-button">Log In</a>
       </nav>
-
+      header
 <div class="history-header">
     <img src="img/latar-navbar.png" alt="Deskripsi gambar">
     <h1>Histori Objek Wisatamu</h1>
