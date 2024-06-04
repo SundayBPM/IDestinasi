@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\EksploreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
@@ -14,9 +15,6 @@ use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
-Route::get('/clone_login', function () {
-    return view('auth.clone_login');
-});
 
 Route::middleware(['auth'])->group(function() {
     
@@ -68,6 +66,8 @@ Route::get('/landingPage', function () {
 
     // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
     Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
+    // Rute eksplore wisata
+    Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
 
 
     // ========================== Informasi Statistik========================================

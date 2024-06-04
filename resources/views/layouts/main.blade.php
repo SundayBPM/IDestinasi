@@ -6,6 +6,8 @@
     <title>IDestinasi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;500;700&display=swap"
       rel="stylesheet"
@@ -29,7 +31,7 @@
       <!-- Navbar List -->
       <nav class="navbar">
         <a href="destinations.html">Destinasi</a>
-        <a href="#eksplor">Eksplor</a>
+        <a href="/eksplore-objek-wisata">Eksplor</a>
         <a href="#paket-tur">Paket Tur</a>
         <a href="#artikel">Artikel</a>
         <a href="/ulasan">Ulasan</a>
