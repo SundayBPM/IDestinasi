@@ -316,7 +316,24 @@ l0,0c-0.2,0.2-0.5,0.2-0.7,0L9.1,11.9z M16.1,11.2l7.9,8.3v-15L16.1,11.2z"></path>
           </div>
         </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
       </div>
-    </section><style>.u-dialog-section-8 .u-dialog-1 {
+    </section>
+    <section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-9" id="sec-07db">
+      <div class="u-container-style u-dialog u-white u-dialog-1">
+        <div class="u-container-layout u-container-layout-1">
+          <p class="u-align-center u-custom-font u-text u-text-default u-text-1">Share this place.</p>
+          <a href="https://www.facebook.com/" class="u-border-2 u-border-palette-5-light-2 u-btn u-button-style u-text-palette-5-dark-1 u-white u-btn-1" target="_blank"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-1"><img src="images/1946450-c50a8eb9.png" alt=""></span>&nbsp;Facebook 
+          </a>
+          <a href="https://x.com/compose/post" class="u-border-2 u-border-palette-5-light-2 u-btn u-button-style u-text-palette-5-dark-1 u-white u-btn-2" target="_blank"><span class="u-file-icon u-icon u-icon-2"><img src="images/5968958.png" alt=""></span>&nbsp;Twitter
+          </a>
+          <a href="https://www.linkedin.com/feed/" class="u-border-2 u-border-palette-5-light-2 u-btn u-button-style u-text-palette-5-dark-1 u-white u-btn-3" target="_blank"><span class="u-file-icon u-icon u-text-palette-1-base u-icon-3"><img src="images/739219-3ba59f23.png" alt=""></span>&nbsp;LinkendIn
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="u-border-2 u-border-palette-5-light-2 u-btn u-button-style u-text-palette-5-dark-1 u-white u-btn-4" target="_blank"><span class="u-file-icon u-icon u-icon-4"><img src="images/16509529.png" alt=""></span>Gmail 
+          </a>
+        </div><button class="u-border-2 u-border-palette-5-dark-1 u-dialog-close-button u-icon u-radius u-text-palette-5-dark-1 u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 348.333 348.334" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9711"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 348.333 348.334" x="0px" y="0px" id="svg-9711" style="enable-background:new 0 0 348.333 348.334;"><g><path d="M336.559,68.611L231.016,174.165l105.543,105.549c15.699,15.705,15.699,41.145,0,56.85   c-7.844,7.844-18.128,11.769-28.407,11.769c-10.296,0-20.581-3.919-28.419-11.769L174.167,231.003L68.609,336.563   c-7.843,7.844-18.128,11.769-28.416,11.769c-10.285,0-20.563-3.919-28.413-11.769c-15.699-15.698-15.699-41.139,0-56.85   l105.54-105.549L11.774,68.611c-15.699-15.699-15.699-41.145,0-56.844c15.696-15.687,41.127-15.687,56.829,0l105.563,105.554   L279.721,11.767c15.705-15.687,41.139-15.687,56.832,0C352.258,27.466,352.258,52.912,336.559,68.611z"></path>
+</g></svg></button>
+      </div>
+    </section>
+    <style>.u-dialog-section-8 .u-dialog-1 {
   width: 920px;
   min-height: 776px;
   height: auto;

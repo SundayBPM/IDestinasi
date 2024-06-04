@@ -13,6 +13,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
+use App\Http\Controllers\InformasiObjekWisataController;
 
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
 
@@ -68,6 +69,10 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
     // Route::get('/informasi-statistik', 'ChartController@getDataForChart');
+
+
+    // ========================== Informasi Objek Wisata ========================================
+    Route::resource('informasi_objek_wisata', InformasiObjekWisataController::class);
 
 
 });
