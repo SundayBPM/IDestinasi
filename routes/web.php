@@ -8,6 +8,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\EksploreController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
@@ -27,15 +28,6 @@ Route::get('/promo/{post}', [LandingPageController::class, 'show_promo'])->name(
 
 Route::middleware(['auth'])->group(function() {
     
-
-    // Route::get('/promo', function () {
-    //     return view('promo');
-    // });
-    
-    // Route::get('/promo', function () {
-    //     return view('promo');
-    // })->name('promo');
-
     Route::get('/informasi-wisata', function () {
         return view('informasi-wisata');
     });
@@ -71,11 +63,13 @@ Route::middleware(['auth'])->group(function() {
     // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
     Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
 
+    // Rute eksplore wisata
+    Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
 
     // ========================== Informasi Statistik========================================
 
     Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
-    // Route::get('/informasi-statistik', 'ChartController@getDataForChart');
+    
 
 
 });
