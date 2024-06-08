@@ -46,9 +46,9 @@ class HistoryController extends Controller
     public function buyAgain($id)
     {
         // Logic untuk membeli objek wisata lagi, bisa berupa mengarahkan ke halaman pemesanan
-        $historyItem = HistoryObjekWisata::findOrFail($id);
+        $historyItem = Riwayat::findOrFail($id);
 
         // Redirect ke halaman pemesanan 
-        return redirect()->route('booking.create', ['tourism_object_id' => $historyItem->tourism_object_id]);
+        return redirect()->route('booking.create', ['id_objek_wisata' => $historyItem->id_objek_wisata]);
     }
 }

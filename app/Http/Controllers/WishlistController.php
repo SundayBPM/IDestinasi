@@ -15,8 +15,8 @@ class WishlistController extends Controller
     public function index()
     {
         // Mengambil semua objek wisata yang ada di wishlist pengguna
-        // Misalnya, objek wisata ini diambil dari model `TourismObject`
-        $wishlistItems = TourismObject::all();
+        // Misalnya, objek wisata ini diambil dari model `Wisata`
+        $wishlistItems = Wisata::all();
 
         // Menampilkan halaman wishlist dengan data objek wisata
         return view('wishlist.index', compact('wishlistItems'));
@@ -50,7 +50,7 @@ class WishlistController extends Controller
         ]);
 
         // Menyimpan objek wisata baru ke database
-        TourismObject::create($request->all());
+        Wisata::create($request->all());
 
         // Mengarahkan kembali ke halaman wishlist dengan pesan sukses
         return redirect()->route('wishlist.index')->with('success', 'Objek Wisata berhasil ditambahkan ke wishlist');

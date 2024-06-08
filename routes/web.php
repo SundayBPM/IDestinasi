@@ -13,7 +13,8 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\WishlistController;
 
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
 
@@ -73,13 +74,19 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
+// ========================== -------------  ========================================
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 // ========================== Verifikasi ========================================
 
-Route::get('/verifikasi', [VerificationController::class, 'index'])->name('verifikasi.index');
-Route::get('/verifikasi/{id}', [VerificationController::class, 'show'])->name('verifikasi.show');
-Route::post('/verifikasi/{id}', [VerificationController::class, 'update'])->name('verifikasi.update');
-Route::post('/verifikasi/{id}/approve', [VerificationController::class, 'approve'])->name('verifikasi.approve');
-Route::post('/verifikasi/{id}/reject', [VerificationController::class, 'reject'])->name('verifikasi.reject');
+Route::get('/verifikasi', [VerificationController::class, 'index'])->name('verification.index');
+Route::get('/verifikasi/{id}', [VerificationController::class, 'show'])->name('verification.show');
+Route::post('/verifikasi/{id}', [VerificationController::class, 'update'])->name('verifications.update');
+Route::post('/verifikasi/{id}/approve', [VerificationController::class, 'approve'])->name('verifications.approve');
+Route::post('/verifikasi/{id}/reject', [VerificationController::class, 'reject'])->name('verifications.reject');
 
 
 // ========================== Wishlist ========================================
@@ -94,12 +101,3 @@ Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlist.s
 Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
 Route::delete('/history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
 Route::post('/history/buy-again/{id}', [HistoryController::class, 'buyAgain'])->name('history.buyAgain');
-
-// ========================== Register ========================================
-
-Route::get('/register', [authController::class, 'register1'])->name('register');
-Route::post('/register-submit', [authController::class, 'procesStep1']);
-Route::get('/profile', [authController::class, 'showProfileForm'])->name('profile');
-Route::post('/profile', [authController::class, 'storeProfile']);
-Route::get('/profile/success', [authController::class, 'showSuccessPage'])->name('profile.success');
-
