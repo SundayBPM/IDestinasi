@@ -850,6 +850,10 @@ footer {
   padding: 16px;
 }
 
+#btn-ulasan{
+  background-color: white;
+}
+
 .card-content-ulasan h3 {
   /* white-space: nowrap; */
   overflow: hidden;
@@ -1077,6 +1081,12 @@ footer {
   height: 150px;
   border: 1px solid lightgray;
   border-radius: 10px;
+}
+.rate h2{
+  font-size: 25px;
+}
+.rate h4{
+  font-size: 20px;
 }
 
 
