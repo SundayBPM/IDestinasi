@@ -18,7 +18,7 @@
                 <img src="img/Kete Kesu.jpg" alt="">
             </div>
             <div class="card-content-ulasan">
-                <h5>{{ $destinasi }}</h5>
+                <!-- <h5>{{ $destinasi }}</h5> -->
                 <h3>{{ $destinasi->nama_wisata }}</h3>
                 @php
                     $overalRatingArray = $overalRating->toArray();
@@ -29,7 +29,7 @@
                         @break
                     @endif
                 @endforeach
-                <a href="/ulasan/form?id_destinasi={{ $destinasi->id_tiket }}" class="btn">
+                <a href="/ulasan/form?id_destinasi={{ $destinasi->id_tiket }}" class="btn" id="btn-ulasan">
                     <i class="fa-solid fa-pen"></i> Buat Ulasan
                 </a>
             </div>

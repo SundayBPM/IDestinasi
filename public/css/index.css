@@ -771,6 +771,13 @@ footer {
 	margin-bottom: 24px;
 }
 
+.promo-detail-container .promo-detail ul.custom-bullet-list {
+  list-style-type: disc !important;
+  padding-left: 20px !important;
+}
+
+
+
 
 /* ============================================= Bagian Sistem Umpan Balik ============================================= */
 .ulasan-header {
@@ -841,6 +848,10 @@ footer {
 
 .card-content-ulasan {
   padding: 16px;
+}
+
+#btn-ulasan{
+  background-color: white;
 }
 
 .card-content-ulasan h3 {
@@ -1071,6 +1082,13 @@ footer {
   border: 1px solid lightgray;
   border-radius: 10px;
 }
+.rate h2{
+  font-size: 25px;
+}
+.rate h4{
+  font-size: 20px;
+}
+
 
 /* ============================================= Bagian Ekplore Objek Wisata ============================================= */
 
