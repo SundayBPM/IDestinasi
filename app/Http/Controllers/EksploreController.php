@@ -9,31 +9,25 @@ use Illuminate\Support\Facades\DB;
 
 class EksploreController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $listdestinasi = Objek_Wisata::all();
+        // Ambil query pencarian dari input pengguna
+        $search = $request->input('search');
+
+        // Query untuk mendapatkan list destinasi, jika ada query pencarian, tambahkan ke kondisi
+        $listdestinasi = Objek_Wisata::when($search, function ($query, $search) {
+            return $query->where('nama_wisata', 'like', '%' . $search . '%')
+                         ->orWhere('lokasi', 'like', '%' . $search . '%')
+                         ->orWhere('deskripsi', 'like', '%' . $search . '%');
+        })->get();
+
+        // Mendapatkan rata-rata rating dari tabel sarans
         $overalRatings = DB::table('sarans')
-                    ->select('id_objek_wisata', DB::raw('AVG(rating) as average_rating'))
-                    ->groupBy('id_objek_wisata')
-                    ->get();
-        return view('eksplore-objek-wisata\index', compact('listdestinasi', 'overalRatings'));
+            ->select('id_objek_wisata', DB::raw('AVG(rating) as average_rating'))
+            ->groupBy('id_objek_wisata')
+            ->get();
 
-
-        $posts = Post::latest();
-
-    if (request('search')) {
-        $search = request('search');
-        $posts->where(function ($query) use ($search) {
-            $query->where('title', 'like', '%' . $search . '%')
-                  ->orWhere('body', 'like', '%' . $search . '%');
-        });
+        // Kembalikan view dengan data destinasi dan overall ratings
+        return view('eksplore-objek-wisata.index', compact('listdestinasi', 'overalRatings'));
     }
-
-    return view('eksplore-objek-wisata.index', [
-        'listdestinasi' => $listdestinasi,
-        'overalRatings' => $overalRatings,
-        'posts' => $posts->get()
-    ]);
-    }
-    
 }
