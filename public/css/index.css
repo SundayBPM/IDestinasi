@@ -865,6 +865,7 @@ footer {
   color: black;
   font-size: 15px;
   line-height: 1.3;
+  padding: 0px;
 }
 
 .card-content-ulasan h5 i {
@@ -882,8 +883,14 @@ footer {
 
 .card-content-ulasan i {
   color: #00C0CA;
-  padding: 0px 10px;
+  padding: 0px 5px;
   float: left;
+}
+
+#btn-ulasan {
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* ============================================= Bagian Informasi Statistik ============================================= */
@@ -944,6 +951,28 @@ footer {
   color: #ff3b30;
 }
 
+/* .item_box::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+} */
+
+/* .item_box::before {
+  content: '';
+  display: none;
+}
+
+.bi::before {
+  content: '';
+  display: none;
+} */
+/* .item_box .bi-people::before {
+  content: '';
+  display: none; 
+} */
+
+
 .total_visitor .item_box {
   width: 30px;
   height: 30px;
@@ -956,6 +985,10 @@ footer {
   display: flex; /* Membuat kontainer flex */
   align-items: center; /* Menengahkan vertikal */
   justify-content: center; /* Menengahkan horizontal */
+}
+
+.item_box .bi {
+  color: #000;
 }
 
 .nps_chart h1 {
@@ -1078,6 +1111,20 @@ footer {
   border: 1px solid lightgray;
   border-radius: 10px;
 }
+
+.rate h2{
+  font-size: 25px; /* Sesuaikan ukuran font sesuai kebutuhan */
+  
+}
+.rate h4{
+  font-size: 20px; /* Sesuaikan ukuran font sesuai kebutuhan */
+  
+}
+.rate h6{
+  font-size: 15px; /* Sesuaikan ukuran font sesuai kebutuhan */
+  
+}
+
 
 /* ============================================= Bagian Ekplore Objek Wisata ============================================= */
 
