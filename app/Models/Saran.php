@@ -11,6 +11,7 @@ class Saran extends Model
     protected $fillable = ['rating',
                             'id_user',
                             'id_objek_wisata',
+                            'id_pembelian_tiket',
                             'ulasan',
                             'kritik_saran',
                             'penilaian_atraksi',
@@ -19,4 +20,9 @@ class Saran extends Model
                             'penilaian_ansilari1',
                             'penilaian_ansilari2',
                             'penilaian_nps'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

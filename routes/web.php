@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\EksploreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
@@ -14,17 +13,28 @@ use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 
+// menuju ke hal ulasan/feedback
+// Route::get('/test', function () {
+//     return view('tempUlasan');
+// });
+
+Route::get('/informasi-ulasan/{id}', [SistemUmpanBalikController::class, 'display_ulasan']);
+Route::get('/fetch-destinasi', [SistemUmpanBalikController::class, 'display_ulasan'])->name('fetch.destinasi');
+
+
 Route::get('/',  [LandingPageController::class, 'index'])->name('');
+Route::get('/promo/{post}', [LandingPageController::class, 'show_promo'])->name('show_promo');
 
 Route::middleware(['auth'])->group(function() {
     
-    Route::get('/promo', function () {
-        return view('promo');
-    });
+
+    // Route::get('/promo', function () {
+    //     return view('promo');
+    // });
     
-    Route::get('/promo', function () {
-        return view('promo');
-    })->name('promo');
+    // Route::get('/promo', function () {
+    //     return view('promo');
+    // })->name('promo');
 
     Route::get('/informasi-wisata', function () {
         return view('informasi-wisata');
@@ -60,8 +70,6 @@ Route::middleware(['auth'])->group(function() {
 
     // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
     Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
-    // Rute eksplore wisata
-    Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
 
 
     // ========================== Informasi Statistik========================================

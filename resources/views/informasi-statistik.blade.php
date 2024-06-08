@@ -136,7 +136,7 @@
                 <div class="row_rating">
                     <div class="rate">
                         <h2>{{ $overalRating }}</h2>
-                        <h4>Overal Rating From Customer</h4>
+                        <h4>Overal Rating</h4>
                         <h6>3900 Responden</h6>
                     </div>
     
