@@ -52,7 +52,6 @@
 				<!-- <a href="/promo/?id={{ $promo->id }}"> -->
 				<a href="{{ route('show_promo', $promo->id) }}">
 					<img src="{{ asset($promo->foto_promo) }}" alt="image_path"/>
-
 				</a>
 			</div>
 		@endforeach
@@ -125,16 +124,15 @@
 				<div class="card img">
 					<!-- untuk sementara menggunakan gambar statis -->
 					<img src="{{ asset('img/img5.jpg') }}" alt="gambar sementara">
-					
 				</div>
 				<div class="card-info">
-						<div class="card-title">{{ $destinasi->nama_wisata }}</div>
-						<div class="rating">
-							<i class="fa-solid fa-star"></i>
-							<div class="rating-value">ini rating</div>
-							<div class="reviews">jumlah Reviews</div>
-						</div>
-						<div class="price">Rp harga/pax</div>
+					<div class="card-title">{{ $destinasi->nama_wisata }}</div>
+					<div class="rating">
+						<i class="fa-solid fa-star"></i>
+						<div class="rating-value">ini rating</div>
+						<div class="reviews">jumlah Reviews</div>
+					</div>
+					<div class="price">Rp harga/pax</div>
 				</div>
 			</div>
 		</a>
