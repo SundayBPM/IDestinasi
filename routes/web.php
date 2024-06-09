@@ -14,25 +14,47 @@ use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 
+Auth::routes();
 // menuju ke hal ulasan/feedback
 // Route::get('/test', function () {
-//     return view('tempUlasan');
-// });
-
+    //     return view('tempUlasan');
+    // });
+    
 Route::get('/informasi-ulasan/{id}', [SistemUmpanBalikController::class, 'display_ulasan']);
 Route::get('/fetch-destinasi', [SistemUmpanBalikController::class, 'display_ulasan'])->name('fetch.destinasi');
 
 
-Route::get('/',  [LandingPageController::class, 'index'])->name('');
+Route::get('/',  [LandingPageController::class, 'index'])->name('landing_page');
 Route::get('/promo/{post}', [LandingPageController::class, 'show_promo'])->name('show_promo');
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
+  
+    // Route::get('/', [HomeController::class, 'index'])->name('home');
     
-    Route::get('/informasi-wisata', function () {
-        return view('informasi-wisata');
-    });
+    // ========================== Ulasan========================================
+    // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
+    Route::get('/ulasan',[SistemUmpanBalikController::class,'index']);
 
+    // Mengarahkan user ke hal form untuk mengisih feedback
+    Route::get('/ulasan/form',[SistemUmpanBalikController::class,'create']);
 
+    // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
+    Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
+
+    // Rute eksplore wisata
+    Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
+
+    
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
+    
+    // Route::get('/pengelola/home', [HomeController::class, 'pengelolaHome'])->name('pengelola.home');
 
     // ========================== Kelola Objek Wisata========================================
 
@@ -53,29 +75,25 @@ Route::middleware(['auth'])->group(function() {
     // Rute untuk menghapus data objek wisata
     Route::delete('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 'destroy'])->name('kelola-objek-wisata.destroy');
 
-    // ========================== Ulasan========================================
-    // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
-    Route::get('/ulasan',[SistemUmpanBalikController::class,'index']);
-
-    // Mengarahkan user ke hal form untuk mengisih feedback
-    Route::get('/ulasan/form',[SistemUmpanBalikController::class,'create']);
-
-    // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
-    Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
-
-    // Rute eksplore wisata
-    Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
-
     // ========================== Informasi Statistik========================================
 
     Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
     
-
-
 });
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+});
+
+
 
 // ========================== -------------  ========================================
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
