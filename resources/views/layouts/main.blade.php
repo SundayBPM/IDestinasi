@@ -105,6 +105,21 @@
                     Edit Profile
                   </a>
                 </li>
+
+                <li class="profile-dropdown-list-item">
+                  <a href="/history">
+                    <i class="fa-solid fa-list-check"></i>
+                    History
+                  </a>
+                </li>
+
+                <li class="profile-dropdown-list-item">
+                  <a href="/wishlist">
+                    <i class="fa-solid fa-list-check"></i>
+                    Wishlist
+                  </a>
+                </li>
+
                 <hr />
                 <li class="profile-dropdown-list-item">
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
