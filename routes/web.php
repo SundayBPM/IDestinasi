@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function() {
 
 
     // ========================== Informasi Objek Wisata ========================================
-    Route::resource('informasi_objek_wisata', InformasiObjekWisataController::class);
+    Route::get('/informasi_objek_wisata', [InformasiObjekWisataController::class, 'index'])->name('informasi_objek_wisata.index');
 
 
 });
