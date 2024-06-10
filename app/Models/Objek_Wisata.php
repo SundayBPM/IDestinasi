@@ -7,15 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Objek_Wisata extends Model
 {
-    public $table = 'objek_wisatas';
     use HasFactory;
-    protected $fillable = ['nama_wisata',
+    protected $table = 'objek_wisatas';
+    protected $fillable = ['nama_destinasi',
+                            'jenis',
                             'deskripsi',
                             'lokasi',
-                            'longitude',
-                            'latitude',
-                            'jam_operasional',
-                            'jenis',
+                            'harga_tiket',
                             'foto',
-                            ];
+                        ];
+
+    public function timeline()
+    {
+        return $this->hasMany(ObjekWisataTimeline::class, 'objek_wisata_id', 'id');
+    }
+
+    public function fasilitas()
+    {
+        return $this->hasMany(ObjekWisataFasilitas::class, 'objek_wisata_id', 'id');
+    }
 }
