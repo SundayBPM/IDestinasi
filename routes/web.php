@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\EditProfilController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
@@ -43,6 +44,10 @@ Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
 
     // Rute eksplore wisata
     Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
+      // ========================== Edit Profil========================================
+    Route::get('/edit-profil', [EditProfilController::class, 'index'])->name('edit-profil.index');
+    Route::get('/edit-profil/{id}/edit', [EditProfilController::class, 'edit'])->name('edit-profil.edit');
+    Route::put('/edit-profil/{id}', [EditProfilController::class, 'update'])->name('edit-profil.update');
 
     
 });
@@ -78,6 +83,10 @@ Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
     // ========================== Informasi Statistik========================================
 
     Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
+      // ========================== Edit Profil========================================
+    Route::get('/edit-profil', [EditProfilController::class, 'index'])->name('edit-profil.index');
+    Route::get('/edit-profil/{id}/edit', [EditProfilController::class, 'edit'])->name('edit-profil.edit');
+    Route::put('/edit-profil/{id}', [EditProfilController::class, 'update'])->name('edit-profil.update');
     
 });
   
