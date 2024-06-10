@@ -16,7 +16,6 @@ class administratorController extends Controller
                             ->where('status', 'Menunggu Verifikasi')
                             ->orderByDesc('verifikasi.created')
                             ->get();
-        //$update_verifikasi = 
     }
 
 }

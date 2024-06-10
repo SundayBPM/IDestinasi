@@ -62,14 +62,14 @@
                 <div class="title">Rekomendasi Untukmu</div>
                 <div class="desc">Lihat rekomendasi objek wisata sesuai preferensimu</div>
             </div>
-            <a href="#" class="secondary-button">Lihat Semua Wisata</a>
+            <a href="{{ route('objek-wisata.index') }}" class="secondary-button">Lihat Semua Wisata</a>
         </div>
 
         <!--card rekomendasi objek wisata-->
-        <!--card 1-->
+
         <div class="card-container">
             @foreach ($data_recomended as $destinationId => $destination)
-                <a href="{{ route('objek-wisata.show', $destination['id']) }}">
+            <a href="{{ route('objek-wisata.show', $destination['id']) }}" dusk="objek-wisata-{{ $destination['id'] }}">
                     <div class="card-layout">
                         <div class="card img">
                             <img src="{{ asset('img/' . $destination['image']) }}" alt="{{ $destination['title'] }}">
@@ -96,26 +96,32 @@
                 <div class="title">Temukan Paket Tour Wisata Impianmu</div>
                 <div class="desc">Temukan berbagai pilihan paket tour wisata lengkap dengan harga murah disini</div>
             </div>
-            <a href="#" class="secondary-button">Lihat Semua Paket</a>
+            <a href="{{ route('paket-tour.index') }}" class="secondary-button">Lihat Semua Paket</a>
         </div>
 
         <!--card rekomendasi paket-->
         <!--card 1-->
         <div class="card-container">
-            @foreach ($data_recomended as $destinationId => $destination)
-                <a href="{{ route('objek-wisata.show', $destination['id']) }}">
+            @foreach ($paket_tours as $tourId => $tour)
+                <a href="{{ route('paket-tour.show', $tour->id) }}">
                     <div class="card-layout">
                         <div class="card img">
-                            <img src="{{ asset('img/' . $destination['image']) }}" alt="{{ $destination['title'] }}">
+                            <img src="{{ asset('img/' . $tour->foto) }}" alt="{{ $tour->nama_destinasi }}">
                         </div>
                         <div class="card-info">
-                            <div class="card-title">{{ $destination['title'] }}</div>
-                            <div class="rating">
-                                <div class="reviews">{{ $destination['total_orang'] }} Orang</div>
+                            <div class="card-title">{{ $tour->nama_destinasi }}</div>
+                            {{-- <div class="rating">
+                                <div class="reviews">{{ $tour->total_orang }} Orang</div>
                                 <div class="reviews">|</div>
-                                <div class="reviews">{{ $destination['total_hari'] }} Hari</div>
+                                <div class="reviews">{{ $tour->total_hari }} Hari</div>
+                            </div> --}}
+                            <div class="d-flex gap-1 align-items-center">
+                                <span class="text-dark fw-bold">Rp {{ $tour->harga_tiket }}</span>
+                                <small class="text-secondary">•</small>
+                                <div class="reviews">{{ $tour->total_orang }} Orang</div>
+                                <small class="text-secondary">•</small>
+                                <div class="reviews">{{ $tour->total_hari }} Hari</div>
                             </div>
-                            <div class="price">Rp {{ $destination['price'] }}/pax</div>
                         </div>
                     </div>
                 </a>
@@ -141,24 +147,24 @@
           opacity: 1;
           background: rgba(255, 255, 255, 0.8);
         }
-  
+
         .swiper-pagination-bullet-active {
           color: #fff;
           background: #00C0CA;
         }
         `,
-        ],
-        pagination: {
-          clickable: true,
+            ],
+            pagination: {
+                clickable: true,
                 renderBullet: function(index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-          },
-        },
-      };
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+        };
 
-      Object.assign(swiperEl, params);
+        Object.assign(swiperEl, params);
 
-      swiperEl.initialize();
-</script>
+        swiperEl.initialize();
+    </script>
 
 @endsection

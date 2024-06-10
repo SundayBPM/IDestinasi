@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wisatawans', function (Blueprint $table) {
+        Schema::create('paket_tour_detail_timelines', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tiket_id');
-            $table->string('nama');
-            $table->string('email');
-            $table->string('no_hp');
+            $table->unsignedBigInteger('timeline_id');
+            $table->string('kegiatan');
             $table->timestamps();
 
-            $table->foreign('tiket_id')->references('id')->on('pembelian_tikets')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('timeline_id')->references('id')->on('paket_tour_timelines')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wisatawans');
+        Schema::dropIfExists('paket_tour_detail_timelines');
     }
 };

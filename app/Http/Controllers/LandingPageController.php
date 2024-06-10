@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Objek_Wisata;
-use App\Models\Paket_Tour;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Objek_Wisata;
 use App\Models\Events;
+use App\Models\PaketTour;
 use App\Models\Saran;
 
 class LandingPageController extends Controller
 {
-
     public function index()
     {
         $saran_destinasi = Objek_Wisata::all();
@@ -20,17 +17,20 @@ class LandingPageController extends Controller
 
         // recomended system
         $data_recomended = $this->recommendDestinations();
-        return view('landingpage', compact('saran_destinasi', 'events', 'data_recomended'));
+
+        $paket_tours = PaketTour::withCount('timeline as total_hari')->get();
+
+        return view('landingpage', compact('saran_destinasi', 'events', 'data_recomended', 'paket_tours'));
     }
 
-    public function recommendDestinations() 
+    public function recommendDestinations()
 {
     $destinations = Objek_Wisata::withCount('timeline as total_hari')->get();
     $scores = [];
 
     foreach ($destinations as $destination) {
         $feedbacks = Saran::where('id_objek_wisata', $destination->id)->get();
-        
+
         $totalRating = 0;
         $count = 0;
         foreach ($feedbacks as $feedback) {
@@ -68,9 +68,9 @@ class LandingPageController extends Controller
 
 
 
-    public function promoDetails($event_id) 
+    public function promoDetails($event_id)
     {
         $event = Events::find($event_id);
         return view('promo', compact('event'));
-    }     
+    }
 }
