@@ -20,11 +20,11 @@
   <!-- Navbar -->
   <header class="header">
       <!-- Logo -->
-      <a href="{{ route('landingPage') }}" class="logo"><img src="{{ asset('/img/logo.png') }}" /></a>
+      <a href="{{ route('landing_page') }}" class="logo"><img src="{{ asset('/img/logo.png') }}" /></a>
 
       <!-- Navbar List -->
       <nav class="navbar">
-        <a href="{{ route('landingPage') }}">Destinasi</a>
+        <a href="{{ route('landing_page') }}">Destinasi</a>
         <a href="{{ route('objek-wisata.index') }}">Eksplor</a>
         <a href="{{ route('paket-tour.index') }}">Paket Tour</a>
         <!--<a href="#paket-tur">Paket Tur</a> -->

@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('sarans', function (Blueprint $table) {
             $table->id();
-            $table->integer("id_user");
+            $table->unsignedBigInteger("id_user");
+            $table->foreign('id_user')->references('id')->on('users');
             $table->integer("id_objek_wisata");
             $table->tinyInteger("rating");
             $table->tinyInteger("penilaian_nps");

@@ -1,22 +1,123 @@
 /* ================================================= Login ================================================== */
-body{
-    background-color: aqua;
-}
-.login_page {
-    display: flex;
-    flex-direction: row;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.left_login_side, .right-right_login_side {
-    width: 50%; /* Setiap container akan mengambil 50% lebar layar */
-    height: auto;
-    /* padding: 20px; Tambahkan padding jika diperlukan */
+body {
+    background-color: white;
+}
+
+.login_page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left_login_side, .right_login_side {
+    flex: 1; /* Each container will take 50% of the screen width */
+    height: 100%;
 }
 
 .left_login_side {
-    background-color: lightblue; /* Warna latar belakang untuk container kiri */
+    background-color: lightblue; /* Background color for the left container */
+    overflow: hidden; /* Avoid overflow */
+    
 }
 
+.left_login_side .gambar1 {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    transform: translateX(-30%);
+}
+.left_login_side .gambar2 {
+    position: absolute;
+    height: 40px;
+    width: auto;
+    left: 25px;
+    top: 25px;
+    display: flex; /* Membuat kontainer flex */
+    align-items: center; /* Menengahkan vertikal */
+    justify-content: center; /* Menengahkan horizontal */
+}
+
+
 .right_login_side {
-    background-color: lightgreen; /* Warna latar belakang untuk container kanan */
+    background-color: rgb(255, 255, 255); /* Background color for the right container */
+    display: flex;
+    flex-direction: column; /* Ensure content is aligned in a column */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    /* padding: 20px; */
+}
+
+.right_login_side h1 {
+    margin-bottom: 20px;
+}
+
+.right_login_side p {
+    margin-bottom: 20px;
+    color: grey;
+}
+
+.loginArea {
+    width: 100%; /* Make form take full width */
+    max-width: 400px; /* Limit the maximum width */
+    display: flex;
+    flex-direction: column;
+    /* gap: 30px; Space between form elements */
+}
+
+.loginArea .input_data_diri{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
+}
+
+.loginArea .form-check-input,
+.loginArea .form-check-label {
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.loginArea button {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00C0CA;
+    color: white;
+    cursor: pointer;
+}
+
+.loginArea a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+
+/* ============================================================================== */
+
+.gender {
+    padding-bottom: 20px;
+}
+
+.input_gender {
+    padding: 2000px;
+    border: 20px solid red;
+}
+
+.gender p{
+    padding: 0px;
+}
+
+.role {
+    padding-bottom: 20px;
 }

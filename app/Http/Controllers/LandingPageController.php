@@ -6,21 +6,39 @@ use Illuminate\Http\Request;
 use App\Models\Objek_Wisata;
 use App\Models\Events;
 use App\Models\PaketTour;
+use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Promo;
 use App\Models\Saran;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LandingPageController extends Controller
 {
     public function index()
     {
-        $saran_destinasi = Objek_Wisata::all();
+        $saran_destinasi = DB::table('objek_wisatas')
+                            ->inRandomOrder()
+                            ->limit(10)
+                            ->get();
         $events = Events::all();
+        $promos = Promo::all();
 
         // recomended system
         $data_recomended = $this->recommendDestinations();
 
         $paket_tours = PaketTour::withCount('timeline as total_hari')->get();
 
-        return view('landingpage', compact('saran_destinasi', 'events', 'data_recomended', 'paket_tours'));
+        return view('landingpage', compact('saran_destinasi', 'events', 'data_recomended', 'paket_tours','promos'));
+    }
+
+    public function show_promo($id)
+    {
+        // $promoId = $request->query('id');
+        $promo = Promo::find($id);
+        $promo->start_date = Carbon::parse($promo->start_date)->translatedFormat('j F Y');
+        $promo->end_date = Carbon::parse($promo->end_date)->translatedFormat('j F Y');
+        return view('promo',['promo'=> $promo]);
     }
 
     public function recommendDestinations()
@@ -73,4 +91,8 @@ class LandingPageController extends Controller
         $event = Events::find($event_id);
         return view('promo', compact('event'));
     }
+
+    // ========================================================== SUNDAY YANG BIKIN ====================================================================
+
+        
 }

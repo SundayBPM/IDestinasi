@@ -21,8 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Paginator::useBootstrapFive();
-
         Carbon::setLocale('id_ID');
+        Paginator::useBootstrap();
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('fasilitas');
             $table->timestamps();
 
-            $table->foreign('objek_wisata_id')->references('id')->on('artikel')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('objek_wisata_id')->references('id')->on('objek_wisatas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
