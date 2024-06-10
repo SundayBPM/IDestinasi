@@ -46,6 +46,9 @@ Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
 	// Rute eksplore wisata
 	Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
 
+    // Rute informasi objek wisata
+    Route::get('/informasi_objek_wisata', [InformasiObjekWisataController::class, 'index'])->name('informasi_objek_wisata.index');
+
     
 });
   
@@ -80,6 +83,9 @@ Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
 	// ========================== Informasi Statistik========================================
 
 	Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
+
+    // ========================== Informasi Objek Wisata ========================================
+Route::get('/informasi_objek_wisata', [InformasiObjekWisataController::class, 'index'])->name('informasi_objek_wisata.index');
     
 });
   
@@ -94,63 +100,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function() {
-    
-    Route::get('/promo', function () {
-        return view('promo');
-    });
-    
-    Route::get('/promo', function () {
-        return view('promo');
-    })->name('promo');
-
-    Route::get('/informasi-wisata', function () {
-        return view('informasi-wisata');
-    });
-
-
-
-    // ========================== Kelola Objek Wisata========================================
-
-    Route::get('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'index'])->name('kelola-objek-wisata.index');
-
-    // START PROMO
-    Route::get('/promo/{event_id}', [LandingPageController::class, 'promoDetails'])->name('promo.detail');
-
-
-    // Rute untuk menampilkan formulir tambah kegiatan pendaftaran objek wisata dan menyimpan data baru
-    Route::get('/kelola-objek-wisata/create', [KelolaObjekWisataController::class, 'create'])->name('kelola-objek-wisata.create');
-    Route::post('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'store'])->name('kelola-objek-wisata.store');
-
-    // Rute untuk menampilkan formulir edit kegiatan informasi objek wisata dan memperbarui data
-    Route::get('/kelola-objek-wisata/{id}/edit', [KelolaObjekWisataController::class, 'edit'])->name('kelola-objek-wisata.edit');
-    Route::put('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 'update'])->name('kelola-objek-wisata.update');
-
-    // Rute untuk menghapus data objek wisata
-    Route::delete('/kelola-objek-wisata/{id}', [KelolaObjekWisataController::class, 'destroy'])->name('kelola-objek-wisata.destroy');
-
-    // ========================== Ulasan========================================
-    // Mengarahkan user ke hal yang menampilkan list destinasi yang akan diberikan feedback
-    Route::get('/ulasan',[SistemUmpanBalikController::class,'index']);
-
-    // Mengarahkan user ke hal form untuk mengisih feedback
-    Route::get('/ulasan/form',[SistemUmpanBalikController::class,'create']);
-
-    // Setelah form pada hal sebelumnya diisi selanjut sistem akan menyimpan data tersebut melalui fungsi "store" dan membawa user ke hal selanjutnya yaitu /ulasan
-    Route::post('/ulasan',[SistemUmpanBalikController::class,'store']);
-    // Rute eksplore wisata
-    Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
-
-
-    // ========================== Informasi Statistik========================================
-
-    Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
-    // Route::get('/informasi-statistik', 'ChartController@getDataForChart');
-
-
-    // ========================== Informasi Objek Wisata ========================================
-    Route::get('/informasi_objek_wisata', [InformasiObjekWisataController::class, 'index'])->name('informasi_objek_wisata.index');
-
-
 	Route::get('/edit-profil/', [EditProfilController::class, 'index'])->name('edit-profil.index');
 	Route::get('/edit-profil/{id}/edit', [EditProfilController::class, 'edit'])->name('edit-profil.edit');
 	Route::put('/edit-profil/{id}', [EditProfilController::class, 'update'])->name('edit-profil.update');
@@ -160,3 +109,4 @@ Route::middleware(['auth'])->group(function() {
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
