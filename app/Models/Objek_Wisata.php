@@ -18,4 +18,15 @@ class Objek_Wisata extends Model
                             'jenis',
                             'foto',
                             ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'wishlists', 'objek_wisata_id', 'user_id');
+    }
+
+    public function userMengelola()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    
 }

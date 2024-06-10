@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('jam_operasional');
             $table->text('jenis');
             $table->string('foto');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

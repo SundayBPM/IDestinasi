@@ -69,4 +69,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Saran::class, 'id_user');
     }
+
+    public function wishlist()
+    {
+        return $this->belongsToMany(Objek_Wisata::class, 'wishlists', 'user_id', 'objek_wisata_id');
+    }
+    
+    public function objekWisataDikelola()
+    {
+        return $this->hasOneThrough(Objek_Wisata::class, Mengelola::class, 'user_id', 'id', 'id', 'objek_wisata_id');
+    }
 }

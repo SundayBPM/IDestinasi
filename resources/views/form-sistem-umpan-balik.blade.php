@@ -235,20 +235,20 @@
         
         <!-- <button type="submit"> POST CUII</button> -->
         <!-- Button submit for testing -->
-        <div class="btn-submit-ulasan">
+        <!-- <div class="btn-submit-ulasan">
             <button id="first_button" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
-        </div>
+        </div> -->
         <!-- Button trigger modal -->
-        <!-- <div class="btn-submit-ulasan">
+        <div class="btn-submit-ulasan">
             <button id="first_button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
-        </div> -->
+        </div>
 
         <!-- Modal -->
-        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -266,7 +266,7 @@
             </div>
             </div>
         </div>
-        </div> -->
+        </div>
     </form>
     
 

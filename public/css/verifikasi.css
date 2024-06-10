@@ -1,0 +1,21 @@
+body{
+    background-color: lightgrey;
+    margin: 0%;
+    padding: 0%;
+}
+.footer {
+    background-color: white;
+}
+
+.container-fluid{
+    display: flex;
+}
+
+.informasi_statistik_pendaftaran{
+    display: flex;
+}
+
+.box_statistik{
+    background-color: white;
+    margin: 0px 20px;
+}
