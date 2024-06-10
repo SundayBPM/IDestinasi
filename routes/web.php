@@ -94,7 +94,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function() {
-<<<<<<< HEAD
     
     Route::get('/promo', function () {
         return view('promo');
@@ -152,11 +151,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/informasi_objek_wisata', [InformasiObjekWisataController::class, 'index'])->name('informasi_objek_wisata.index');
 
 
-=======
 	Route::get('/edit-profil/', [EditProfilController::class, 'index'])->name('edit-profil.index');
 	Route::get('/edit-profil/{id}/edit', [EditProfilController::class, 'edit'])->name('edit-profil.edit');
 	Route::put('/edit-profil/{id}', [EditProfilController::class, 'update'])->name('edit-profil.update');
->>>>>>> 2f04ef6a0f77ae4d7499e4fae831d8af5cb460a9
 });
 
 // ========================== -------------  ========================================
