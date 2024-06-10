@@ -17,5 +17,9 @@ class Objek_Wisata extends Model
                             'jam_operasional',
                             'jenis',
                             'foto',
+                            'id_user',
+                            'id_objek_wisata',
+                            'id_pembelian',
+                            'id_saran'
                             ];
 }

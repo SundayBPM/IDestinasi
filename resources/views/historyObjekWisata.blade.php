@@ -21,7 +21,7 @@
       </nav>
       
 <div class="history-header">
-    <img src="img/latar-navbar.png" alt="Deskripsi gambar">
+    <img src="img/ulasan-img1.png" alt="Deskripsi gambar">
     <h1>Histori Objek Wisatamu</h1>
 </div>
     <!-- hsitory objek wisata-->
@@ -35,7 +35,7 @@
     <a href="#">
     <div class="card-layout">
       <div class="card img">
-        <img src="img/derawan.png" alt="Wisata 1">
+        <img src="img/pulau-derawan.png" alt="Wisata 1">
     </div>
       <div class="card-info">
         <div class="card-title">Kepulauan Derawan, Kaltim</div>
@@ -51,7 +51,7 @@
     <a href="#">
     <div class="card-layout">
       <div class="card img">
-        <img src="img/lombok.png" alt="Wisata 1">
+        <img src="img/Lombok.png" alt="Wisata 1">
     </div>
       <div class="card-info">
         <div class="card-title">Lombok</div>
@@ -133,4 +133,3 @@
 </html>
 
 
-@endsection

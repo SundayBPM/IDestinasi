@@ -2,52 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Objek_Wisata;
 use Illuminate\Http\Request;
 
 class VerificationController extends Controller
 {
+    // Menampilkan daftar objek wisata yang belum diverifikasi
     public function index()
     {
-        $sites = Verification::all();
-        return view('Verification.index', compact('sites'));
+        $objekWisata = Objek_Wisata::whereNull('verifikasi')->get();
+        return view('verification.index', compact('objekWisata'));
     }
 
-    public function show($id)
+    // Memverifikasi objek wisata
+    public function verify($id)
     {
-        $site = Verification::findOrFail($id);
-        return view('Verification.show', compact('site'));
+        $objekWisata = Objek_Wisata::findOrFail($id);
+        $objekWisata->update(['verifikasi' => 'verified']);
+        return redirect()->route('verification.index')->with('success', 'Objek wisata berhasil diverifikasi.');
     }
 
-    public function update(Request $id)
+    // Membatalkan verifikasi objek wisata
+    public function unverify($id)
     {
-        $site = Verification::findOrFail($id);
-        
-        $site->update($request->all());
-
-        return redirect()->route('Verification.index')->with('success', 'Site updated successfully');
-    }
-
-    public function approve($id)
-    {
-        $site = Verification::findOrFail($id);
-        $site->status = 'Diterima'; // Approved
-        $site->save();
-
-        return redirect()->route('Verification.index')->with('success', 'Site approved successfully');
-    }
-
-    public function reject($id)
-    {
-        $site = Verification::findOrFail($id);
-        $site->status = 'Ditolak'; // Rejected
-        $site->save();
-
-        return redirect()->route('verification.index')->with('success', 'Site rejected successfully');
-    }
-
-    public function showSuccessMessage()
-    {
-    
-        return view('Verification.success');
+        $objekWisata = Objek_Wisata::findOrFail($id);
+        $objekWisata->update(['verifikasi' => null]);
+        return redirect()->route('verification.index')->with('success', 'Verifikasi objek wisata dibatalkan.');
     }
 }

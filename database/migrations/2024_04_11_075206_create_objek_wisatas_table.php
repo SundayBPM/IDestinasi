@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('jenis');
             $table->string('foto');
             $table->timestamps();
+            $table->string('verifikasi')->nullable();
         });
     }
 

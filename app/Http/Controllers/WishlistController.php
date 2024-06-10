@@ -3,56 +3,74 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\TourismObject;
+use App\Models\User;
+use App\Models\Objek_Wisata;
 
 class WishlistController extends Controller
+// {
+  
+//     public function index()
+//     {
+//         $selected_user_id = request()->get('selected_user_id');
+
+//         $userId = Auth::id();
+
+//         $list_destinasi = Wishlist::join('objek_wisatas', 'objek_wisatas.id', '=', 'pembelian_tikets.id_destinasi')
+//         ->where('pembelian_tikets.id_users', $userId)
+//         ->get([
+//             'pembelian_tikets.id as id_tiket',
+//             'pembelian_tikets.id_users',
+//             'objek_wisatas.id as id_objek_wisata',
+//             'objek_wisatas.nama_wisata',
+//             'pembelian_tikets.jumlah_tiket',
+//             'pembelian_tikets.created_at'
+//         ]);
+
+//         $overalRating = Objek_Wisata::select('id_objek_wisata', DB::raw('AVG(rating) as average_rating'))
+//             ->groupBy('id_objek_wisata')
+//             ->get();
+        
+//         // dd($list_destinasi);
+//         return view('wishlist',compact(['list_destinasi','selected_destinasi_id','overalRating']));
+
+//     }
+        
+//     public function create(Request $request)
+//     {
+//             $destinasiId = $request->query('id_objek_wisata');
+//             $destinasi = Objek_Wisata::find($OId);
+//             // $datDestinasi = Objek_Wisata::where('id_destinasi')
+//             return view('kelola-objek-wisata.create', ['destinasi' => $destinasi]);
+//     }
+        
+
+// }
+
+
+
 {
-    /**
-     * Display the wishlist of tourism objects.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        // Mengambil semua objek wisata yang ada di wishlist pengguna
-        // Misalnya, objek wisata ini diambil dari model `Wisata`
-        $wishlistItems = Wisata::all();
-
-        // Menampilkan halaman wishlist dengan data objek wisata
-        return view('wishlist.index', compact('wishlistItems'));
+        $wishlists = Wishlist::with('wishlist')->where('user_id', auth()->id())->get();
+        return view('wishlist', compact('wishlists'));
     }
 
-    /**
-     * Show the form for creating a new tourism object in wishlist.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        // Menampilkan form untuk menambahkan objek wisata ke wishlist
-        return view('wishlist.create');
-    }
-
-    /**
-     * Store a newly created tourism object in wishlist.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        // Validasi input dari pengguna
         $request->validate([
-            'name' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'price' => 'required|numeric',
-            'image_url' => 'required|url',
+            'id_objek_wisata' => 'required|exists:Objek_Wisata,id',
         ]);
 
-        // Menyimpan objek wisata baru ke database
-        Wisata::create($request->all());
+        Wishlist::create([
+            'user_id' => auth()->id(),
+            'id_objek_wisata' => $request->id_objek_wisata,
+        ]);
 
-        // Mengarahkan kembali ke halaman wishlist dengan pesan sukses
-        return redirect()->route('wishlist.index')->with('success', 'Objek Wisata berhasil ditambahkan ke wishlist');
+        return redirect()->route('wishlists.index')->with('success', 'Objek Wisata berhasil ditambahkan ke wishlist');
+    }
+
+    public function show(Wishlist $wishlists)
+    {
+        return redirect()->route('kelola-objek-wisata.index')->with('success', 'objek wisata berhasil tertampil');
     }
 }

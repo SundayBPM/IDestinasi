@@ -5,14 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Riwayat extends Model
+
+class Wishlist extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_pembelian', 'id_saran'];
+    protected $fillable = [
+        'user_id',
+        'id_objek_wisata',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function Objek_Wisata()
     {
         return $this->belongsTo(Objek_Wisata::class);
     }
 }
+
+

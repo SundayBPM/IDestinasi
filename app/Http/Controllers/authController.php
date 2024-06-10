@@ -14,7 +14,7 @@ class authController extends Controller
         return view('login');
     }
     public function register1(){
-        return view('register1');
+        return view('Auth/register1');
     }
     // proses step 1
     public function processStep1(Request $request)
@@ -73,7 +73,7 @@ class authController extends Controller
 
             session()->forget(['email', 'password', 'confirm_password', 'role', 'wisatawan', 'fullname', 'number_phone', 'place_birth', 'usia', 'gender']);
             
-            return view('register3');
+            return view('Auth/register3');
         }
         return redirect('/register')->with('status', 'failed')->with('message', 'Email sudah terdaftar');
     }

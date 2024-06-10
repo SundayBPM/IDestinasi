@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role');
-            $table->string('no_telp');
+            $table->string('no_telp')->default('')->change();
             $table->string('domisili')->nullable();
             $table->json('personalisi')->nullable();
             $table->string('gender');

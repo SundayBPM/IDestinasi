@@ -82,22 +82,38 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // ========================== Verifikasi ========================================
 
-Route::get('/verifikasi', [VerificationController::class, 'index'])->name('verification.index');
-Route::get('/verifikasi/{id}', [VerificationController::class, 'show'])->name('verification.show');
-Route::post('/verifikasi/{id}', [VerificationController::class, 'update'])->name('verifications.update');
-Route::post('/verifikasi/{id}/approve', [VerificationController::class, 'approve'])->name('verifications.approve');
-Route::post('/verifikasi/{id}/reject', [VerificationController::class, 'reject'])->name('verifications.reject');
+Route::get('/reserved-objek-wisata', [KelolaObjekWisataController::class, 'create'])->name('kelola-objek-wisata.index');
+Route::get('verification', [VerificationController::class, 'index'])->name('verification.index');
+Route::post('verification/{id}/verify', [VerificationController::class, 'verify'])->name('verification.verify');
+Route::post('verification/{id}/unverify', [VerificationController::class, 'unverify'])->name('verification.unverify');
+
+// ========================== Informasi Verifikasi ========================================
+
+// Definisikan resource routes untuk InformationController
+Route::resource('tourinfo', InformationController::class);
 
 
 // ========================== Wishlist ========================================
 
-Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
-Route::get('/wishlist/create', [WishlistController::class, 'create'])->name('wishlist.create');
-Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlist.store');
-
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlists.index');
+Route::get('/wishlist/create', [KelolaObjekWisataController::class, 'create'])->name('kelola-objek-wisata.create');
+Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlists.store');
+Route::post('/wishlist/show', [KelolaObjekWisataController::class, 'show'])->name('kelola-objek-wisata.index');
 
 // ========================== History ========================================
 
 Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
 Route::delete('/history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
-Route::post('/history/buy-again/{id}', [HistoryController::class, 'buyAgain'])->name('history.buyAgain');
+Route::post('/history/buy-again/{id}', [ObjekWisataController::class, 'buyAgain'])->name('objek-wisata.index');
+
+// // login/logout proses
+// Route::get('/login', [authController::class, 'login'])->name('login');
+// Route::post('/login', [authController::class, 'cekLogin']);
+// Route::get('/logout', [authController::class, 'logout']);
+// // register step
+Route::get('/landingPage', [authController::class, 'register1'])->name('registerStep1');
+Route::post('/register/step1', [authController::class, 'processStep1'])->name('register_processStep1');
+Route::get('/registerStep2', [authController::class, 'register2'])->name('registerStep2');
+Route::post('/register/Step2', [authController::class, 'processStep2'])->name('register_processStep2');
+Route::get('/registerStep3', [authController::class, 'register3'])->name('registerStep3');
+Route::post('/register/Step3', [authController::class, 'processStep3']);
