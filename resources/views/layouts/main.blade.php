@@ -26,7 +26,7 @@
       <!-- Navbar List -->
       <nav class="navbar">
         <a href="destinations.html">Destinasi</a>
-        <a href="#eksplor">Eksplor</a>
+        <a href="eksplore-objek-wisata">Eksplor</a>
         <a href="#paket-tur">Paket Tur</a>
         <a href="#artikel">Artikel</a>
         <a href="/ulasan">Ulasan</a>
@@ -51,7 +51,7 @@
 
             <ul class="profile-dropdown-list">
               <li class="profile-dropdown-list-item">
-                <a href="edit-profil">
+                <a href="/edit-profil">
                   <i class="fa-regular fa-user"></i>
                   Edit Profile
                 </a>
@@ -100,7 +100,7 @@
 
               <ul class="profile-dropdown-list">
                 <li class="profile-dropdown-list-item">
-                  <a href="edit-profil">
+                  <a href="/edit-profil">
                     <i class="fa-regular fa-user"></i>
                     Edit Profile
                   </a>

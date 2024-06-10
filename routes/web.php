@@ -26,6 +26,7 @@ Route::get('/fetch-destinasi', [SistemUmpanBalikController::class, 'display_ulas
 
 
 Route::get('/',  [LandingPageController::class, 'index'])->name('landing_page');
+Route::get('/edit-profil', [EditProfilController::class, 'index'])->name('edit-profil.index');
 Route::get('/promo/{post}', [LandingPageController::class, 'show_promo'])->name('show_promo');
 
 Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
@@ -45,7 +46,6 @@ Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
     // Rute eksplore wisata
     Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
       // ========================== Edit Profil========================================
-    Route::get('/edit-profil', [EditProfilController::class, 'index'])->name('edit-profil.index');
     Route::get('/edit-profil/{id}/edit', [EditProfilController::class, 'edit'])->name('edit-profil.edit');
     Route::put('/edit-profil/{id}', [EditProfilController::class, 'update'])->name('edit-profil.update');
 
@@ -84,7 +84,6 @@ Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
 
     Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
       // ========================== Edit Profil========================================
-    Route::get('/edit-profil', [EditProfilController::class, 'index'])->name('edit-profil.index');
     Route::get('/edit-profil/{id}/edit', [EditProfilController::class, 'edit'])->name('edit-profil.edit');
     Route::put('/edit-profil/{id}', [EditProfilController::class, 'update'])->name('edit-profil.update');
     
