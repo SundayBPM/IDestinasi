@@ -90,7 +90,7 @@ Route::post('verification/{id}/unverify', [VerificationController::class, 'unver
 // ========================== Informasi Verifikasi ========================================
 
 // Definisikan resource routes untuk InformationController
-Route::resource('tourinfo', InformationController::class);
+// Route::resource('tourinfo', InformationController::class);
 
 
 // ========================== Wishlist ========================================
@@ -106,14 +106,3 @@ Route::get('/history', [HistoryController::class, 'index'])->name('history.index
 Route::delete('/history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
 Route::post('/history/buy-again/{id}', [ObjekWisataController::class, 'buyAgain'])->name('objek-wisata.index');
 
-// // login/logout proses
-// Route::get('/login', [authController::class, 'login'])->name('login');
-// Route::post('/login', [authController::class, 'cekLogin']);
-// Route::get('/logout', [authController::class, 'logout']);
-// // register step
-Route::get('/landingPage', [authController::class, 'register1'])->name('registerStep1');
-Route::post('/register/step1', [authController::class, 'processStep1'])->name('register_processStep1');
-Route::get('/registerStep2', [authController::class, 'register2'])->name('registerStep2');
-Route::post('/register/Step2', [authController::class, 'processStep2'])->name('register_processStep2');
-Route::get('/registerStep3', [authController::class, 'register3'])->name('registerStep3');
-Route::post('/register/Step3', [authController::class, 'processStep3']);
