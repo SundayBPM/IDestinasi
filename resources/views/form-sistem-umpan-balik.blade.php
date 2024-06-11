@@ -35,7 +35,7 @@
     </div>
     <form action="/ulasan" method="POST"> 
         @csrf
-        <input type="hidden" name="id_pembelian_tiket" value="{{ $destinasi->id }}">
+        <input type="hidden" name="id_tiket" value="{{ $destinasi->id }}">
         <input type="hidden" name="id_objek_wisata" value="{{ $destinasi->id_destinasi }}">        
         <div class="ulasan">
             <div class="ulasan-text">
@@ -234,21 +234,15 @@
         </div>
         
         <!-- <button type="submit"> POST CUII</button> -->
-        <!-- Button submit for testing -->
+        <!-- Button trigger modal -->
         <div class="btn-submit-ulasan">
-            <button id="first_button" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
         </div>
-        <!-- Button trigger modal -->
-        <!-- <div class="btn-submit-ulasan">
-            <button id="first_button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Post
-            </button>    
-        </div> -->
 
         <!-- Modal -->
-        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -266,7 +260,7 @@
             </div>
             </div>
         </div>
-        </div> -->
+        </div>
     </form>
     
 

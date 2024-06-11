@@ -6,32 +6,33 @@
     <title>IDestinasi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://kit.fontawesome.com/01706c9c94.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
   <!-- Navbar -->
   <header class="header">
       <!-- Logo -->
-      <a href="/" class="logo"><img src="{{ asset('img/IDESTINASI.LOGO.png') }}" /></a>
+      <a href="{{ route('landing_page') }}" class="logo"><img src="{{ asset('/img/logo.png') }}" /></a>
+
       <!-- Navbar List -->
       <nav class="navbar">
-        <a href="destinations.html">Destinasi</a>
-        <a href="eksplore-objek-wisata">Eksplor</a>
-        <a href="#paket-tur">Paket Tur</a>
-        <a href="#artikel">Artikel</a>
-        <a href="/ulasan">Ulasan</a>
+        <a href="{{ route('landing_page') }}">Destinasi</a>
+        <a href="{{ route('objek-wisata.index') }}">Eksplor</a>
+        <a href="{{ route('paket-tour.index') }}">Paket Tour</a>
+        <!--<a href="#paket-tur">Paket Tur</a> -->
+        <a href="{{ route('artikel.index') }}">Artikel</a>
+        <a href="#ulasan">Ulasan</a>
       </nav>
-      
+
+      </form>
       <!-- STRAT DROP DOWN -->
       @if (Auth::check())
         <!-- pengelola -->
@@ -51,21 +52,21 @@
 
             <ul class="profile-dropdown-list">
               <li class="profile-dropdown-list-item">
-                <a href="/edit-profil">
+                <a href="#">
                   <i class="fa-regular fa-user"></i>
                   Edit Profile
                 </a>
               </li>
 
               <li class="profile-dropdown-list-item">
-                <a href="/kelola-objek-wisata">
+                <a href="#">
                   <i class="fa-solid fa-list-check"></i>
                   Kelola Objek Wisata
                 </a>
               </li>
-          
+
               <li class="profile-dropdown-list-item">
-                <a href="/informasi-statistik">
+                <a href="#">
                   <i class="fa-solid fa-chart-column"></i>
                   Statistik Wisata
                 </a>
@@ -85,46 +86,44 @@
         @endif
           <!-- Wisatawan -->
         @if (Auth::user()->role == 'wisatawan')
-          <div class="profile">
-            <i data-feather="search" class="search"></i>
-            <div class="profile-dropdown">
-              <div class="profile-dropdown-btn" data-dropdown="wisatawan" onclick="toggle('wisatawan')">
-                <div class="profile-img">
-                  <i class="fa-solid fa-circle"></i>
-                </div>
-                <span
-                  >{{ Auth::user()->name }}
-                  <i class="fa-solid fa-angle-down"></i>
-                </span>
+        <div class="profile">
+          <i data-feather="search" class="search"></i>
+          <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" data-dropdown="wisatawan" onclick="toggle('wisatawan')">
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
               </div>
-
-              <ul class="profile-dropdown-list">
-                <li class="profile-dropdown-list-item">
-                  <a href="/edit-profil">
-                    <i class="fa-regular fa-user"></i>
-                    Edit Profile
-                  </a>
-                </li>
-                <hr />
-                <li class="profile-dropdown-list-item">
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                  </form>
-                  <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
-                  </a>
-                </li>
-              </ul>
+              <span
+                >{{ Auth::user()->name }}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
             </div>
+
+            <ul class="profile-dropdown-list">
+              <li class="profile-dropdown-list-item">
+                <a href="#">
+                  <i class="fa-regular fa-user"></i>
+                  Edit Profile
+                </a>
+              </li>
+              <hr />
+              <li class="profile-dropdown-list-item">
+                <a href="{{ route('logout') }}">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Log out
+                </a>
+              </li>
+            </ul>
           </div>
+        </div>
         @endif
         @else
-          <div class="profile">
-            <i data-feather="search" class="search"></i>
-            <a href="{{route('register')}}">Sign Up</a>
-            <a href="{{route('login')}}" class="special">Login</a>
-            <i data-feather="menu" class="menu" id="ham-menu"></i>
-          </div>
+        <div class="profile">
+          <i data-feather="search" class="search"></i>
+          <a href="{{ url('/register') }}">Sign Up</a>
+          <a href="{{ url('/login') }}" class="special">Login</a>
+          <i data-feather="menu" class="menu" id="ham-menu"></i>
+        </div>
       @endif
       <!-- END DROP DOWN -->
       <!-- Search input -->
@@ -137,14 +136,14 @@
     <!--container template-->
     <div class="container">
             @yield('container')
-    </div>
+        </div>
 
     <!-- Footer starts -->
 
     <footer>
       <div class="row">
         <div class="col">
-          <img src="img/logo.png" class="logo-footer" />
+          <img src="{{ asset('/img/logo.png') }}" class="logo-footer" />
           <p>"Bersama Tingkatkan Pariwisata Indonesia"</p>
           <div class="icon-sosmed"></div>
           <a href="#">
@@ -198,8 +197,15 @@
       feather.replace();
     </script>
 
-    <script src="{{ asset('js/index.js') }}"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/logged-in.js"></script>
+    <script src="{{ asset('/js/index.js') }}"></script>
+    <script src="{{ asset('/js/logged-in.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    @yield('scripts')
+    @if (session('alert'))
+    <script>
+        alert("{{ session('alert') }}")
+    </script>
+    @endif
   </body>
 </html>

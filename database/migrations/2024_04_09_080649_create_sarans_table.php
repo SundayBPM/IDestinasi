@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger("id_user");
             $table->foreign('id_user')->references('id')->on('users');
             $table->integer("id_objek_wisata");
-            $table->integer("id_pembelian_tiket");
             $table->tinyInteger("rating");
             $table->tinyInteger("penilaian_nps");
             $table->tinyInteger("penilaian_amenitas");

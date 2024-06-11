@@ -44,13 +44,13 @@ class authController extends Controller
             'usia' => 'required',
             'gender' => 'required'
         ]);
-        
+
         session(['fullname' => $request->input('fullname')]);
         session(['number_phone' => $request->input('number_phone')]);
         session(['place_birth' => $request->input('place_birth')]);
         session(['usia' => $request->input('usia')]);
         session(['gender' => $request->input('gender')]);
-        
+
         return redirect()->route('registerStep3');
     }
 
@@ -72,42 +72,42 @@ class authController extends Controller
             ]);
 
             session()->forget(['email', 'password', 'confirm_password', 'role', 'wisatawan', 'fullname', 'number_phone', 'place_birth', 'usia', 'gender']);
-            
+
             return view('register3');
         }
         return redirect('/register')->with('status', 'failed')->with('message', 'Email sudah terdaftar');
     }
     public function processStep3(Request $request)
-    {   
-        return redirect('/login');      
+    {
+        return redirect('/login');
     }
 
-     public function cekLogin(Request $request){   
+     public function cekLogin(Request $request){
          $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended('/');
         }
         if (Auth::guard('role, wisatawan')->attempt($credentials)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended('/');
         }
         Session::flash('status', 'failed');
         Session::flash('message', 'proses login gagal');
         return redirect('/login');
-    }   
+    }
     public function Logout(Request $request){
         Auth::logout();
- 
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 }
