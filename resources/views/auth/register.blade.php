@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- import bootstrap icon-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body>
-    <div class="container-fluid login_page">
-        <div class="left_login_side">
-            <img src="asset/6faa57f843c594386d98aa756d6c713e.png" class="gambar1">
-            <a href="/">
-                <img src="asset/logoidestinasi.png" class="gambar2">
-            </a>
-        </div>
+@extends('layouts.app')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 03febdb378175874f6ab985c52dcaef5a34ee8b9
 <<<<<<< HEAD
         <div class="register">
           <p>Sudah memiliki akun? <strong><a href="/login">Masuk ke akun</strong></a></p>
@@ -119,6 +105,7 @@
                 </div>
             </div>
 >>>>>>> 1f2e6a7be2b5a0b72671a6fe641230399e3866ec
+<<<<<<< HEAD
 =======
         <div class="right_login_side">
             <h1>Mulai Perjalanan Wisatamu 👋</h1>
@@ -152,8 +139,9 @@
 
 
 >>>>>>> 425144de7459cf81c1c7bfda3033c7bfe51f8b0c
+=======
+>>>>>>> 03febdb378175874f6ab985c52dcaef5a34ee8b9
         </div>
     </div>
-    
-</body>
-</html>
+</div>
+@endsection

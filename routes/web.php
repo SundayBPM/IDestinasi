@@ -1,19 +1,21 @@
 <?php
 
 use App\Models\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\EditProfilController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
-use App\Http\Controllers\adminController;
+use App\Http\Controllers\administratorController;
 use App\Http\Controllers\EksploreController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
-use App\Http\Controllers\InformasiStatistikController;
+use App\Http\Controllers\ObjekWisataController;
+use App\Http\Controllers\PaketTourController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 // menuju ke hal ulasan/feedback
@@ -113,3 +115,4 @@ Route::get('/paket-tour', [PaketTourController::class, 'index'])->name('paket-to
 Route::get('/paket-tour/{id}', [PaketTourController::class, 'show'])->name('paket-tour.show');
 Route::get('/paket-tour/{id}/pembelian-tiket', [PaketTourController::class, 'pembelian_tiket'])->name('paket-tour.pembelian_tiket');
 Route::post('/paket-tour/{id}/pembayaran-tiket', [PaketTourController::class, 'pembayaran_tiket'])->name('paket-tour.pembayaran_tiket');
+Route::get('/landinPage',function(){return redirect()->route('/');})->name('landingPage');

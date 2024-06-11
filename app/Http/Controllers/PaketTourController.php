@@ -2,22 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Objek_Wisata;
+use App\Models\PaketTour;
 use App\Models\Pembelian_tiket;
 use App\Models\Wisatawan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ObjekWisataController extends Controller
+class PaketTourController extends Controller
 {
+    public function index()
+    {
+        $paket_tours = PaketTour::paginate(6);
+
+        return view('paket-tour.index', compact('paket_tours'));
+    }
+
     public function show($id)
     {
-        $objek_wisata = Objek_Wisata::query()
+        $paket_tour = PaketTour::query()
             ->with('timeline.detail', 'fasilitas')
             ->findOrFail($id);
 
-        $total_timeline = count($objek_wisata->timeline);
+        $total_timeline = count($paket_tour->timeline);
         $detail_perjalanan = "$total_timeline Hari ".($total_timeline-1)." Malam";
 
         foreach (range(0, 5) as $item) {
@@ -27,23 +34,24 @@ class ObjekWisataController extends Controller
             $list_tanggal[] = $tanggal;
         }
 
-        return view('objek-wisata.show', compact('objek_wisata', 'detail_perjalanan', 'list_tanggal'));
+        return view('paket-tour.show', compact('paket_tour', 'detail_perjalanan', 'list_tanggal'));
     }
 
     public function pembelian_tiket($id)
     {
-        $objek_wisata = Objek_Wisata::query()
+        $paket_tour = PaketTour::query()
             ->with('timeline.detail', 'fasilitas')
             ->findOrFail($id);
 
-        $jumlah_wisatawan = $objek_wisata->total_orang;
+        // $jumlah_wisatawan = $paket_tour->total_orang;
+        $jumlah_wisatawan = 1;
 
-        return view('objek-wisata.pembayaran', compact('objek_wisata', 'jumlah_wisatawan'));
+        return view('paket-tour.pembayaran', compact('paket_tour', 'jumlah_wisatawan'));
     }
 
     public function pembayaran_tiket($id, Request $request)
     {
-        $objek_wisata = Objek_Wisata::findOrFail($id);
+        $paket_tour = PaketTour::findOrFail($id);
 
         DB::beginTransaction();
         try {
@@ -51,7 +59,7 @@ class ObjekWisataController extends Controller
                 'id_users' => auth()->user()->id,
                 'id_destinasi' => $id,
                 'jumlah_tiket' => count($request->nama),
-                'harga' => (int) str_replace(".", "", $objek_wisata->harga_tiket),
+                'harga' => (int) str_replace(".", "", $paket_tour->harga_tiket),
                 'jenis_pembayaran' => $request->jenis_pembayaran,
                 'kedatangan' => $request->tanggal
             ]);
