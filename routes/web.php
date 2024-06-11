@@ -1,20 +1,26 @@
 <?php
 
 use App\Models\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\EditProfilController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
-use App\Http\Controllers\adminController;
+use App\Http\Controllers\administratorController;
 use App\Http\Controllers\EksploreController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
+<<<<<<< HEAD
 use App\Http\Controllers\InformasiStatistikController;
 use App\Http\Controllers\InformasiObjekWisataController;
+=======
+use App\Http\Controllers\ObjekWisataController;
+use App\Http\Controllers\PaketTourController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+>>>>>>> ef50727ab3c4c6f8991a5c703f71a64352cfbab3
 
 Auth::routes();
 // menuju ke hal ulasan/feedback
@@ -63,7 +69,7 @@ Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
 
 	// ========================== Kelola Objek Wisata========================================
 
-	Route::get('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'index'])->name('kelola-objek-wisata.index');
+    Route::get('/kelola-objek-wisata', [KelolaObjekWisataController::class, 'index'])->name('kelola-objek-wisata.index');
 
 	// START PROMO
 	Route::get('/promo/{event_id}', [LandingPageController::class, 'promoDetails'])->name('promo.detail');
@@ -110,3 +116,17 @@ Route::middleware(['auth'])->group(function() {
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
+=======
+Route::resource('/artikel', ArtikelController::class)->only('index', 'show');
+Route::get('/objek-wisata', [ObjekWisataController::class, 'index'])->name('objek-wisata.index');
+Route::get('/objek-wisata/{id}', [ObjekWisataController::class, 'show'])->name('objek-wisata.show');
+Route::get('/objek-wisata/{id}/pembelian-tiket', [ObjekWisataController::class, 'pembelian_tiket'])->name('objek-wisata.pembelian_tiket');
+Route::post('/objek-wisata/{id}/pembayaran-tiket', [ObjekWisataController::class, 'pembayaran_tiket'])->name('objek-wisata.pembayaran_tiket');
+
+Route::get('/paket-tour', [PaketTourController::class, 'index'])->name('paket-tour.index');
+Route::get('/paket-tour/{id}', [PaketTourController::class, 'show'])->name('paket-tour.show');
+Route::get('/paket-tour/{id}/pembelian-tiket', [PaketTourController::class, 'pembelian_tiket'])->name('paket-tour.pembelian_tiket');
+Route::post('/paket-tour/{id}/pembayaran-tiket', [PaketTourController::class, 'pembayaran_tiket'])->name('paket-tour.pembayaran_tiket');
+Route::get('/landinPage',function(){return redirect()->route('/');})->name('landingPage');
+>>>>>>> ef50727ab3c4c6f8991a5c703f71a64352cfbab3

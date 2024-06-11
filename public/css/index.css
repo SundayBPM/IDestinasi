@@ -1121,7 +1121,7 @@ footer {
   color: #333; /* Mengatur warna teks */
 }
 
-.card {
+/* .card {
   width: 325px;
   height: 456px;
   background-color: #ffffff;
@@ -1129,7 +1129,7 @@ footer {
   overflow: hidden;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   margin: 20px;
-}
+} */
 
 .card_img{
   background-color: #00C0CA;

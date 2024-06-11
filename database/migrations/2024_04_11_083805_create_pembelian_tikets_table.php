@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('pembelian_tikets', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->integer('id_users');
             $table->integer('id_destinasi');
             $table->integer('jumlah_tiket');
-            $table->integer('total_harga');
+            $table->integer('harga');
             $table->string('jenis_pembayaran');
             $table->date('kedatangan');
             $table->timestamps();
