@@ -91,9 +91,21 @@
               <div class="profile-img">
                 <i class="fa-solid fa-circle"></i>
               </div>
+              <span
+                >Admin
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
             </div>
 
             <ul class="profile-dropdown-list">
+              <li class="profile-dropdown-list-item">
+                <a href="/admin/verification">
+                  <i class="fa-regular fa-user"></i>
+                  Verifikasi Objek Wisata
+                </a>
+              </li>
+
+              <hr />
               <li class="profile-dropdown-list-item">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf

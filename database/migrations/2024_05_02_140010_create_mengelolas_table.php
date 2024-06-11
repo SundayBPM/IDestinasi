@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mengelolas', function (Blueprint $table) {
-            $table->integer('id_pengelola');
-            $table->integer('id_objek_wisata');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('objek_wisata_id');
+            $table->timestamps();
+
+            $table->primary(['user_id', 'objek_wisata_id']);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('objek_wisata_id')->references('id')->on('objek_wisatas')->onDelete('cascade');
+
         });
     }
 

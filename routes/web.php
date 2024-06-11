@@ -16,6 +16,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
+use App\Http\Controllers\Verifikasi_Destinasi;
 
 Auth::routes();
 // menuju ke hal ulasan/feedback
@@ -99,7 +100,9 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
-    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+	Route::get('/admin/verification', [Verifikasi_Destinasi::class, 'index'])->name('admin.home');
+	Route::post('/admin/verification/{id}/update', [Verifikasi_Destinasi::class, 'update'])->name('objek-wisata.updateStatus');
+
 });
 
 Route::middleware(['auth'])->group(function() {

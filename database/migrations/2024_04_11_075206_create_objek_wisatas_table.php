@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('latitude');
             $table->string('jam_operasional');
             $table->text('jenis');
+            $table->string('status')->nullable();
             $table->string('foto');
             $table->timestamps();
         });
