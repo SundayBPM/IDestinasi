@@ -890,6 +890,230 @@ footer {
   float: left;
 }
 
+/* ============================================== History ================================================================ */
+.history-header {
+  width: auto;
+  height: 500px;
+	position: relative;
+  
+}
+
+.history-header img {
+	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+	
+}
+
+.history-header h1 {
+	position: absolute;
+	top: 45%;
+	left: 26%;
+	z-index: 1;
+	color: white;
+	font-size: 50px;
+}
+
+.list-history-destinasi-text {
+	padding-top: 50px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 3.5%;
+}
+.list-history-destinasi-text p {
+	padding: 10px 0px;
+}
+
+.list-history-destinasi {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 60%;
+
+}
+
+.card_history {
+  width: 325px;
+  height: 456px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.card_img_history{
+  background-color: #00C0CA;
+  /* object-fit: cover; */
+  width: 465;
+  height: 310px;
+}
+
+.card_img_history img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content-history {
+  padding: 16px;
+}
+
+#btn-history{
+  background-color: white;
+}
+
+.card-content-history h3 {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  display: -webkit-box;
+  /* text-overflow: ellipsis; */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card-content-history h5{
+  color: black;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.card-content-history h5 i {
+  color: orange;
+}
+
+.card-content-history .btn{
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  color: #00C0CA;
+
+}
+
+.card-content-history i {
+  color: #00C0CA;
+  padding: 0px 10px;
+  float: left;
+}
+
+/* ============================================== Wishlist ================================================================ */
+.wishlist-header {
+  width: auto;
+  height: 500px;
+	position: relative;
+  
+}
+
+.wishlist-header img {
+	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+	
+}
+
+.wishlist-header h1 {
+	position: absolute;
+	top: 45%;
+	left: 26%;
+	z-index: 1;
+	color: white;
+	font-size: 50px;
+}
+
+.wishlist-destinasi-text {
+	padding-top: 50px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 3.5%;
+}
+.wishlist-destinasi-text p {
+	padding: 10px 0px;
+}
+
+.list-wishlist-destinasi {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 60%;
+
+}
+
+.card_wishlist {
+  width: 325px;
+  height: 456px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+
+}
+
+.card_img_wishlist{
+  background-color: #00C0CA;
+  /* object-fit: cover; */
+  width: 465;
+  height: 310px;
+}
+
+.card_img_wishlist img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.card-content-wishlist {
+  padding: 16px;
+}
+
+#btn-wishlist{
+  background-color: white;
+}
+
+.card-content-wishlist h3 {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  display: -webkit-box;
+  /* text-overflow: ellipsis; */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card-content-wishlist h5{
+  color: black;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.card-content-wishlist h5 i {
+  color: orange;
+}
+
+.card-content-wishlist .btn{
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  color: #00C0CA;
+
+}
+
+.card-content-wishlist i {
+  color: #00C0CA;
+  padding: 0px 10px;
+  float: left;
+}
+
 /* ============================================= Bagian Informasi Statistik ============================================= */
 .statistik-header {
   width: auto;

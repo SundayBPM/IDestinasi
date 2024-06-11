@@ -83,6 +83,29 @@
           </div>
         </div>
         @endif
+        @if (Auth::user()->role == 'admin')
+        <div class="profile">
+          <i data-feather="search" class="search"></i>
+          <div class="profile-dropdown">
+            <div class="profile-dropdown-btn" data-dropdown="pengelola" onclick="toggle('pengelola')">
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+            </div>
+
+            <ul class="profile-dropdown-list">
+              <li class="profile-dropdown-list-item">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        @endif
           <!-- Wisatawan -->
         @if (Auth::user()->role == 'wisatawan')
           <div class="profile">
@@ -105,6 +128,21 @@
                     Edit Profile
                   </a>
                 </li>
+
+                <li class="profile-dropdown-list-item">
+                  <a href="/history">
+                    <i class="fa-solid fa-list-check"></i>
+                    History
+                  </a>
+                </li>
+
+                <li class="profile-dropdown-list-item">
+                  <a href="/wishlist">
+                    <i class="fa-solid fa-list-check"></i>
+                    Wishlist
+                  </a>
+                </li>
+
                 <hr />
                 <li class="profile-dropdown-list-item">
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

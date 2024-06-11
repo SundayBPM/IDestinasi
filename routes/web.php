@@ -5,11 +5,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\EditProfilController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\EksploreController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\EditProfilController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
@@ -45,6 +47,12 @@ Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
 	// Rute eksplore wisata
 	Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
 
+	// ============================ History ==============================
+	Route::get('/history',[HistoryController::class,'index']);
+
+	// ============================ Wishlist ==============================
+	Route::get('/wishlist',[WishlistController::class,'index']);
+
     
 });
   
@@ -79,6 +87,8 @@ Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
 	// ========================== Informasi Statistik========================================
 
 	Route::get('/informasi-statistik', [InformasiStatistikController::class,'InfoPenjualan']);
+
+
     
 });
   

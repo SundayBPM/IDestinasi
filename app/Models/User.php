@@ -69,4 +69,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Saran::class, 'id_user');
     }
+    public function wishlist()
+    {
+        return $this->belongsToMany(Objek_Wisata::class, 'wishlist', 'user_id', 'objek_wisata_id');
+    }
+
 }
