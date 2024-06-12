@@ -1,12 +1,18 @@
 body{
-  background-color: white;
+  background-color: #DFDFDF;
   margin: 0%;
   padding: 0%;
 }
+
+body h4{
+  padding: 0% 4%;
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
 .footer {
-  height: 100px;
+  height: 80px;
   width: 100%;
-  background-color: grey;
+  background-color: white;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -14,6 +20,16 @@ body{
   padding: 0px 20px;
 }
 
+.footer a{
+  align-self: center;
+}
+
+.nav_title{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+}
 .foto {
   background-color: rgb(250, 4, 4);
   width: 50px;
@@ -37,7 +53,7 @@ body{
 .box_statistik{
   width: 300px;
   height: 100px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   margin: 0px 20px;
   background-color: white;
   display: flex;
@@ -47,14 +63,19 @@ body{
 }
 
 .mini_box{
-  background-color: aqua;
-  margin: 0px 20px;
-  width: 35px;
-  height: 35px;
+  background-color: #00C0CA;
+  margin: 0px 15px;
+  width: 50px;
+  height: 40px;
   border-radius: 7px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-size: 30px; /* Ubah nilai ini sesuai kebutuhan Anda */
+}
+
+.mini_box .bi{
+  color: white;
 }
 
 .mini_box_text {
@@ -63,4 +84,48 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-top: 10px;
+}
+
+.kelola_pendaftar{
+  padding: 0% 4%;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between; /* Ensure buttons are spaced between */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Add gap between buttons */
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dropdown button {
+  flex-grow: 1;
+}
+
+.dropdown-menu {
+  min-width:auto;
+}
+
+.search_pendaftar{
+  width: 300px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  border: none;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.input-icon input {
+  padding-left: 30px; /* Ubah nilai ini sesuai ukuran ikon */
 }

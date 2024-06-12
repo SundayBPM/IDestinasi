@@ -20,4 +20,23 @@ class WishlistController extends Controller
 
         return view('wishlist', ['wishlists' => $wishlists]);
     }
+  
+    public function add(Request $request)
+    {
+        $wishlist = new Wishlist();
+        $wishlist->user_id = auth()->id();
+        $wishlist->objek_wisata_id = $request->objek_wisata_id;
+        $wishlist->save();
+
+        return response()->json(['message' => 'Wishlist added successfully']);
+    }
+
+    public function remove(Request $request)
+    {
+        Wishlist::where('user_id', auth()->id())
+            ->where('objek_wisata_id', $request->objek_wisata_id)
+            ->delete();
+
+        return response()->json(['message' => 'Wishlist removed successfully']);
+    }
 }

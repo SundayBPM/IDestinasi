@@ -47,19 +47,24 @@ Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
 
 	// Rute eksplore wisata
 	Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
+	Route::post('/eksplore-objek-wisata/add', [EksploreController::class, 'add'])->name('eksplore-objek-wisata.add');
+	Route::delete('/eksplore-objek-wisata/remove', [EksploreController::class, 'remove'])->name('eksplore-objek-wisata.remove');
+	
 
 	// ============================ History ==============================
 	Route::get('/history',[HistoryController::class,'index']);
 
 	// ============================ Wishlist ==============================
 	Route::get('/wishlist',[WishlistController::class,'index']);
+	Route::post('/wishlist/add', [WishlistController::class, 'add'])->name('wishlist.add');
+	Route::post('/wishlist/remove', [WishlistController::class, 'remove'])->name('wishlist.remove');
 
     
 });
   
 /*------------------------------------------
 --------------------------------------------
-All Admin Routes List
+All Pengelola Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:pengelola'])->group(function () {
@@ -102,6 +107,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
 	Route::get('/admin/verification', [Verifikasi_Destinasi::class, 'index'])->name('admin.home');
 	Route::post('/admin/verification/{id}/update', [Verifikasi_Destinasi::class, 'update'])->name('objek-wisata.updateStatus');
+	Route::get('/admin/verification/filter', [Verifikasi_Destinasi::class, 'filter'])->name('objek-wisata.filter');
+	Route::get('/admin/verification/{id}/data-pendaftar', [Verifikasi_Destinasi::class, 'show_data'])->name('objek-wisata.updateStatus');
+	
+
 
 });
 
