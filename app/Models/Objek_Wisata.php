@@ -24,19 +24,18 @@ class Objek_Wisata extends Model
         return $this->belongsToMany(User::class, 'wishlist', 'objek_wisata_id', 'user_id');
     }
     
-    public function mengelolas()
-    {
-        return $this->hasOne(Mengelola::class, 'objek_wisata_id');
-    }
+    //public function mengelolas()
+    //{
+    //    return $this->hasOne(Mengelola::class, 'objek_wisata_id');
+    //}
 
     public function userMengelola()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
-    public function tiket()
+    public function wishlists()
     {
-        return $this->hasOne(Tiket::class, 'id_objek_wisata');
+        return $this->belongsToMany(User::class, 'wishlists', 'objek_wisata_id', 'user_id');
     }
                                                         
 }

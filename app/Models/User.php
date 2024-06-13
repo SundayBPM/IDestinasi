@@ -69,15 +69,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Saran::class, 'id_user');
     }
-    public function wishlist()
+    public function wishlists()
     {
-        return $this->belongsToMany(Objek_Wisata::class, 'wishlist', 'user_id', 'objek_wisata_id');
+        return $this->belongsToMany(Objek_Wisata::class, 'wishlists', 'user_id', 'objek_wisata_id');
     }
 
-    public function mengelolas()
-    {
-        return $this->hasOne(Mengelola::class, 'user_id');
-    }
+    // public function mengelola()
+    // {
+    //     return $this->hasOne(Mengelola::class, 'user_id');
+    // }
 
     public function objekWisataDikelola()
     {

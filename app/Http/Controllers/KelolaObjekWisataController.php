@@ -115,19 +115,13 @@ class KelolaObjekWisataController extends Controller
             'foto' => $imageName,
         ]);
 
-        $tiket = Tiket::where('id_objek_wisata', $id)->first();
+        $pengaturanObjekWisata = Objek_Wisata::findOrFail($id);
 
-        if ($tiket) {
-            $tiket->update([
-                'nama_tiket' => $request->nama_tiket,
-                'harga_tiket' => $request->harga_tiket,
-            ]);
+        if ($request->hasFile('foto')) {
+            $imagePath = $request->file('foto')->store('post-images', 'public');
+            $imageName = basename($imagePath);
         } else {
-            Tiket::create([
-                'nama_tiket' => $request->nama_tiket,
-                'harga_tiket' => $request->harga_tiket,
-                'id_objek_wisata' => $id,
-            ]);
+            $imageName = $pengaturanObjekWisata->foto;
         }
 
         return redirect()->route('kelola-objek-wisata.index')->with('success', 'Data berhasil diperbarui!');
