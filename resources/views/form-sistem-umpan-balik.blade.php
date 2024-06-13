@@ -31,7 +31,7 @@
         </div>
     @endif
     <div>
-        <h5>{{ $destinasi }}</h5>
+        <!-- <h5>{{ $destinasi }}</h5> -->
     </div>
     <form action="/ulasan" method="POST"> 
         @csrf
