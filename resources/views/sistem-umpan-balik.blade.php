@@ -15,7 +15,11 @@
     @foreach($list_destinasi as $destinasi)
         <div class="card_ulasan">
             <div class="card_img">
-                <img src="img/Kete Kesu.jpg" alt="">
+                @if($destinasi->foto)
+                    <img src="{{ asset($destinasi->foto) }}" alt="image_path">
+                @else
+                    <img src="asset/no_img.jpg" alt="default_image">
+                @endif
             </div>
             <div class="card-content-ulasan">
                 <!-- <h5>{{ $destinasi }}</h5> -->
