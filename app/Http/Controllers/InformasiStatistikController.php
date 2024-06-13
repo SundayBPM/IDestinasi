@@ -21,7 +21,7 @@ class InformasiStatistikController extends Controller
         $userId = Auth::id();
         $data_user = User::where('id', $userId)->get();
 
-        $id_pengelola = Mengelola::where('id_pengelola', $userId)->pluck('id_objek_wisata')->first();
+        $id_pengelola = Mengelola::where('user_id', $userId)->pluck('objek_wisata_id')->first();
         $overalRating = Saran::where('id_objek_wisata', $id_pengelola)->avg('rating');
         $nps_rating_avg = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_nps');
         $nps_rating_avg = number_format($nps_rating_avg, 2);
@@ -54,32 +54,38 @@ class InformasiStatistikController extends Controller
         // $pembelianTiket = Pembelian_tiket::whereWeek('kedatangan', '=', Carbon::now()->subWeek()->week)->get();
         $pembelianTikets = Pembelian_tiket::whereYear('created_at', 2022)
             ->whereMonth('created_at', 11)
+            ->where('id_destinasi', $id_pengelola)
             ->sum('jumlah_tiket'); //Data Semebtara, yang asli ada diata
 
         $pembelianTikets = number_format($pembelianTikets);
         $pembelianTikets_sebelumnya = Pembelian_tiket::whereYear('created_at', 2022)
             ->whereMonth('created_at', 10)
+            ->where('id_destinasi', $id_pengelola)
             ->sum('jumlah_tiket'); //Data Semebtara, yang asli ada diata
 
         $pembelianTikets_sebelumnya = number_format($pembelianTikets_sebelumnya);
 
         $total_keuntungan = Pembelian_tiket::whereYear('created_at', 2022)
             ->whereMonth('created_at', 11)
+            ->where('id_destinasi', $id_pengelola)
             ->sum('total_harga'); //Data Semebtara, yang asli ada diata
 
         $total_keuntungan_sebelumnya = Pembelian_tiket::whereYear('created_at', 2022)
             ->whereMonth('created_at', 10)
+            ->where('id_destinasi', $id_pengelola)
             ->sum('total_harga'); //Data Semebtara, yang asli ada diata
     
 
         $total_kunjungan = Pembelian_tiket::whereYear('kedatangan', 2022)
             ->whereMonth('kedatangan', 11)
+            ->where('id_destinasi', $id_pengelola)
             ->sum('jumlah_tiket');
 
         $total_kunjungan = number_format($total_kunjungan);
         
         $total_kunjungan_sebelumnya = Pembelian_tiket::whereYear('kedatangan', 2022)
             ->whereMonth('kedatangan', 10)
+            ->where('id_destinasi', $id_pengelola)
             ->sum('jumlah_tiket');
 
         $total_kunjungan_sebelumnya = number_format($total_kunjungan_sebelumnya);
