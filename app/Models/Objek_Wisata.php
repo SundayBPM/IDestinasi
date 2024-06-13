@@ -33,7 +33,7 @@ class Objek_Wisata extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function wishlist()
+    public function wishlists()
     {
         return $this->belongsToMany(User::class, 'wishlists', 'objek_wisata_id', 'user_id');
     }

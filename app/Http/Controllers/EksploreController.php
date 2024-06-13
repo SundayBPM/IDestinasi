@@ -20,34 +20,61 @@ class EksploreController extends Controller
             return $query->where('nama_wisata', 'like', '%' . $search . '%')
                          ->orWhere('lokasi', 'like', '%' . $search . '%')
                          ->orWhere('deskripsi', 'like', '%' . $search . '%');
-        })->with(['wishlist' => function($query) use ($userId) {
+        })->with(['wishlists' => function($query) use ($userId) {
             $query->where('user_id', $userId);
         }])->get();
 
-        $overalRatings = DB::table('sarans')
-            ->select('id_objek_wisata', DB::raw('AVG(rating) as average_rating'))
-            ->groupBy('id_objek_wisata')
-            ->get();
-
-        return view('eksplore-objek-wisata.index', compact('listdestinasi', 'overalRatings'));
+        return view('eksplore-objek-wisata.index', compact('listdestinasi'));
     }
 
     public function add(Request $request)
     {
-        $wishlist = new Wishlist();
-        $wishlist->user_id = auth()->id();
-        $wishlist->objek_wisata_id = $request->objek_wisata_id;
-        $wishlist->save();
-    
-        return response()->json(['message' => 'Wishlist added successfully']);
+        Auth::user()->wishlists()->attach($request->objek_wisata_id);
+
+        return response()->json(['success' => true]);
     }
-    
+
     public function remove(Request $request)
     {
-        Wishlist::where('user_id', auth()->id())
-            ->where('objek_wisata_id', $request->objek_wisata_id)
-            ->delete();
-    
-        return response()->json(['message' => 'Wishlist removed successfully']);
+        Auth::user()->wishlists()->detach($request->objek_wisata_id);
+
+        return response()->json(['success' => true]);
     }
 }
+    // public function add(Request $request)
+    // {
+    //     $wishlist = new Wishlist();
+    //     $wishlist->user_id = auth()->id();
+    //     $wishlist->objek_wisata_id = $request->objek_wisata_id;
+    //     $wishlist->save();
+    
+    //     return response()->json(['message' => 'Wishlist added successfully']);
+    // }
+    
+    // public function remove(Request $request)
+    // {
+    //     Wishlist::where('user_id', auth()->id())
+    //         ->where('objek_wisata_id', $request->objek_wisata_id)
+    //         ->delete();
+    
+    //     return response()->json(['message' => 'Wishlist removed successfully']);
+    // }
+
+    // public function add(Request $request)
+    // {
+    //     $wishlist = Wishlist::create([
+    //         'user_id' => Auth::id(),
+    //         'destinasi_id' => $request->destinasi_id,
+    //     ]);
+
+    //     return response()->json(['success' => true, 'wishlist_id' => $wishlist->id]);
+    // }
+
+    // public function remove(Request $request)
+    // {
+    //     Wishlist::where('user_id', Auth::id())
+    //             ->where('destinasi_id', $request->destinasi_id)
+    //             ->delete();
+
+    //     return response()->json(['success' => true]);
+    // }

@@ -47,9 +47,8 @@ Route::middleware(['auth', 'user-access:wisatawan'])->group(function () {
 
 	// Rute eksplore wisata
 	Route::get('/eksplore-objek-wisata', [EksploreController::class, 'index'])->name('eksplore-objek-wisata.index');
-	Route::post('/eksplore-objek-wisata/add', [EksploreController::class, 'add'])->name('eksplore-objek-wisata.add');
-	Route::delete('/eksplore-objek-wisata/remove', [EksploreController::class, 'remove'])->name('eksplore-objek-wisata.remove');
-	
+	Route::post('/eksplore-objek-wisata/add', [WishlistController::class, 'add'])->name('eksplore.wishlist.add');
+	Route::post('/eksplore-objek-wisata/remove', [WishlistController::class, 'remove'])->name('eksplore.wishlist.remove');
 
 	// ============================ History ==============================
 	Route::get('/history',[HistoryController::class,'index']);

@@ -1,5 +1,3 @@
-<!-- eksplore-objek-wisata.blade.php -->
-
 @extends('layouts.main')
 
 @section('container')
@@ -23,55 +21,38 @@
                 </div>
                 <div class="card-content-wishlist">
                     <h3>{{ $destinasi->nama_wisata }}</h3>
-                    <div class="checkbox-wrapper">
-                        <input type="checkbox">
-                        <input type="checkbox" id="checkbox-{{ $destinasi->id }}" class="wishlist-checkbox" data-id="{{ $destinasi->id }}" {{ $destinasi->wishlist->isNotEmpty() ? 'checked' : '' }}>
-                        <label for="checkbox-{{ $destinasi->id }}" class="wishlist-label">
-                            <i class="bi {{ $destinasi->wishlist->isNotEmpty() ? 'bi-bookmark-fill' : 'bi-bookmark' }}"></i>
-                        </label>
-                    </div>
                     <h5><i class="fa-regular fa-star"> </i> Reviews</h5>
+                    @php
+                        $isWishlisted = Auth::user()->wishlists->contains($destinasi->id);
+                    @endphp
+                    <i class="bi {{ $isWishlisted ? 'bi-bookmark-fill' : 'bi-bookmark' }} wishlist-icon" data-destinasi-id="{{ $destinasi->id }}"></i>
                 </div>
             </div>
         @endforeach
     </div>
 
-    @push('scripts')
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                console.log('jQuery loaded');  // Debug log
-                $('.wishlist-checkbox').change(function() {
-                    console.log('Checkbox handler attached');  // Debug log
-                    var objekWisataId = $(this).data('id');
-                    var isChecked = $(this).is(':checked');
-                    var cardElement = $('#wishlist-' + objekWisataId);
-                    var iconElement = $(this).next('label').find('i');
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.wishlist-icon').click(function() {
+            var icon = $(this);
+            var destinasiId = icon.data('destinasi-id');
+            var url = icon.hasClass('bi-bookmark') ? '{{ route("eksplore.wishlist.add") }}' : '{{ route("eksplore.wishlist.remove") }}';
 
-                    console.log('Checkbox clicked', objekWisataId, isChecked);  // Debug log
-
-                    $.ajax({
-                        url: isChecked ? '/eksplore-objek-wisata/add' : '/eksplore-objek-wisata/remove',
-                        type: 'POST',
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            objek_wisata_id: objekWisataId
-                        },
-                        success: function(response) {
-                            console.log(response.message);  // Debug log
-                            if (isChecked) {
-                                iconElement.removeClass('bi-bookmark').addClass('bi-bookmark-fill');
-                            } else {
-                                iconElement.removeClass('bi-bookmark-fill').addClass('bi-bookmark');
-                                cardElement.remove();
-                            }
-                        },
-                        error: function(response) {
-                            console.log(response.responseJSON.message);  // Debug log
-                        }
-                    });
-                });
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    objek_wisata_id: destinasiId,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    if (response.success) {
+                        icon.toggleClass('bi-bookmark bi-bookmark-fill');
+                    }
+                }
             });
-        </script>
-    @endpush
+        });
+    });
+</script>
 @endsection
