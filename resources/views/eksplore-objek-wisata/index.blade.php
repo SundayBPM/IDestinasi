@@ -30,6 +30,64 @@
             </div>
         @endforeach
     </div>
+    <h2 class="rekomendasi-title">Rekomendasi Sesuai Preferensimu</h2>
+    <h10 class="add-title">Temukan objek wisata yang sesuai dengan preferensimu</h10>
+    <div class="list-eksplore-wisata">
+        @foreach($listdestinasi as $destinasi)
+            <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
+                <div class="card_img_wishlist">
+                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                </div>
+                <div class="card-content-wishlist">
+                    <h3>{{ $destinasi->nama_wisata }}</h3>
+                    <h5><i class="fa-regular fa-star"> </i> Reviews</h5>
+                    @php
+                        $isWishlisted = Auth::user()->wishlists->contains($destinasi->id);
+                    @endphp
+                    <i class="bi {{ $isWishlisted ? 'bi-bookmark-fill' : 'bi-bookmark' }} wishlist-icon" data-destinasi-id="{{ $destinasi->id }}"></i>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <h2 class="rekomendasi-title">Populer Saat Ini</h2>
+    <h10 class="add-title">Temukan objek wisata yang populer saat ini di kalangan wisatawan</h10>
+    <div class="list-eksplore-wisata">
+        @foreach($listdestinasi as $destinasi)
+            <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
+                <div class="card_img_wishlist">
+                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                </div>
+                <div class="card-content-wishlist">
+                    <h3>{{ $destinasi->nama_wisata }}</h3>
+                    <h5><i class="fa-regular fa-star"> </i> Reviews</h5>
+                    @php
+                        $isWishlisted = Auth::user()->wishlists->contains($destinasi->id);
+                    @endphp
+                    <i class="bi {{ $isWishlisted ? 'bi-bookmark-fill' : 'bi-bookmark' }} wishlist-icon" data-destinasi-id="{{ $destinasi->id }}"></i>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <h2 class="rekomendasi-title">Semua Objek Wisata</h2>
+    <h10 class="add-title">Lihat berbagai tempat wisata dan cari yang sesuai denganmu</h10>
+    <div class="list-eksplore-wisata">
+        @foreach($listdestinasi as $destinasi)
+            <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
+                <div class="card_img_wishlist">
+                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                </div>
+                <div class="card-content-wishlist">
+                    <h3>{{ $destinasi->nama_wisata }}</h3>
+                    <h5><i class="fa-regular fa-star"> </i> Reviews</h5>
+                    @php
+                        $isWishlisted = Auth::user()->wishlists->contains($destinasi->id);
+                    @endphp
+                    <i class="bi {{ $isWishlisted ? 'bi-bookmark-fill' : 'bi-bookmark' }} wishlist-icon" data-destinasi-id="{{ $destinasi->id }}"></i>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
