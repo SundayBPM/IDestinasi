@@ -31,7 +31,6 @@ class EditProfilController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'nullable|min:8',
-            'role' => 'required',
             'no_telp' => 'required|numeric',
             'domisili' => 'required',
             'gender' => 'required',
@@ -45,7 +44,6 @@ class EditProfilController extends Controller
         if ($request->filled('password')) {
             $user->password = bcrypt($request->input('password'));
         }
-        $user->role = $request->input('role');
         $user->no_telp = $request->input('no_telp');
         $user->domisili = $request->input('domisili');
         $user->gender = $request->input('gender');

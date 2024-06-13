@@ -74,7 +74,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Objek_Wisata::class, 'wishlist', 'user_id', 'objek_wisata_id');
     }
 
-    public function mengelola()
+    public function mengelolas()
     {
         return $this->hasOne(Mengelola::class, 'user_id');
     }

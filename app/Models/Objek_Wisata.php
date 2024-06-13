@@ -24,7 +24,7 @@ class Objek_Wisata extends Model
         return $this->belongsToMany(User::class, 'wishlist', 'objek_wisata_id', 'user_id');
     }
     
-    public function mengelola()
+    public function mengelolas()
     {
         return $this->hasOne(Mengelola::class, 'objek_wisata_id');
     }
@@ -32,6 +32,11 @@ class Objek_Wisata extends Model
     public function userMengelola()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function tiket()
+    {
+        return $this->hasOne(Tiket::class, 'id_objek_wisata');
     }
                                                         
 }

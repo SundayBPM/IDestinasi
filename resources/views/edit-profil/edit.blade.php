@@ -25,11 +25,6 @@
                             </div>
 
                             <div class="form-row">
-                                <label for="role">Role</label>
-                                <input type="text" class="form-control" name="role" id="role" placeholder="Masukkan Role" value="{{ $editProfil->role }}" required>
-                            </div>
-
-                            <div class="form-row">
                                 <label for="no_telp">No Telp</label>
                                 <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Masukkan No Telp" value="{{ $editProfil->no_telp }}" required>
                             </div>
