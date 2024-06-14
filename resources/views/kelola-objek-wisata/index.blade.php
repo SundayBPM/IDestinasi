@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container">
+    <div class="view-daftar">
         <h2>Objek Wisatamu</h2>
         <h6>Lihat objek wiata yang sudah kamu upload</h6>
         <a href="{{ route('kelola-objek-wisata.create') }}" class="btn btn-success">Daftar Sekarang</a>

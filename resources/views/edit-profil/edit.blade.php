@@ -25,11 +25,6 @@
                             </div>
 
                             <div class="form-row">
-                                <label for="role">Role</label>
-                                <input type="text" class="form-control" name="role" id="role" placeholder="Masukkan Role" value="{{ $editProfil->role }}" required>
-                            </div>
-
-                            <div class="form-row">
                                 <label for="no_telp">No Telp</label>
                                 <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Masukkan No Telp" value="{{ $editProfil->no_telp }}" required>
                             </div>
@@ -40,7 +35,18 @@
 
                             <div class="form-row">
                                 <label for="gender">Gender</label>
-                                <input type="text" class="form-control" name="gender" id="gender" placeholder="Masukkan Gender" value="{{ $editProfil->gender }}" required>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Laki - laki" {{ $editProfil->gender == 'Laki - laki' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="genderMale">
+                                        Laki - laki
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Perempuan" {{ $editProfil->gender == 'Perempuan' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="genderFemale">
+                                        Permpuan
+                                    </label>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <label for="usia">Usia</label>

@@ -106,7 +106,7 @@
         <tbody>
             @foreach($objekWisatas as $item)
                 <tr>
-                    <td>{{ $item->mengelola->user->name }}</td>
+                    <td>{{ $item->mengelola->user->name ?? 'Tidak tersedia' }}</td>
                     <td>{{ $item->nama_wisata }}</td>
                     <td>{{ $item->deskripsi }}</td>
                     <td>{{ $item->created_at }}</td>                   

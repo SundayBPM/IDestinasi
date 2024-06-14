@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="row justify-content-center mt-3">
-                            <a href="{{ route('edit-profil.edit', $user->id) }}" class="btn btn-primary">Edit</a> <!-- Tombol "Edit" -->
+                            <a href="{{ route('edit-profil.edit', $user->id) }}" class="btn btn-primary">Edit</a> <!-- Tombol "Edit" -->        
                         </div>
                     </div>
                 </div>
