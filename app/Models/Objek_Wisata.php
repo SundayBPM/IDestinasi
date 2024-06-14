@@ -26,7 +26,7 @@ class Objek_Wisata extends Model
     
     public function mengelola()
     {
-        return $this->hasOne(Mengelola::class, 'objek_wisata_id');
+       return $this->hasOne(Mengelola::class, 'objek_wisata_id');
     }
 
     public function userMengelola()
