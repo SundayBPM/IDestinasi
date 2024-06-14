@@ -10,7 +10,7 @@ body{
     display: flex;
     /* flex-direction: column; */
     justify-content: space-between;
-    border: 3px solid black;
+    /* border: 3px solid black; */
 }
 .circle {
     width: 50px;
@@ -32,15 +32,33 @@ body{
 }
 
 .informasi_content {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    gap: 20px;
+    /* justify-content: space-evenly; */
+}
+    
+.informasi_pendaftar {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+    height: auto;
+    margin: 15px 10%;
+    border-radius: 8px;
+    padding: 1% 2%;
+
+}
+.informasi_pendaftar h5 {
+    padding-top: 20px;
+}
+    
+.informasi_pendaftar input{
+    border: 1px grey solid;
+    border-radius: 5px;        
 }
 
-.informasi_pendaftar {
-    background-color: white;
-    width: 70%;
-    height: auto;
-
+.informasi_pendaftar img{
+    padding: 0% 1%;
 }

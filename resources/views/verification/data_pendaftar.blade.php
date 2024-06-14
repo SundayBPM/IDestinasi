@@ -24,30 +24,33 @@
     </nav>
     <nav class="informasi_content">
         <div class="informasi_pendaftar">
-            <h3>Infomrasi Umum</h3>
+            <h3>Informasi Umum</h3>
             <hr>
             <h5>Nama Objek Wisata</h5>
             <input type="text" value="{{ $data_objek_wisata -> nama_wisata }}">
             <h5>Lokasi</h5>
             <input type="text" value="{{ $data_objek_wisata -> lokasi }}">
             <h5>Titik Koordinat</h5>
-            <input type="text" value="{{ $data_objek_wisata -> longitude }}">
-            <input type="text" value="{{ $data_objek_wisata -> latitude }}">
+            <div class="titik_koordinat">
+                <input type="text" value="{{ $data_objek_wisata -> longitude }}">
+                <input type="text" value="{{ $data_objek_wisata -> latitude }}">
+            </div>
             <h5>Jam Operasional</h5>
             <input type="text" value="{{ $data_objek_wisata -> jam_operasional }}">
         </div>
     
         <div class="informasi_pendaftar">
-            <h3>Infomrasi Detail</h3>
+            <h3>Informasi Detail</h3>
             <hr>
             <h5>Deskripsi</h5>
             <input type="text" value="{{ $data_objek_wisata -> deskripsi }}">
             <h5>Jenis Wisata</h5>
             <input type="text" value="{{ $data_objek_wisata -> jenis }}">
             <h5>Foto Objek Wisata</h5>
-            <input type="text" value="{{ $data_objek_wisata -> jenis }}">
             <img src="{{ $data_objek_wisata->foto ? asset($data_objek_wisata->foto) : 'img/Kete Kesu.jpg' }}" alt="">
-            <img src="{{asset('img/Kete Kesu.jpg')}}" alt="" width="auto" height="150">
+            <div class="gambar">
+                <img src="{{asset('img/Kete Kesu.jpg')}}" alt="" height="200px" width="auto">
+            </div>
         </div>
 
     </nav>   
