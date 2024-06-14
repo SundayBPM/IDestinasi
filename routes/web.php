@@ -133,4 +133,4 @@ Route::get('/paket-tour', [PaketTourController::class, 'index'])->name('paket-to
 Route::get('/paket-tour/{id}', [PaketTourController::class, 'show'])->name('paket-tour.show');
 Route::get('/paket-tour/{id}/pembelian-tiket', [PaketTourController::class, 'pembelian_tiket'])->name('paket-tour.pembelian_tiket');
 Route::post('/paket-tour/{id}/pembayaran-tiket', [PaketTourController::class, 'pembayaran_tiket'])->name('paket-tour.pembayaran_tiket');
-Route::get('/landinPage',function(){return redirect()->route('');})->name('landingPage');
+Route::get('/landinPage',function(){return redirect()->route('landingPage');})->name('landingPage');
