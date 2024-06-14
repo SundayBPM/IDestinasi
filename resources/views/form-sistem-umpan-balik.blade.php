@@ -71,26 +71,26 @@
             <hr>
             <p>Seberapa menarik Anda menilai atraksi wisata yang ada?</p>
             <div class="rating-penilaian">
-                <input type="radio" name="penilaian_atraksi" id="rate-1" value="1">
-                <input type="radio" name="penilaian_atraksi" id="rate-2" value="2">
-                <input type="radio" name="penilaian_atraksi" id="rate-3" value="3">
-                <input type="radio" name="penilaian_atraksi" id="rate-4" value="4">
-                <input type="radio" name="penilaian_atraksi" id="rate-5" value="5">
-                <input type="radio" name="penilaian_atraksi" id="rate-6" value="6">
-                <input type="radio" name="penilaian_atraksi" id="rate-7" value="7">
-                <input type="radio" name="penilaian_atraksi" id="rate-8" value="8">
-                <input type="radio" name="penilaian_atraksi" id="rate-9" value="9">
-                <input type="radio" name="penilaian_atraksi" id="rate-10" value="10">
                 <label for="rate-1">1</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-1" value="1">
                 <label for="rate-2">2</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-2" value="2">
                 <label for="rate-3">3</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-3" value="3">
                 <label for="rate-4">4</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-4" value="4">
                 <label for="rate-5">5</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-5" value="5">
                 <label for="rate-6">6</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-6" value="6">
                 <label for="rate-7">7</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-7" value="7">
                 <label for="rate-8">8</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-8" value="8">
                 <label for="rate-9">9</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-9" value="9">
                 <label for="rate-10">10</label>
+                <input type="radio" name="penilaian_atraksi" id="rate-10" value="10">
                 
             </div>
         </div>
