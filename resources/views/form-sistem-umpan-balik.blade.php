@@ -15,8 +15,8 @@
 <body>
     <nav class="navbar justify-content-left navbar-expand-lg navbar-light bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/ulasan"><i class="bi bi-arrow-left"></i> Navbar</a>   
-            <!-- <p>Lengkapi formulir ulasan dibawah ini untuk "...."</p> -->
+            <a class="navbar-brand" href="/ulasan"><i class="bi bi-arrow-left"></i></a>   
+            <h3>Buat Ulasan</h3>
             <div class="navbar-text">
             </div>
         </div>
@@ -100,6 +100,7 @@
                 <Header>Penilaian Aksesibilitas</Header>
                 <hr>
             </div>
+            <p>Seberapa mudah akses ke destinasi wisata dari tempat anda?</p>
             <div class="rating-penilaian">
                 <label for="rate-1">1</label>
                 <input type="radio" name="penilaian_aksesibilitas" id="rate-1" value="1">
@@ -128,6 +129,7 @@
         <div class="penilaian">
             <Header>Penilaian Amenitas</Header>
             <hr>
+            <p>Bagaimana penilaian anda terhadap fasilitas umum seperti toilet, tempat istirahat dan lain-lainnya di sekitar destinasi wisata?</p>
             <div class="rating-penilaian">
                 <label for="rate-1">1</label>
                 <input type="radio" name="penilaian_amenitas" id="rate-1" value="1">
@@ -156,6 +158,7 @@
         <div class="penilaian">
             <Header>Penilaian Ansilari</Header>
             <hr>
+            <p>Apakah anda menemukan pilihan akomodasi yang memadai di sekitar destinasi wisata?</p>
             <div class="rating-penilaian">
                 <label for="rate-1">1</label>
                 <input type="radio" name="penilaian_ansilari1" id="rate-1" value="1">
@@ -180,6 +183,7 @@
             </div>
             <Header>Penilaian Ansilari</Header>
             <hr>
+            <p>Bagaimana pengalaman anda dengan pelayanan dan keramahan penduduk lokal di destinasi wisata tersebut?</p>
             <div class="rating-penilaian">
                 <label for="rate-1">1</label>
                 <input type="radio" name="penilaian_ansilari2" id="rate-1" value="1">
@@ -206,7 +210,8 @@
         
         <div class="penilaian">
             <Header>Penilaian NPS</Header>
-
+            <hr>
+            <p>Berdasarkan pengalaman anda, apakah anda akan merekomendasikan destinasi wisata ini kepada orang lain?</p>
             <div class="rating-penilaian">
                 <label for="rate-1">1</label>
                 <input type="radio" name="penilaian_nps" id="rate-1" value="1">
@@ -233,22 +238,16 @@
         </div>
         </div>
         
-        <!-- <button type="submit"> POST CUII</button> -->
-        <!-- Button submit for testing -->
-        <div class="btn-submit-ulasan">
-            <button id="first_button" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Post
-            </button>    
-        </div>
+
         <!-- Button trigger modal -->
-        <!-- <div class="btn-submit-ulasan">
+        <div class="btn-submit-ulasan">
             <button id="first_button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Post
             </button>    
-        </div> -->
+        </div>
 
         <!-- Modal -->
-        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -266,7 +265,7 @@
             </div>
             </div>
         </div>
-        </div> -->
+        </div>
     </form>
     
 
