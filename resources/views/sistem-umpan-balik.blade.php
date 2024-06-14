@@ -33,12 +33,12 @@
 <div class="list-ulasan-destinasi">
     @foreach($list_destinasi as $destinasi)
         <div class="card_ulasan">
-            <div class="card_img">
-                <!-- @if($destinasi->foto)
-                    <img src="{{ asset($destinasi->foto) }}" alt="image_path">
+            <div class="card_img_ulasan">
+                @if($destinasi->foto)
+                    <img src="{{ asset('storage/post-images/' . $destinasi->foto) }}" alt="image_path">
                 @else
-                @endif -->
                 <img src="asset/no_img.jpg" alt="default_image">
+                @endif
             </div>
             <div class="card-content-ulasan">
                 <h3>{{ $destinasi->nama_wisata }}</h3>

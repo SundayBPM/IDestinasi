@@ -17,7 +17,7 @@
         @foreach($listdestinasi as $destinasi)
             <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
                 <div class="card_img_wishlist">
-                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                    <img src="{{ asset('storage/post-images/' . $destinasi->foto) }}" alt="">
                 </div>
                 <div class="card-content-wishlist">
                     <h3>{{ $destinasi->nama_wisata }}</h3>
@@ -36,7 +36,7 @@
         @foreach($listdestinasi as $destinasi)
             <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
                 <div class="card_img_wishlist">
-                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                    <img src="{{ asset('storage/post-images/' . $destinasi->foto) }}" alt="">
                 </div>
                 <div class="card-content-wishlist">
                     <h3>{{ $destinasi->nama_wisata }}</h3>
@@ -55,7 +55,7 @@
         @foreach($listdestinasi as $destinasi)
             <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
                 <div class="card_img_wishlist">
-                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                    <img src="{{ asset('storage/post-images/' . $destinasi->foto) }}" alt="">
                 </div>
                 <div class="card-content-wishlist">
                     <h3>{{ $destinasi->nama_wisata }}</h3>
@@ -74,7 +74,7 @@
         @foreach($listdestinasi as $destinasi)
             <div class="card_wishlist" id="wishlist-{{ $destinasi->id }}">
                 <div class="card_img_wishlist">
-                    <img src="{{ $destinasi->foto ? asset($destinasi->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                    <img src="{{ asset('storage/post-images/' . $destinasi->foto) }}" alt="">
                 </div>
                 <div class="card-content-wishlist">
                     <h3>{{ $destinasi->nama_wisata }}</h3>
