@@ -9,7 +9,7 @@
         <div class="navigation">
             <a href="{{ route('landingPage') }}" class="nav-link {{ (request()->is('landingPage')) ? 'active' : '' }}">Home</a>
             <span class="separator">></span>
-            <a href="{{ route('promo.detail', $events->id) }}" class="nav-link {{ (request()->is('promo')) ? 'active' : '' }}">Promo</a>
+            <a href="{{ route('promo.detail', $event->id) }}" class="nav-link {{ (request()->is('promo')) ? 'active' : '' }}">Promo</a>
         </div>
     </div>
 <!-- photo-->
