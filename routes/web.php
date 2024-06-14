@@ -15,6 +15,7 @@ use App\Http\Controllers\SistemUmpanBalikController;
 use App\Http\Controllers\KelolaObjekWisataController;
 use App\Http\Controllers\InformasiStatistikController;
 use App\Http\Controllers\Verifikasi_Destinasi;
+use App\Http\Controllers\PaketTourController;
 
 Auth::routes();
 // menuju ke hal ulasan/feedback
