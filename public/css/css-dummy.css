@@ -11,6 +11,7 @@ body{
     /* flex-direction: column; */
     justify-content: space-between;
     /* border: 3px solid black; */
+    align-items: center;
 }
 .circle {
     width: 50px;
@@ -53,8 +54,16 @@ body{
 .informasi_pendaftar h5 {
     padding-top: 20px;
 }
+
+.titik_koordinat{
+    display: flex;
+}
+.titik_koordinat input{
+    flex-grow: 1;
+}
     
 .informasi_pendaftar input{
+    padding: 15px;
     border: 1px grey solid;
     border-radius: 5px;        
 }

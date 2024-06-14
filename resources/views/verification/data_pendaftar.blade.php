@@ -11,7 +11,7 @@
 <body>
     <nav class="footer">
         <a class="" href="/">
-            <img src="{{ asset('img/logo.png') }}" alt="Logo" width="auto" height="44">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo" width="auto" height="44" style="padding-left: 30px;">
         </a>
         <div class="nav_title">
             <h4>Verifikasi Objek Wisata</h4>
