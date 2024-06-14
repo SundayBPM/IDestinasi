@@ -21,7 +21,7 @@ class InformasiStatistikController extends Controller
         $userId = Auth::id();
         $data_user = User::where('id', $userId)->get();
 
-        $id_pengelola = Mengelola::where('user_id', $userId)->pluck('objek_wisata_id')->first();
+        $id_pengelola = Mengelola::where('user_id', $userId)->pluck('objek_wisata_id');
         $overalRating = Saran::where('id_objek_wisata', $id_pengelola)->avg('rating');
         $nps_rating_avg = Saran::where('id_objek_wisata', $id_pengelola)->avg('penilaian_nps');
         $nps_rating_avg = number_format($nps_rating_avg, 2);

@@ -31,7 +31,7 @@
             </div>
             <div class="mini_box_text">
                 <h5>Total Pendaftar</h5>
-                <p>ini angka</p>
+                <p>{{ $countAll }}</p>
             </div>
         </div>
         <div class="box_statistik">
@@ -40,7 +40,7 @@
             </div>
             <div class="mini_box_text">
                 <h5>Belum Di-review</h5>
-                <p>ini angka</p>
+                <p>{{ $countStatusNull }}</p>
             </div>
         </div>
         <div class="box_statistik">
@@ -49,7 +49,7 @@
             </div>
             <div class="mini_box_text">
                 <h5>Total Diterima</h5>
-                <p>ini angka</p>
+                <p>{{ $countStatusTerima }}</p>
             </div>
         </div>
         <div class="box_statistik">
@@ -58,7 +58,7 @@
             </div>
             <div class="mini_box_text">
                 <h5>Total Ditolak</h5>
-                <p>ini angka</p>
+                <p>{{ $countStatusTolak }}</p>
             </div>
         </div>
 
