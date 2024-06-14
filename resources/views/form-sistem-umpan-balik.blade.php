@@ -16,7 +16,7 @@
     <nav class="navbar justify-content-left navbar-expand-lg navbar-light bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/ulasan"><i class="bi bi-arrow-left"></i> Navbar</a>   
-            <p>Lengkapi formulir ulasan dibawah ini untuk "...."</p>
+            <!-- <p>Lengkapi formulir ulasan dibawah ini untuk "...."</p> -->
             <div class="navbar-text">
             </div>
         </div>
@@ -30,9 +30,9 @@
             </ul>
         </div>
     @endif
-    <div>
-        <!-- <h5>{{ $destinasi }}</h5> -->
-    </div>
+    <!-- <div>
+        <h5>{{ $destinasi }}</h5>
+    </div> -->
     <form action="/ulasan" method="POST"> 
         @csrf
         <input type="hidden" name="id_pembelian_tiket" value="{{ $destinasi->id }}">
