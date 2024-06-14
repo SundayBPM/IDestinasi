@@ -30,7 +30,7 @@
                     @endif
                 @endforeach
                 <a href="/ulasan/form?id_destinasi={{ $destinasi->id_tiket }}" class="btn" id="btn-history">
-                    <i class="fa-solid fa-pen"></i> Buat Ulasan
+                    <!-- <i class="fa-solid fa-pen"></i> Buat Ulasan -->
                 </a>
             </div>
         </div>

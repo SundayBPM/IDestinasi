@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Objek_Wisata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class Verifikasi_Destinasi extends Controller
@@ -13,7 +14,13 @@ class Verifikasi_Destinasi extends Controller
     {
         $objekWisatas = Objek_Wisata::with('mengelola.user')->get();
 
-        return view('verification.verification', ['objekWisatas' => $objekWisatas]);
+        // Menghitung objek_wisatas dengan status IS NULL
+        $countStatusNull = Objek_Wisata::whereNull('status')->count();
+        $countStatusTerima = Objek_Wisata::where('status', 'terima')->count();
+        $countStatusTolak = Objek_Wisata::where('status', 'tolak')->count();
+        $countAll = DB::table('objek_wisatas')->count();
+
+        return view('verification.verification', compact('objekWisatas', 'countStatusNull', 'countStatusTolak', 'countAll', 'countStatusTerima'));
     }
 
     public function update(Request $request, $id)

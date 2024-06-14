@@ -12,32 +12,41 @@ use Illuminate\Support\Facades\Auth;
 
 class SistemUmpanBalikController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Ambil ID destinasi yang dipilih dari permintaan, jika ada
-        $selected_destinasi_id = request()->get('selected_destinasi_id');
-
+        // Ambil pilihan filter dari request
+        $filter = $request->get('filter', 'all');
+    
         // Dapatkan ID pengguna yang sedang diautentikasi
         $userId = Auth::id();
-
-        $list_destinasi = Pembelian_tiket::join('objek_wisatas', 'objek_wisatas.id', '=', 'pembelian_tikets.id_destinasi')
-        ->where('pembelian_tikets.id_users', $userId)
-        ->get([
+    
+        // Dapatkan semua pembelian tiket pengguna
+        $query = Pembelian_tiket::join('objek_wisatas', 'objek_wisatas.id', '=', 'pembelian_tikets.id_destinasi')
+            ->where('pembelian_tikets.id_users', $userId);
+    
+        // Filter berdasarkan pilihan dropdown
+        if ($filter == 'belum_diulas') {
+            $query->leftJoin('sarans', 'pembelian_tikets.id', '=', 'sarans.id_pembelian_tiket')
+                ->whereNull('sarans.id');
+        } elseif ($filter == 'sudah_diulas') {
+            $query->join('sarans', 'pembelian_tikets.id', '=', 'sarans.id_pembelian_tiket');
+        }
+    
+        $list_destinasi = $query->get([
             'pembelian_tikets.id as id_tiket',
             'pembelian_tikets.id_users',
             'objek_wisatas.id as id_objek_wisata',
             'objek_wisatas.nama_wisata',
             'pembelian_tikets.jumlah_tiket',
-            'pembelian_tikets.created_at'
+            'pembelian_tikets.created_at',
+            'objek_wisatas.foto'
         ]);
-
+    
         $overalRating = Saran::select('id_objek_wisata', DB::raw('AVG(rating) as average_rating'))
             ->groupBy('id_objek_wisata')
             ->get();
-        
-        // dd($list_destinasi);
-        return view('sistem-umpan-balik',compact(['list_destinasi','selected_destinasi_id','overalRating']));
-        
+    
+        return view('sistem-umpan-balik', compact(['list_destinasi', 'filter', 'overalRating']));
     }
     
     public function create(Request $request)
