@@ -26,7 +26,7 @@ class LandingPageController extends Controller
 
         // recomended system
         $data_recomended = $this->recommendDestinations();
-        return view('landingpage', compact('saran_destinasi', 'events', 'data_recomended', 'promos'));
+        return view('LandingPage', compact('saran_destinasi', 'events', 'data_recomended', 'promos'));
     }
 
     public function show_promo($id)
