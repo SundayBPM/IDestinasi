@@ -14,7 +14,7 @@
     @foreach($wishlists as $wishlist)
         <div class="card_wishlist" id="wishlist-{{ $wishlist->objekWisata->id }}">
             <div class="card_img_wishlist">
-                <img src="{{ $wishlist->objekWisata->foto ? asset($wishlist->objekWisata->foto) : 'img/Kete Kesu.jpg' }}" alt="">
+                <img src="{{ asset('storage/post-images/' . $wishlist->objekWisata->foto) }}" alt="">
             </div>
             <div class="card-content-wishlist">
                 <h3>{{ $wishlist->objekWisata->nama_wisata }}</h3>

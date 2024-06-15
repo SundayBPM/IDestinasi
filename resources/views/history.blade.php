@@ -15,7 +15,7 @@
     @foreach($list_destinasi as $destinasi)
         <div class="card_history">
             <div class="card_img_history">
-                <img src="img/Kete Kesu.jpg" alt="">
+                <img src="{{ asset('storage/post-images/' . $destinasi->foto) }}" alt="">
             </div>
             <div class="card-content-history">
                 <!-- <h5>{{ $destinasi }}</h5> -->
